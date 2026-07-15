@@ -74,7 +74,16 @@ h2 {
 
 .actions {
   display: flex;
+  align-items: flex-end;
   gap: 8px;
+}
+
+.language-control {
+  min-width: 112px;
+}
+
+.language-control select {
+  height: 38px;
 }
 
 button {
@@ -87,7 +96,7 @@ button {
   cursor: pointer;
 }
 
-button:first-child {
+.actions #startButton {
   border-color: rgba(36, 192, 139, 0.55);
   background: #14382d;
 }
@@ -197,7 +206,7 @@ input[type="file"] {
   border-radius: 8px;
   background: var(--panel);
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr) 190px;
+  grid-template-rows: auto minmax(0, 9fr) minmax(0, 1fr);
   overflow: hidden;
 }
 
@@ -212,6 +221,12 @@ input[type="file"] {
 #modelBadge {
   color: var(--accent);
   font-size: 12px;
+}
+
+.model-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .typewriter {
@@ -247,12 +262,14 @@ input[type="file"] {
 }
 
 .event-log {
+  min-height: 0;
   overflow: auto;
   border-top: 1px solid var(--line);
   padding: 10px 14px;
   color: var(--muted);
   font-size: 12px;
   line-height: 1.45;
+  overscroll-behavior: contain;
 }
 
 .event-log div {
@@ -291,5 +308,33 @@ input[type="file"] {
 
   .result-panel {
     height: 620px;
+  }
+}
+.detection-status {
+  display: inline-flex;
+  align-items: center;
+}
+
+.detection-light {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #465047;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.detection-status.is-detecting .detection-light {
+  background: #76b900;
+  animation: detection-breathe 1.8s ease-in-out infinite;
+}
+
+@keyframes detection-breathe {
+  0%, 100% {
+    opacity: 0.45;
+    box-shadow: 0 0 0 2px rgba(118, 185, 0, 0.12), 0 0 5px rgba(118, 185, 0, 0.35);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 0 5px rgba(118, 185, 0, 0.12), 0 0 14px rgba(118, 185, 0, 0.9);
   }
 }

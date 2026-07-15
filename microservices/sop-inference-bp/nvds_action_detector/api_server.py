@@ -1153,9 +1153,11 @@ async def delete_rtsp_preview_session(session_id: str):
 @app.get("/v1/model", tags=["Models"])
 async def get_model():
     """Return current model path and switch status."""
+    model_ready = global_sop_manager is not None and global_sop_manager.is_model_ready()
+    status = _model_switch_status if _model_switch_status == "switching" else ("ready" if model_ready else "loading")
     return {
         "current_model": _current_model,
-        "status": _model_switch_status,
+        "status": status,
         "available_models": AVAILABLE_MODELS,
     }
 

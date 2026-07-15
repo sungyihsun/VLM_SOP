@@ -1,4 +1,30 @@
-const DEFAULT_PROMPT = "Describe what action is happening in this video buffer. Keep the answer concise and operational.";
+const PROMPTS = {
+  en: "Describe what action is happening in this video buffer. Respond only in English. Keep the answer concise and operational.",
+  "zh-TW": "辨識這段影片正在進行的動作，將動作描述翻譯成繁體中文，並且只使用繁體中文回答。內容需簡潔、明確且適合現場操作。",
+};
+
+const TRANSLATIONS = {
+  en: {
+    pageTitle: "SOP Inference Console", heading: "SOP Inference", idle: "Idle", language: "Language",
+    start: "Start", stop: "Stop", source: "Source", rtspSource: "RTSP source", previewUrl: "Preview URL",
+    mp4File: "MP4 file", mp4Upload: "MP4 upload", name: "Name", model: "Model",
+    chunkSeconds: "Chunk seconds", previewNotConnected: "Preview not connected", waiting: "waiting",
+    vlmInference: "VLM Inference", loadingModel: "Loading model…", switchingModel: "Switching model…",
+    switchFailed: "Switch failed", detecting: "Inference running", stopping: "Stopping",
+    previewUnavailable: "RTSP preview unavailable", previewConnected: "RTSP preview connected",
+    chunk: "chunk",
+  },
+  "zh-TW": {
+    pageTitle: "SOP 推論控制台", heading: "SOP 推論", idle: "閒置", language: "語言",
+    start: "開始", stop: "停止", source: "來源", rtspSource: "RTSP 來源", previewUrl: "預覽網址",
+    mp4File: "MP4 檔案", mp4Upload: "上傳 MP4", name: "名稱", model: "模型",
+    chunkSeconds: "分段秒數", previewNotConnected: "尚未連接預覽", waiting: "等待中",
+    vlmInference: "VLM 推論", loadingModel: "模型載入中…", switchingModel: "模型切換中…",
+    switchFailed: "模型切換失敗", detecting: "推論進行中", stopping: "正在停止",
+    previewUnavailable: "RTSP 預覽無法使用", previewConnected: "RTSP 預覽已連接",
+    chunk: "分段",
+  },
+};
 const DEFAULT_MP4_PATH = "/home/spark/eason/x86-sop-inference-bp/tests/0428_test.mp4";
 const DEFAULT_MP4_NAME = "default";
 
@@ -8,9 +34,12 @@ const state = {
   typing: false,
   running: false,
   modelSwitching: false,
+  modelReady: false,
+  language: localStorage.getItem("language") === "zh-TW" ? "zh-TW" : "en",
   previewTimerId: null,
   previewStartedAt: 0,
   uploadedPreviewUrl: null,
+  lastAction: "",
 };
 
 const els = {
@@ -26,6 +55,9 @@ const els = {
   chunkSeconds: document.getElementById("chunkSeconds"),
   modelSelect: document.getElementById("modelSelect"),
   modelStatus: document.getElementById("modelStatus"),
+  modelBadge: document.getElementById("modelBadge"),
+  languageSelect: document.getElementById("languageSelect"),
+  detectionStatus: document.getElementById("detectionStatus"),
   mediaFrame: document.querySelector(".media-frame"),
   mjpegPreview: document.getElementById("mjpegPreview"),
   videoPreview: document.getElementById("videoPreview"),
@@ -36,11 +68,30 @@ const els = {
   latencyBadge: document.getElementById("latencyBadge"),
 };
 
+function t(key) {
+  return TRANSLATIONS[state.language][key] || TRANSLATIONS.en[key] || key;
+}
+
+function localized(en, zh) {
+  return state.language === "zh-TW" ? zh : en;
+}
+
+function applyUiLanguage() {
+  document.documentElement.lang = state.language;
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    element.textContent = t(element.dataset.i18n);
+  });
+  els.languageSelect.value = state.language;
+  els.detectionStatus.setAttribute("aria-label", localized("Detection status", "偵測狀態"));
+}
+
 els.sourceMode.value = localStorage.getItem("sourceMode") || "mp4";
+applyUiLanguage();
 els.rtspUrl.value = localStorage.getItem("rtspUrl") || "";
 els.previewUrl.value = localStorage.getItem("previewUrl") || "";
 els.mp4Name.value = localStorage.getItem("mp4Name") || DEFAULT_MP4_NAME;
-els.chunkSeconds.value = localStorage.getItem("chunkSeconds") || "4";
+const savedChunkSeconds = localStorage.getItem("chunkSeconds");
+els.chunkSeconds.value = !savedChunkSeconds || savedChunkSeconds === "4" ? "2" : savedChunkSeconds;
 
 async function populateVideoList() {
   try {
@@ -65,13 +116,20 @@ void loadModelInfo();
 
 function setRunning(running, status) {
   state.running = running;
-  els.startButton.disabled = running || state.modelSwitching;
+  els.startButton.disabled = running || state.modelSwitching || !state.modelReady;
   els.stopButton.disabled = !running;
   els.modelSelect.disabled = running || state.modelSwitching;
+  els.languageSelect.disabled = running;
   els.statusText.textContent = status;
 }
 
 let _modelPollTimer = null;
+
+function modelDisplayName(path) {
+  const basename = String(path || "").replace(/\/$/, "").split("/").pop() || "";
+  const version = basename.match(/(?:model[^0-9]*|_)([12])$/i)?.[1];
+  return version ? `cosmos_${version}` : basename || "cosmos";
+}
 
 async function loadModelInfo() {
   try {
@@ -82,21 +140,24 @@ async function loadModelInfo() {
       data.available_models.forEach((path) => {
         const opt = document.createElement("option");
         opt.value = path;
-        opt.textContent = path.split("/").pop();
+        opt.textContent = modelDisplayName(path);
         els.modelSelect.appendChild(opt);
       });
     }
     els.modelSelect.value = data.current_model;
+    els.modelBadge.textContent = modelDisplayName(data.current_model);
 
-    if (data.status === "switching") {
+    if (data.status !== "ready") {
+      state.modelReady = false;
       state.modelSwitching = true;
       els.modelSelect.disabled = true;
       els.startButton.disabled = true;
-      els.modelStatus.textContent = "Loading model…";
+      els.modelStatus.textContent = t("loadingModel");
       if (!_modelPollTimer) {
         _modelPollTimer = setInterval(loadModelInfo, 3000);
       }
     } else {
+      state.modelReady = true;
       state.modelSwitching = false;
       els.modelStatus.textContent = "";
       if (_modelPollTimer) {
@@ -104,31 +165,42 @@ async function loadModelInfo() {
         _modelPollTimer = null;
       }
       els.modelSelect.disabled = state.running;
-      els.startButton.disabled = state.running;
+      els.startButton.disabled = state.running || !state.modelReady;
     }
-  } catch (_e) {}
+  } catch (_e) {
+    state.modelReady = false;
+    els.startButton.disabled = true;
+    if (!_modelPollTimer) {
+      _modelPollTimer = setInterval(loadModelInfo, 3000);
+    }
+  }
 }
 
 els.modelSelect.addEventListener("change", async () => {
   const newModel = els.modelSelect.value;
   state.modelSwitching = true;
+  state.modelReady = false;
   els.modelSelect.disabled = true;
   els.startButton.disabled = true;
-  els.modelStatus.textContent = "Switching model…";
+  els.modelStatus.textContent = t("switchingModel");
   try {
-    await fetch("/v1/model/switch", {
+    const response = await fetch("/v1/model/switch", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ model_path: newModel }),
     });
+    if (!response.ok) {
+      throw new Error(await response.text());
+    }
     if (!_modelPollTimer) {
       _modelPollTimer = setInterval(loadModelInfo, 3000);
     }
   } catch (_e) {
     state.modelSwitching = false;
-    els.modelStatus.textContent = "Switch failed";
+    state.modelReady = false;
+    els.modelStatus.textContent = t("switchFailed");
     els.modelSelect.disabled = false;
-    els.startButton.disabled = false;
+    els.startButton.disabled = true;
   }
 });
 
@@ -151,6 +223,7 @@ function logEvent(message) {
   const now = new Date().toLocaleTimeString();
   row.textContent = `${now}  ${message}`;
   els.eventLog.prepend(row);
+  els.eventLog.scrollTop = 0;
   while (els.eventLog.children.length > 80) {
     els.eventLog.lastElementChild.remove();
   }
@@ -173,12 +246,42 @@ function startPreviewTimer(label) {
   state.previewTimerId = window.setInterval(update, 1000);
 }
 
-function stopPreviewTimer(message = "Preview not connected") {
+function stopPreviewTimer(message = t("previewNotConnected")) {
   if (state.previewTimerId) {
     window.clearInterval(state.previewTimerId);
     state.previewTimerId = null;
   }
   els.previewFallback.textContent = message;
+}
+
+function startDetectionStatus() {
+  state.lastAction = "";
+  els.detectionStatus.classList.add("is-detecting");
+}
+
+function stopDetectionStatus() {
+  els.detectionStatus.classList.remove("is-detecting");
+}
+
+function normalizeAction(text) {
+  return String(text || "")
+    .trim()
+    .toLocaleLowerCase()
+    .replace(/[\s\p{P}\p{S}]+/gu, " ")
+    .trim();
+}
+
+function presentAction(content) {
+  const normalized = normalizeAction(content);
+  if (!normalized) {
+    return;
+  }
+  if (normalized === state.lastAction) {
+    logEvent(localized("Same action continues; detection is active", "相同動作持續進行；系統仍在偵測"));
+    return;
+  }
+  state.lastAction = normalized;
+  queueTyping(content);
 }
 
 function queueTyping(text) {
@@ -218,7 +321,7 @@ async function typeNext() {
 
 async function startPreview(rtspUrl, previewUrl) {
   clearPreviewMedia();
-  startPreviewTimer("RTSP elapsed");
+  startPreviewTimer(localized("RTSP elapsed", "RTSP 已經過"));
 
   const normalizedPreviewUrl = previewUrl.replace(/\/$/, "");
   const serviceOrigin = window.location.origin.replace(/\/$/, "");
@@ -241,15 +344,16 @@ async function startPreview(rtspUrl, previewUrl) {
     const session = await response.json();
     const previewSrc = session.preview_url + "?t=" + Date.now();
     els.mediaFrame.classList.add("preview-image");
-    stopPreviewTimer("RTSP preview connected");
+    stopPreviewTimer(t("previewConnected"));
     els.mjpegPreview.onerror = () => {
       els.mediaFrame.classList.remove("preview-image");
-      stopPreviewTimer("RTSP preview unavailable");
-      logEvent("rtsp preview stream unavailable");
+      stopPreviewTimer(t("previewUnavailable"));
+      logEvent(localized("RTSP preview stream unavailable", "RTSP 預覽串流無法使用"));
     };
     els.mjpegPreview.src = previewSrc;
   } catch (error) {
-    logEvent(`preview unavailable: ${error.message}`);
+    stopPreviewTimer(t("previewUnavailable"));
+    logEvent(localized(`Preview unavailable: ${error.message}`, `預覽無法使用：${error.message}`));
   }
 }
 
@@ -324,7 +428,7 @@ async function getVideoContent(sourceMode) {
   if (sourceMode === "rtsp") {
     const rtspUrl = els.rtspUrl.value.trim();
     if (!rtspUrl.startsWith("rtsp://")) {
-      throw new Error("RTSP source must start with rtsp://");
+      throw new Error(localized("RTSP source must start with rtsp://", "RTSP 來源必須以 rtsp:// 開頭"));
     }
     return { type: "video_url", video_url: { url: rtspUrl } };
   }
@@ -332,7 +436,7 @@ async function getVideoContent(sourceMode) {
   const file = els.mp4File.files?.[0];
   if (file) {
     if (file.type && file.type !== "video/mp4") {
-      throw new Error("MP4 upload must be a video/mp4 file");
+      throw new Error(localized("MP4 upload must be a video/mp4 file", "上傳檔案必須是 video/mp4 格式"));
     }
     const dataUrl = await readFileAsDataUrl(file);
     return { type: "video_url", video_url: { url: dataUrl } };
@@ -340,7 +444,7 @@ async function getVideoContent(sourceMode) {
 
   const mp4Path = els.mp4Path.value.trim() || DEFAULT_MP4_PATH;
   if (!mp4Path) {
-    throw new Error("MP4 path or upload is required");
+    throw new Error(localized("MP4 path or upload is required", "請選擇 MP4 路徑或上傳檔案"));
   }
   return { type: "video_url", video_url: { url: mp4Path } };
 }
@@ -352,7 +456,7 @@ function buildPayload(videoContent, chunkSeconds) {
       {
         role: "user",
         content: [
-          { type: "text", text: DEFAULT_PROMPT },
+          { type: "text", text: PROMPTS[state.language] },
           videoContent,
         ],
       },
@@ -381,7 +485,7 @@ function processSseBlock(block) {
 
   const data = dataLines.join("\n");
   if (data === "[DONE]") {
-    logEvent("stream completed");
+    logEvent(localized("Stream completed", "串流已完成"));
     return true;
   }
 
@@ -389,7 +493,7 @@ function processSseBlock(block) {
   try {
     payload = JSON.parse(data);
   } catch (error) {
-    logEvent(`ignored malformed SSE payload: ${error.message}`);
+    logEvent(localized(`Ignored malformed SSE payload: ${error.message}`, `已忽略格式錯誤的 SSE 資料：${error.message}`));
     return false;
   }
 
@@ -401,7 +505,7 @@ function processSseBlock(block) {
   const endTime = metadata.end_time;
   const vlmTime = metadata.vlm_execute_time;
 
-  els.chunkBadge.textContent = `chunk ${chunkIdx}`;
+  els.chunkBadge.textContent = `${t("chunk")} ${chunkIdx}`;
   if (typeof vlmTime === "number") {
     els.latencyBadge.textContent = `VLM ${vlmTime.toFixed(2)}s`;
   } else if (typeof startTime === "number" && typeof endTime === "number") {
@@ -409,9 +513,12 @@ function processSseBlock(block) {
   }
 
   if (content) {
-    queueTyping(content);
+    presentAction(content);
   }
-  logEvent(`chunk ${chunkIdx}: ${content || "metadata received"}`);
+  logEvent(localized(
+    `Chunk ${chunkIdx}: ${content || "metadata received"}`,
+    `分段 ${chunkIdx}：${content || "已收到中繼資料"}`,
+  ));
   return false;
 }
 
@@ -421,7 +528,7 @@ async function startInference() {
   const previewUrl = els.previewUrl.value.trim();
   const mp4Path = els.mp4Path.value.trim() || DEFAULT_MP4_PATH;
   const mp4Name = els.mp4Name.value.trim() || DEFAULT_MP4_NAME;
-  const chunkSeconds = Number(els.chunkSeconds.value || 4);
+  const chunkSeconds = Number(els.chunkSeconds.value || 2);
   let videoContent;
 
   try {
@@ -443,29 +550,13 @@ async function startInference() {
   state.typingQueue.length = 0;
   els.typewriter.textContent = "";
   els.eventLog.textContent = "";
-  els.chunkBadge.textContent = "chunk -";
-  els.latencyBadge.textContent = "connecting";
-  if (sourceMode === "rtsp") {
-    setRunning(true, `Connecting to ${maskRtsp(rtspUrl)}`);
-    await startPreview(rtspUrl, previewUrl);
-    logEvent("rtsp inference request started");
-  } else {
-    const uploadedFile = els.mp4File.files?.[0];
-    setRunning(true, `Loading MP4 ${mp4Name}`);
-    if (uploadedFile) {
-      showUploadedMp4Preview(uploadedFile);
-      logEvent(`mp4 upload selected: ${uploadedFile.name}`);
-    } else {
-      try {
-        await showLocalMp4Preview(mp4Path);
-      } catch (error) {
-        els.mediaFrame.classList.remove("preview-video");
-        stopPreviewTimer("MP4 preview unavailable");
-        logEvent(`mp4 preview unavailable: ${error.message}`);
-      }
-      logEvent(`mp4 source selected: ${mp4Name} (${mp4Path || DEFAULT_MP4_PATH})`);
-    }
-  }
+  els.chunkBadge.textContent = `${t("chunk")} -`;
+  els.latencyBadge.textContent = localized("connecting", "連線中");
+  startDetectionStatus();
+  setRunning(true, sourceMode === "rtsp"
+    ? localized(`Connecting to ${maskRtsp(rtspUrl)}`, `正在連接 ${maskRtsp(rtspUrl)}`)
+    : localized(`Loading MP4 ${mp4Name}`, `正在載入 MP4 ${mp4Name}`));
+  clearPreviewMedia();
 
   try {
     const response = await fetch("/v1/chat/completions", {
@@ -483,7 +574,31 @@ async function startInference() {
       throw new Error(`${response.status} ${response.statusText}: ${detail}`);
     }
 
-    setRunning(true, "Inference running");
+    // Do not let visible playback run ahead while the inference pipeline is starting.
+    if (sourceMode === "rtsp") {
+      await startPreview(rtspUrl, previewUrl);
+      logEvent(localized("RTSP inference and preview started", "RTSP 推論與預覽已開始"));
+    } else {
+      const uploadedFile = els.mp4File.files?.[0];
+      if (uploadedFile) {
+        showUploadedMp4Preview(uploadedFile);
+        logEvent(localized(`MP4 upload selected: ${uploadedFile.name}`, `已選擇上傳的 MP4：${uploadedFile.name}`));
+      } else {
+        try {
+          await showLocalMp4Preview(mp4Path);
+        } catch (error) {
+          els.mediaFrame.classList.remove("preview-video");
+          stopPreviewTimer(localized("MP4 preview unavailable", "MP4 預覽無法使用"));
+          logEvent(localized(`MP4 preview unavailable: ${error.message}`, `MP4 預覽無法使用：${error.message}`));
+        }
+        logEvent(localized(
+          `MP4 source selected: ${mp4Name} (${mp4Path || DEFAULT_MP4_PATH})`,
+          `已選擇 MP4 來源：${mp4Name}（${mp4Path || DEFAULT_MP4_PATH}）`,
+        ));
+      }
+    }
+
+    setRunning(true, t("detecting"));
     const reader = response.body.getReader();
     const decoder = new TextDecoder();
     let buffer = "";
@@ -503,9 +618,9 @@ async function startInference() {
     }
   } catch (error) {
     if (error.name === "AbortError") {
-      logEvent("inference stopped");
+      logEvent(localized("Inference stopped", "推論已停止"));
     } else {
-      logEvent(`error: ${error.message}`);
+      logEvent(localized(`Error: ${error.message}`, `錯誤：${error.message}`));
       els.statusText.textContent = error.message;
     }
   } finally {
@@ -513,7 +628,8 @@ async function startInference() {
       stopPreview();
     }
     state.abortController = null;
-    setRunning(false, "Idle");
+    stopDetectionStatus();
+    setRunning(false, t("idle"));
   }
 }
 
@@ -522,7 +638,8 @@ function stopInference() {
     state.abortController.abort();
   }
   stopPreview();
-  setRunning(false, "Stopping");
+  stopDetectionStatus();
+  setRunning(false, t("stopping"));
 }
 
 els.startButton.addEventListener("click", () => {
@@ -530,11 +647,24 @@ els.startButton.addEventListener("click", () => {
 });
 els.stopButton.addEventListener("click", stopInference);
 els.sourceMode.addEventListener("change", updateSourceModeUi);
+els.languageSelect.addEventListener("change", () => {
+  if (state.running) {
+    els.languageSelect.value = state.language;
+    return;
+  }
+  state.language = els.languageSelect.value === "zh-TW" ? "zh-TW" : "en";
+  localStorage.setItem("language", state.language);
+  applyUiLanguage();
+  els.statusText.textContent = t("idle");
+  if (state.modelSwitching) {
+    els.modelStatus.textContent = t("loadingModel");
+  }
+});
 els.videoPreview.addEventListener("error", () => {
   if (state.running && els.sourceMode.value === "mp4") {
     els.mediaFrame.classList.remove("preview-video");
-    stopPreviewTimer("MP4 preview unavailable");
-    logEvent("mp4 preview unavailable");
+    stopPreviewTimer(localized("MP4 preview unavailable", "MP4 預覽無法使用"));
+    logEvent(localized("MP4 preview unavailable", "MP4 預覽無法使用"));
   }
 });
 updateSourceModeUi();

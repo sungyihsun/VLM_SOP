@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SOP Inference Console</title>
+    <title data-i18n="pageTitle">SOP Inference Console</title>
     <link rel="stylesheet" href="/static/styles.css?v=rtsp-preview-20260707c" />
   </head>
   <body>
@@ -11,51 +11,58 @@
       <section class="workspace">
         <header class="topbar">
           <div>
-            <h1>SOP Inference</h1>
-            <p id="statusText">Idle</p>
+            <h1 data-i18n="heading">SOP Inference</h1>
+            <p id="statusText" data-i18n="idle">Idle</p>
           </div>
           <div class="actions">
-            <button id="startButton" type="button">Start</button>
-            <button id="stopButton" type="button" disabled>Stop</button>
+            <label class="language-control">
+              <span data-i18n="language">Language</span>
+              <select id="languageSelect" aria-label="Language">
+                <option value="en">English</option>
+                <option value="zh-TW">中文</option>
+              </select>
+            </label>
+            <button id="startButton" type="button" disabled data-i18n="start">Start</button>
+            <button id="stopButton" type="button" disabled data-i18n="stop">Stop</button>
           </div>
         </header>
 
         <section class="control-row" aria-label="Stream controls">
           <label class="small">
-            <span>Source</span>
+            <span data-i18n="source">Source</span>
             <select id="sourceMode">
               <option value="mp4">MP4</option>
               <option value="rtsp">RTSP</option>
             </select>
           </label>
           <label data-source="rtsp">
-            <span>RTSP source</span>
+            <span data-i18n="rtspSource">RTSP source</span>
             <input id="rtspUrl" type="text" autocomplete="off" spellcheck="false" placeholder="rtsp://user:password@camera-host/path" />
           </label>
           <label data-source="rtsp">
-            <span>Preview URL</span>
+            <span data-i18n="previewUrl">Preview URL</span>
             <input id="previewUrl" type="text" autocomplete="off" spellcheck="false" />
           </label>
           <label data-source="mp4">
-            <span>MP4 file</span>
+            <span data-i18n="mp4File">MP4 file</span>
             <select id="mp4Path"></select>
           </label>
           <label data-source="mp4">
-            <span>MP4 upload</span>
+            <span data-i18n="mp4Upload">MP4 upload</span>
             <input id="mp4File" type="file" accept="video/mp4" />
           </label>
           <label class="small" data-source="mp4">
-            <span>Name</span>
+            <span data-i18n="name">Name</span>
             <input id="mp4Name" type="text" autocomplete="off" spellcheck="false" />
           </label>
           <label class="small">
-            <span>Model</span>
+            <span data-i18n="model">Model</span>
             <select id="modelSelect" disabled></select>
           </label>
           <span id="modelStatus" style="font-size:0.8em;color:#f90;align-self:center;"></span>
           <label class="small">
-            <span>Chunk seconds</span>
-            <input id="chunkSeconds" type="number" min="1" max="30" step="1" value="4" />
+            <span data-i18n="chunkSeconds">Chunk seconds</span>
+            <input id="chunkSeconds" type="number" min="1" max="30" step="1" value="2" />
           </label>
         </section>
 
@@ -64,18 +71,23 @@
             <div class="media-frame">
               <img id="mjpegPreview" alt="" />
               <video id="videoPreview" muted autoplay playsinline controls></video>
-              <div id="previewFallback" class="preview-fallback">Preview not connected</div>
+              <div id="previewFallback" class="preview-fallback" data-i18n="previewNotConnected">Preview not connected</div>
             </div>
             <div class="stream-meta">
-              <span id="chunkBadge">chunk -</span>
-              <span id="latencyBadge">waiting</span>
+              <span id="chunkBadge" data-i18n="chunk">chunk</span>
+              <span id="latencyBadge" data-i18n="waiting">waiting</span>
             </div>
           </div>
 
           <aside class="result-panel">
             <div class="result-header">
-              <h2>VLM Inference</h2>
-              <span id="modelBadge">Cosmos</span>
+              <h2 data-i18n="vlmInference">VLM Inference</h2>
+              <span class="model-indicator">
+                <span id="modelBadge">cosmos_2</span>
+                <span id="detectionStatus" class="detection-status" role="status" aria-label="Detection status">
+                  <span class="detection-light" aria-hidden="true"></span>
+                </span>
+              </span>
             </div>
             <div id="typewriter" class="typewriter" aria-live="polite"></div>
             <div id="eventLog" class="event-log"></div>
@@ -83,6 +95,6 @@
         </section>
       </section>
     </main>
-    <script src="/static/app.js?v=sse-ping-20260715a"></script>
+    <script src="/static/app.js?v=bilingual-ui-20260716f"></script>
   </body>
 </html>
