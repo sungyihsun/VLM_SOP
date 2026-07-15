@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SOP Inference Console</title>
+    <link rel="stylesheet" href="/static/styles.css?v=rtsp-preview-20260707c" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace">
+        <header class="topbar">
+          <div>
+            <h1>SOP Inference</h1>
+            <p id="statusText">Idle</p>
+          </div>
+          <div class="actions">
+            <button id="startButton" type="button">Start</button>
+            <button id="stopButton" type="button" disabled>Stop</button>
+          </div>
+        </header>
+
+        <section class="control-row" aria-label="Stream controls">
+          <label class="small">
+            <span>Source</span>
+            <select id="sourceMode">
+              <option value="mp4">MP4</option>
+              <option value="rtsp">RTSP</option>
+            </select>
+          </label>
+          <label data-source="rtsp">
+            <span>RTSP source</span>
+            <input id="rtspUrl" type="text" autocomplete="off" spellcheck="false" placeholder="rtsp://user:password@camera-host/path" />
+          </label>
+          <label data-source="rtsp">
+            <span>Preview URL</span>
+            <input id="previewUrl" type="text" autocomplete="off" spellcheck="false" />
+          </label>
+          <label data-source="mp4">
+            <span>MP4 file</span>
+            <select id="mp4Path"></select>
+          </label>
+          <label data-source="mp4">
+            <span>MP4 upload</span>
+            <input id="mp4File" type="file" accept="video/mp4" />
+          </label>
+          <label class="small" data-source="mp4">
+            <span>Name</span>
+            <input id="mp4Name" type="text" autocomplete="off" spellcheck="false" />
+          </label>
+          <label class="small">
+            <span>Model</span>
+            <select id="modelSelect" disabled></select>
+          </label>
+          <span id="modelStatus" style="font-size:0.8em;color:#f90;align-self:center;"></span>
+          <label class="small">
+            <span>Chunk seconds</span>
+            <input id="chunkSeconds" type="number" min="1" max="30" step="1" value="4" />
+          </label>
+        </section>
+
+        <section class="content-grid">
+          <div class="video-panel">
+            <div class="media-frame">
+              <img id="mjpegPreview" alt="" />
+              <video id="videoPreview" muted autoplay playsinline controls></video>
+              <div id="previewFallback" class="preview-fallback">Preview not connected</div>
+            </div>
+            <div class="stream-meta">
+              <span id="chunkBadge">chunk -</span>
+              <span id="latencyBadge">waiting</span>
+            </div>
+          </div>
+
+          <aside class="result-panel">
+            <div class="result-header">
+              <h2>VLM Inference</h2>
+              <span id="modelBadge">Cosmos</span>
+            </div>
+            <div id="typewriter" class="typewriter" aria-live="polite"></div>
+            <div id="eventLog" class="event-log"></div>
+          </aside>
+        </section>
+      </section>
+    </main>
+    <script src="/static/app.js?v=sse-ping-20260715a"></script>
+  </body>
+</html>
