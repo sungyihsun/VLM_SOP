@@ -113,6 +113,12 @@ services:
       VLM_RESIZED_WIDTH: "${VLM_RESIZED_WIDTH:-0}"
       VLM_MAX_TOTAL_PIXELS: "${VLM_MAX_TOTAL_PIXELS:-0}"
       VLM_FPS: "${VLM_FPS:-8.0}"
+      MOTION_GATE_ENABLED: "${MOTION_GATE_ENABLED:-true}"
+      MOTION_GATE_FRAME_DIFF_THRESHOLD: "${MOTION_GATE_FRAME_DIFF_THRESHOLD:-0.006}"
+      MOTION_GATE_MIN_ACTIVE_RATIO: "${MOTION_GATE_MIN_ACTIVE_RATIO:-0.20}"
+      MOTION_GATE_WIDTH: "${MOTION_GATE_WIDTH:-160}"
+      MOTION_GATE_HEIGHT: "${MOTION_GATE_HEIGHT:-90}"
+      MOTION_GATE_MAX_SAMPLED_FRAMES: "${MOTION_GATE_MAX_SAMPLED_FRAMES:-12}"
       SW_ENCODER: "${SW_ENCODER:-true}"
       # RTSP streaming output (only effective if the microservice was built with
       # the optional RTSP feature). Disabled by default.

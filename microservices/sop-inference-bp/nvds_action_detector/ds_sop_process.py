@@ -35,6 +35,7 @@ from typing import Any, Callable, Dict, List, Optional, Tuple
 
 import numpy as np
 import torch
+import torch.nn.functional as F
 from pyservicemaker import BufferRetriever, EOSMessage, PipelineState, StateTransitionMessage
 from pyservicemaker.utils import MediaInfo, VideoStreamInfo
 
@@ -52,6 +53,61 @@ CV_THREAD_NUM = int(os.getenv("CV_THREAD_NUM", "32"))
 CLIP_THREAD_NUM = int(os.getenv("CLIP_THREAD_NUM", "32"))
 VLM_INFERENCE_THREAD_NUM = int(os.getenv("VLM_INFERENCE_THREAD_NUM", "64"))
 VLM_MAX_TOKENS = int(os.getenv("VLM_MAX_TOKENS", "256"))
+
+MOTION_GATE_ENABLED = os.getenv("MOTION_GATE_ENABLED", "true").lower() in ["true", "1", "yes", "y"]
+MOTION_GATE_FRAME_DIFF_THRESHOLD = float(os.getenv("MOTION_GATE_FRAME_DIFF_THRESHOLD", "0.006"))
+MOTION_GATE_MIN_ACTIVE_RATIO = float(os.getenv("MOTION_GATE_MIN_ACTIVE_RATIO", "0.20"))
+MOTION_GATE_WIDTH = max(32, int(os.getenv("MOTION_GATE_WIDTH", "160")))
+MOTION_GATE_HEIGHT = max(32, int(os.getenv("MOTION_GATE_HEIGHT", "90")))
+MOTION_GATE_MAX_SAMPLED_FRAMES = max(2, int(os.getenv("MOTION_GATE_MAX_SAMPLED_FRAMES", "12")))
+
+
+def calculate_motion_metrics(frames: List[torch.Tensor]) -> Tuple[bool, float, float]:
+    """Return activity, mean normalized frame difference, and active-pair ratio."""
+    if len(frames) < 2:
+        return True, 0.0, 1.0
+
+    if len(frames) > MOTION_GATE_MAX_SAMPLED_FRAMES:
+        indices = np.linspace(0, len(frames) - 1, MOTION_GATE_MAX_SAMPLED_FRAMES, dtype=int)
+        sampled_frames = [frames[index] for index in indices]
+    else:
+        sampled_frames = frames
+
+    grayscale_frames = []
+    with torch.no_grad():
+        for frame in sampled_frames:
+            if not isinstance(frame, torch.Tensor):
+                continue
+            tensor = frame.detach()
+            if tensor.ndim == 2:
+                gray = tensor
+            elif tensor.ndim == 3 and tensor.shape[-1] in (3, 4):
+                gray = tensor[..., :3].float().mean(dim=-1)
+            elif tensor.ndim == 3 and tensor.shape[0] in (3, 4):
+                gray = tensor[:3].float().mean(dim=0)
+            else:
+                continue
+            if not gray.is_floating_point():
+                gray = gray.float()
+            if gray.numel() and gray.max().item() > 1.0:
+                gray = gray / 255.0
+            grayscale_frames.append(gray.unsqueeze(0))
+
+        if len(grayscale_frames) < 2:
+            return True, 0.0, 1.0
+
+        batch = torch.stack(grayscale_frames, dim=0)
+        batch = F.interpolate(
+            batch,
+            size=(MOTION_GATE_HEIGHT, MOTION_GATE_WIDTH),
+            mode="bilinear",
+            align_corners=False,
+        )
+        frame_differences = (batch[1:] - batch[:-1]).abs().mean(dim=(1, 2, 3))
+        mean_difference = float(frame_differences.mean().item())
+        active_ratio = float((frame_differences >= MOTION_GATE_FRAME_DIFF_THRESHOLD).float().mean().item())
+
+    return active_ratio >= MOTION_GATE_MIN_ACTIVE_RATIO, mean_difference, active_ratio
 
 DISABLE_VLM_INFERENCE = os.getenv("DISABLE_VLM_INFERENCE", "false").lower() in ["true", "1", "yes", "y"]
 if DISABLE_VLM_INFERENCE:
@@ -795,6 +851,14 @@ class SOPVideoProcessor:
                     }
                     self._sop_checker_result_queue.put(final_chunk)
                 break
+            if chunk.get("vlm_skipped"):
+                chunk["checker_execute_time"] = 0.0
+                logger.info(
+                    f"SOP checker skipped for chunk {chunk.get('chunk_idx', 0)}: "
+                    f"{chunk.get('vlm_skip_reason', 'VLM skipped')}"
+                )
+                self._sop_checker_result_queue.put(chunk)
+                continue
             vlm_response = chunk.get("response", "")  # None is not valid for checker process
             request_id = chunk.get("req_id", None)
             chunk_idx = chunk.get("chunk_idx", 0)
@@ -1079,7 +1143,7 @@ class SOPVideoProcessor:
                 break
             chunk_info = chunk
             start_time, end_time = chunk_info["start_time"], chunk_info["end_time"]
-            logger.info(f"VLM start inference on chunk {start_time:.3f} - {end_time:.3f} video")
+            logger.info(f"Evaluating motion for chunk {start_time:.3f} - {end_time:.3f} video")
             chunk_info["pipeline_vlm_starting_timestamp"] = self._tm_e2e.now()
             vlm_tm = TimeMeasure("VLM inference")
             prompt = self._prompt if self._prompt and len(self._prompt) > 0 else VLM_PROMPT
@@ -1103,7 +1167,7 @@ class SOPVideoProcessor:
 
             chunk_info["response_future"] = response_future
             chunk_info["file_path"] = self._file_path
-            chunk_info["vlm_time_measure"] = vlm_tm
+            chunk_info["vlm_time_measure"] = None if chunk_info.get("vlm_skipped") else vlm_tm
             self._vlm_response_future_queue.put(chunk_info)
             logger.debug(f"VLM inference request submitted for chunk {chunk_info_func(chunk_info)}")
 
@@ -1141,6 +1205,23 @@ class SOPVideoProcessor:
         if len(frames) == 0:
             logger.warning(f"submit_vllm_inference: no frames decoded, start: {start_time}, end: {end_time}")
             return None
+
+        if MOTION_GATE_ENABLED:
+            motion_active, motion_score, motion_active_ratio = calculate_motion_metrics(frames)
+            chunk_info["motion_score"] = motion_score
+            chunk_info["motion_active_ratio"] = motion_active_ratio
+            chunk_info["motion_gate_threshold"] = MOTION_GATE_FRAME_DIFF_THRESHOLD
+            if not motion_active:
+                chunk_info["vlm_skipped"] = True
+                chunk_info["vlm_skip_reason"] = "no_motion"
+                chunk_info["response"] = ""
+                logger.info(
+                    f"Motion gate skipped VLM for chunk {chunk_info.get('chunk_idx', 0)}: "
+                    f"score={motion_score:.6f}, active_ratio={motion_active_ratio:.3f}, "
+                    f"threshold={MOTION_GATE_FRAME_DIFF_THRESHOLD:.6f}, "
+                    f"required_ratio={MOTION_GATE_MIN_ACTIVE_RATIO:.3f}"
+                )
+                return None
 
         logger.info(
             f"submit_vllm_inference: VLM chunk start: {start_time}, end: {end_time} with decoded frame count: {len(frames)}"
@@ -1215,8 +1296,14 @@ class SOPVideoProcessor:
                 vlm_execute_time = tm.first_execute_time
             chunk_info["vlm_execute_time"] = vlm_execute_time
             chunk_info["pipeline_vlm_ready_timestamp"] = self._tm_e2e.now()
-            vlm_time_str = f"{vlm_execute_time:.3f}" if vlm_execute_time is not None else "N/A"
-            logger.info(f"VLM inference on chunk {chunk_info_func(chunk_info)} took {vlm_time_str} seconds")
+            if chunk_info.get("vlm_skipped"):
+                logger.info(
+                    f"VLM skipped for chunk {chunk_info_func(chunk_info)}: "
+                    f"{chunk_info.get('vlm_skip_reason', 'unspecified')}"
+                )
+            else:
+                vlm_time_str = f"{vlm_execute_time:.3f}" if vlm_execute_time is not None else "N/A"
+                logger.info(f"VLM inference on chunk {chunk_info_func(chunk_info)} took {vlm_time_str} seconds")
             self._vlm_response_queue.put(chunk_info)
 
         self._vlm_response_queue.put(None)
