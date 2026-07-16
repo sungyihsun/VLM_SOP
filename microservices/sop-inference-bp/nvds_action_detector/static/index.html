@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title data-i18n="pageTitle">SOP Inference Console</title>
-    <link rel="stylesheet" href="/static/styles.css?v=rtsp-preview-20260707c" />
+    <title data-i18n="pageTitle">SOP Execution Monitor</title>
+    <link rel="stylesheet" href="/static/styles.css?v=tv-scale-20260717c" />
   </head>
   <body>
     <main class="app-shell">
       <section class="workspace">
         <header class="topbar">
           <div>
-            <h1 data-i18n="heading">SOP Inference</h1>
+            <h1 data-i18n="heading">SOP Execution Monitor</h1>
             <p id="statusText" data-i18n="idle">Idle</p>
           </div>
           <div class="actions">
@@ -22,8 +22,8 @@
                 <option value="zh-TW">中文</option>
               </select>
             </label>
-            <button id="startButton" type="button" disabled data-i18n="start">Start</button>
-            <button id="stopButton" type="button" disabled data-i18n="stop">Stop</button>
+            <button id="startButton" type="button" disabled data-i18n="start">Start Monitoring</button>
+            <button id="stopButton" type="button" disabled data-i18n="stop">Stop Monitoring</button>
           </div>
         </header>
 
@@ -61,7 +61,7 @@
           </label>
           <span id="modelStatus" style="font-size:0.8em;color:#f90;align-self:center;"></span>
           <label class="small">
-            <span data-i18n="chunkSeconds">Chunk seconds</span>
+            <span data-i18n="chunkSeconds">Detection Interval</span>
             <input id="chunkSeconds" type="number" min="1" max="30" step="1" value="2" />
           </label>
         </section>
@@ -81,7 +81,7 @@
 
           <aside class="result-panel">
             <div class="result-header">
-              <h2 data-i18n="vlmInference">VLM Inference</h2>
+              <h2 data-i18n="vlmInference">Live Action Detection</h2>
               <span class="model-indicator">
                 <span id="modelBadge">cosmos_2</span>
                 <span id="detectionStatus" class="detection-status" role="status" aria-label="Detection status">
@@ -95,6 +95,6 @@
         </section>
       </section>
     </main>
-    <script src="/static/app.js?v=bilingual-ui-20260716f"></script>
+    <script src="/static/app.js?v=operations-monitor-copy-20260716g"></script>
   </body>
 </html>

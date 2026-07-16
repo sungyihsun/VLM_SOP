@@ -34,6 +34,7 @@ from threading import Event
 from typing import Any, Callable, Dict, List, Optional, Tuple
 
 import numpy as np
+import cv2
 import torch
 import torch.nn.functional as F
 from pyservicemaker import BufferRetriever, EOSMessage, PipelineState, StateTransitionMessage
@@ -60,9 +61,103 @@ MOTION_GATE_MIN_ACTIVE_RATIO = float(os.getenv("MOTION_GATE_MIN_ACTIVE_RATIO", "
 MOTION_GATE_WIDTH = max(32, int(os.getenv("MOTION_GATE_WIDTH", "160")))
 MOTION_GATE_HEIGHT = max(32, int(os.getenv("MOTION_GATE_HEIGHT", "90")))
 MOTION_GATE_MAX_SAMPLED_FRAMES = max(2, int(os.getenv("MOTION_GATE_MAX_SAMPLED_FRAMES", "12")))
+HAND_GATE_MAX_SAMPLED_FRAMES = max(1, int(os.getenv("HAND_GATE_MAX_SAMPLED_FRAMES", "8")))
+HAND_GATE_MIN_COMPONENT_RATIO = float(os.getenv("HAND_GATE_MIN_COMPONENT_RATIO", "0.015"))
+HAND_GATE_WHITE_MIN_COMPONENT_RATIO = float(os.getenv("HAND_GATE_WHITE_MIN_COMPONENT_RATIO", "0.004"))
 
 
-def calculate_motion_metrics(frames: List[torch.Tensor]) -> Tuple[bool, float, float]:
+def calculate_glove_metrics(frames: List[torch.Tensor]) -> Tuple[bool, float, float, str]:
+    """Detect QAS blue or white gloves; return presence, score, hit ratio, and color."""
+    if not frames:
+        return False, 0.0, 0.0, "none"
+
+    if len(frames) > HAND_GATE_MAX_SAMPLED_FRAMES:
+        indices = np.linspace(0, len(frames) - 1, HAND_GATE_MAX_SAMPLED_FRAMES, dtype=int)
+        sampled_frames = [frames[index] for index in indices]
+    else:
+        sampled_frames = frames
+
+    frame_results = []
+    previous_gray = None
+    for frame in sampled_frames:
+        if not isinstance(frame, torch.Tensor):
+            continue
+        tensor = frame.detach()
+        if tensor.ndim == 3 and tensor.shape[0] in (3, 4):
+            tensor = tensor[:3].permute(1, 2, 0)
+        elif tensor.ndim == 3 and tensor.shape[-1] in (3, 4):
+            tensor = tensor[..., :3]
+        else:
+            continue
+
+        tensor = tensor.to(device="cpu")
+        if tensor.is_floating_point() and tensor.numel() and tensor.max().item() <= 1.0:
+            tensor = tensor * 255.0
+        image = tensor.clamp(0, 255).to(dtype=torch.uint8).numpy()
+        image = cv2.resize(image, (320, 180), interpolation=cv2.INTER_AREA)
+        hsv = cv2.cvtColor(image, cv2.COLOR_RGB2HSV)
+        gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
+
+        blue_mask = cv2.inRange(hsv, np.array([90, 70, 35]), np.array([135, 255, 255]))
+        blue_mask = cv2.morphologyEx(blue_mask, cv2.MORPH_OPEN, np.ones((3, 3), np.uint8))
+        blue_mask = cv2.morphologyEx(blue_mask, cv2.MORPH_CLOSE, np.ones((7, 7), np.uint8))
+        blue_count, _, blue_stats, _ = cv2.connectedComponentsWithStats(blue_mask)
+        blue_area = int(blue_stats[1:, cv2.CC_STAT_AREA].max()) if blue_count > 1 else 0
+        blue_ratio = blue_area / float(blue_mask.size)
+
+        # White gloves: constrain detection to the central work area and reject
+        # border-touching, sleeve-sized, and thin metallic components.
+        white_mask = cv2.inRange(hsv, np.array([0, 0, 150]), np.array([179, 55, 255]))
+        white_mask[:, int(white_mask.shape[1] * 0.82):] = 0
+        white_mask = cv2.erode(white_mask, np.ones((5, 5), np.uint8), iterations=1)
+        white_mask = cv2.morphologyEx(white_mask, cv2.MORPH_OPEN, np.ones((3, 3), np.uint8))
+        white_count, white_labels, white_stats, _ = cv2.connectedComponentsWithStats(white_mask)
+        white_ratio = 0.0
+        motion_mask = None
+        if previous_gray is not None:
+            motion_mask = cv2.absdiff(gray, previous_gray)
+            motion_mask = cv2.threshold(motion_mask, 12, 255, cv2.THRESH_BINARY)[1]
+            motion_mask = cv2.dilate(motion_mask, np.ones((7, 7), np.uint8), iterations=1)
+        for component_id, (x, y, width, height, area) in enumerate(white_stats[1:], start=1):
+            ratio = area / float(white_mask.size)
+            aspect = width / max(height, 1)
+            touches_border = x <= 1 or y <= 1 or x + width >= white_mask.shape[1] - 1 or y + height >= white_mask.shape[0] - 1
+            component = white_labels == component_id
+            motion_overlap = (
+                float(np.count_nonzero(motion_mask[component])) / max(int(area), 1)
+                if motion_mask is not None
+                else 0.0
+            )
+            if (
+                HAND_GATE_WHITE_MIN_COMPONENT_RATIO <= ratio <= 0.08
+                and 0.25 <= aspect <= 4.0
+                and not touches_border
+                and motion_overlap >= 0.15
+            ):
+                white_ratio = max(white_ratio, ratio)
+        previous_gray = gray
+
+        if blue_ratio >= HAND_GATE_MIN_COMPONENT_RATIO:
+            frame_results.append(("blue", blue_ratio))
+        elif white_ratio >= HAND_GATE_WHITE_MIN_COMPONENT_RATIO:
+            frame_results.append(("white", white_ratio))
+        else:
+            frame_results.append(("none", max(blue_ratio, white_ratio)))
+
+    if not frame_results:
+        return False, 0.0, 0.0, "none"
+    hits = [(color, score) for color, score in frame_results if color != "none"]
+    hit_ratio = len(hits) / len(frame_results)
+    if not hits:
+        return False, max(score for _, score in frame_results), 0.0, "none"
+    color, largest_ratio = max(hits, key=lambda item: item[1])
+    return True, largest_ratio, hit_ratio, color
+
+
+def calculate_motion_metrics(
+    frames: List[torch.Tensor],
+    min_active_ratio: float = MOTION_GATE_MIN_ACTIVE_RATIO,
+) -> Tuple[bool, float, float]:
     """Return activity, mean normalized frame difference, and active-pair ratio."""
     if len(frames) < 2:
         return True, 0.0, 1.0
@@ -107,7 +202,7 @@ def calculate_motion_metrics(frames: List[torch.Tensor]) -> Tuple[bool, float, f
         mean_difference = float(frame_differences.mean().item())
         active_ratio = float((frame_differences >= MOTION_GATE_FRAME_DIFF_THRESHOLD).float().mean().item())
 
-    return active_ratio >= MOTION_GATE_MIN_ACTIVE_RATIO, mean_difference, active_ratio
+    return active_ratio >= min_active_ratio, mean_difference, active_ratio
 
 DISABLE_VLM_INFERENCE = os.getenv("DISABLE_VLM_INFERENCE", "false").lower() in ["true", "1", "yes", "y"]
 if DISABLE_VLM_INFERENCE:
@@ -203,6 +298,13 @@ class ChunkParams:
 
     algorithm: str = "ddm-net"
     """Chunking algorithm: 'ddm-net' for DDM boundary detection, 'uniform' for fixed-length chunks."""
+
+    motion_gate_min_active_ratio: Optional[float] = None
+    """Request-level motion activity ratio; None uses MOTION_GATE_MIN_ACTIVE_RATIO."""
+    motion_gate_enabled: Optional[bool] = None
+    """Request-level motion gate switch; None uses MOTION_GATE_ENABLED."""
+    hand_gate_enabled: bool = False
+    """QAS-only blue-glove hand-presence gate."""
 
     def __post_init__(self):
         if self.algorithm == "uniform" and self.chunk_length_sec is None:
@@ -1206,11 +1308,45 @@ class SOPVideoProcessor:
             logger.warning(f"submit_vllm_inference: no frames decoded, start: {start_time}, end: {end_time}")
             return None
 
-        if MOTION_GATE_ENABLED:
-            motion_active, motion_score, motion_active_ratio = calculate_motion_metrics(frames)
+        if self._chunk_params.hand_gate_enabled:
+            hand_present, hand_score, hand_frame_ratio, glove_color = calculate_glove_metrics(frames)
+            chunk_info["hand_gate_enabled"] = True
+            chunk_info["hand_detected"] = hand_present
+            chunk_info["hand_score"] = hand_score
+            chunk_info["hand_frame_ratio"] = hand_frame_ratio
+            chunk_info["hand_glove_color"] = glove_color
+            chunk_info["hand_gate_min_component_ratio"] = HAND_GATE_MIN_COMPONENT_RATIO
+            if not hand_present:
+                chunk_info["vlm_skipped"] = True
+                chunk_info["vlm_skip_reason"] = "no_hand"
+                chunk_info["response"] = ""
+                logger.info(
+                    f"Hand gate skipped VLM for chunk {chunk_info.get('chunk_idx', 0)}: "
+                    f"largest_component_ratio={hand_score:.4f}, "
+                    f"hit_frame_ratio={hand_frame_ratio:.3f}, "
+                    f"required_component_ratio={HAND_GATE_MIN_COMPONENT_RATIO:.4f}"
+                )
+                return None
+
+        motion_gate_enabled = (
+            self._chunk_params.motion_gate_enabled
+            if self._chunk_params.motion_gate_enabled is not None
+            else MOTION_GATE_ENABLED
+        )
+        if motion_gate_enabled:
+            required_motion_ratio = (
+                self._chunk_params.motion_gate_min_active_ratio
+                if self._chunk_params.motion_gate_min_active_ratio is not None
+                else MOTION_GATE_MIN_ACTIVE_RATIO
+            )
+            motion_active, motion_score, motion_active_ratio = calculate_motion_metrics(
+                frames,
+                min_active_ratio=required_motion_ratio,
+            )
             chunk_info["motion_score"] = motion_score
             chunk_info["motion_active_ratio"] = motion_active_ratio
             chunk_info["motion_gate_threshold"] = MOTION_GATE_FRAME_DIFF_THRESHOLD
+            chunk_info["motion_gate_min_active_ratio"] = required_motion_ratio
             if not motion_active:
                 chunk_info["vlm_skipped"] = True
                 chunk_info["vlm_skip_reason"] = "no_motion"
@@ -1219,7 +1355,7 @@ class SOPVideoProcessor:
                     f"Motion gate skipped VLM for chunk {chunk_info.get('chunk_idx', 0)}: "
                     f"score={motion_score:.6f}, active_ratio={motion_active_ratio:.3f}, "
                     f"threshold={MOTION_GATE_FRAME_DIFF_THRESHOLD:.6f}, "
-                    f"required_ratio={MOTION_GATE_MIN_ACTIVE_RATIO:.3f}"
+                    f"required_ratio={required_motion_ratio:.3f}"
                 )
                 return None
 

@@ -46,6 +46,7 @@ services:
       - "${VLM_PROMPT_PATH:-/tmp/dummy}${VLM_PROMPT_PATH:+:$VLM_PROMPT_PATH}"
       - "${NVIDIA_DRIVER_LIB_DIR:-/tmp/dummy}${NVIDIA_DRIVER_LIB_DIR:+:/host-nvidia:ro}"
       - "/home/spark/eason/VLM_SOP/microservices/sop-inference-bp/nvds_action_detector/api_server.py:/opt/nvidia/nvds_sop/nvds_action_detector/api_server.py:ro"
+      - "/home/spark/eason/VLM_SOP/microservices/sop-inference-bp/nvds_action_detector/api_types.py:/opt/nvidia/nvds_sop/nvds_action_detector/api_types.py:ro"
       - "/home/spark/eason/VLM_SOP/microservices/sop-inference-bp/nvds_action_detector/ds_sop_process.py:/opt/nvidia/nvds_sop/nvds_action_detector/ds_sop_process.py:ro"
       - "/home/spark/eason/VLM_SOP/microservices/sop-inference-bp/nvds_action_detector/vllm_inference.py:/opt/nvidia/nvds_sop/nvds_action_detector/vllm_inference.py:ro"
       - "/home/spark/eason/VLM_SOP/microservices/sop-inference-bp/nvds_action_detector/static:/opt/nvidia/nvds_sop/nvds_action_detector/static:ro"

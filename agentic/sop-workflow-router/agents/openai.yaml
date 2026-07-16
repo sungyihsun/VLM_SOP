@@ -1,0 +1,4 @@
+interface:
+  display_name: "SOP Workflow Router"
+  short_description: "Route and coordinate SOP monitoring workflows safely"
+  default_prompt: "Use $sop-workflow-router to select and coordinate the correct SOP workflow for this task."

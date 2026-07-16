@@ -103,6 +103,26 @@ class DdmNetChunkingOptions(BaseModel):
         "and not cut at the event boundaries. "
         "Default is 60 seconds.",
     )
+    motion_gate_min_active_ratio: Optional[float] = Field(
+        None,
+        ge=0,
+        le=1,
+        description="Optional request-level minimum ratio of sampled frame pairs that must exceed "
+        "the motion gate frame-difference threshold. When omitted, the service environment "
+        "MOTION_GATE_MIN_ACTIVE_RATIO is used.",
+    )
+    motion_gate_enabled: Optional[bool] = Field(
+        None,
+        description="Optional request-level frame-difference motion gate switch. "
+        "When false, every DDM-Net chunk proceeds directly to VLM inference. "
+        "When omitted, the service environment MOTION_GATE_ENABLED is used.",
+    )
+    hand_gate_enabled: bool = Field(
+        False,
+        description="Enable QAS hand-presence gating. DDM-Net still segments the stream, "
+        "but a chunk reaches VLM only when a blue-glove hand is detected.",
+    )
+
     # batch_size: int = Field(8, ge=2, description="Batch size for DdmNet chunking. "
     #                               "Default is 8. The larger the batch size, the more memory is used. "
     #                               "But the larger the batch size, the faster the chunking is. "

@@ -23,6 +23,7 @@ import json
 import os
 import queue
 import re
+import sqlite3
 import subprocess
 import threading
 import time
@@ -30,7 +31,7 @@ import uuid
 from contextlib import asynccontextmanager
 from http import HTTPStatus
 from pathlib import Path
-from typing import AsyncGenerator, Callable, Dict, Optional, Union
+from typing import Any, AsyncGenerator, Callable, Dict, List, Optional, Union
 from urllib.parse import urlparse
 
 import aiohttp
@@ -39,7 +40,7 @@ from fastapi import Depends, FastAPI, File, Form, HTTPException, Request, Upload
 from fastapi.responses import FileResponse, JSONResponse, Response, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from prometheus_client import CONTENT_TYPE_LATEST, Counter, Gauge, Histogram, generate_latest
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from . import ds_logger
 from .api_types import (
@@ -73,6 +74,8 @@ STORAGE_DIR = os.environ.get("MEDIA_STORAGE_DIR", "/tmp/nvds_sop_storage")
 METADATA_PATH = os.path.join(STORAGE_DIR, "metadata.json")
 DS_SOP_LICENSE_PATH = os.environ.get("DS_SOP_LICENSE_PATH", "/opt/mm/LICENSE")
 STATIC_DIR = Path(__file__).resolve().parent / "static"
+PLANT_MANAGER_DB_PATH = os.environ.get("PLANT_MANAGER_DB_PATH", os.path.join(STORAGE_DIR, "plant_manager.db"))
+DEFAULT_COSMOS_CONFIDENCE = 96.7
 
 API_DUMMY_TEST = os.environ.get("API_DUMMY_TEST", "false").lower() in ["true", "1", "yes", "y"]
 DS_SOP_VERSION = os.environ.get("DS_SOP_VERSION", "1.0.0")
@@ -123,6 +126,231 @@ class ModelSwitchRequest(BaseModel):
 
 class RTSPPreviewSessionRequest(BaseModel):
     url: str
+
+
+class SopCheckerDashboardUpdate(BaseModel):
+    """External SOP Checker update consumed by the plant-manager dashboard."""
+
+    station_id: str = "station-8"
+    camera_id: str = "cam-08"
+    action_id: Optional[int] = None
+    action_name: Optional[str] = None
+    status: str = "in_progress"
+    cycle_id: Optional[int] = None
+    cosmos_description: Optional[str] = None
+    confidence: Optional[float] = Field(None, ge=0, le=100)
+    missing_detected: List[int] = Field(default_factory=list)
+    misordered_detected: List[int] = Field(default_factory=list)
+    cycle_completed: bool = False
+    compliant: Optional[bool] = None
+    duration_seconds: Optional[float] = Field(None, ge=0)
+    event_message: Optional[str] = None
+    session_id: Optional[int] = None
+    tracker_id: Optional[int] = None
+    frame: Optional[int] = Field(None, ge=0)
+    action_states: Dict[str, Union[bool, int, str]] = Field(default_factory=dict)
+
+
+_PLANT_MANAGER_SCHEMA = """
+CREATE TABLE IF NOT EXISTS station_state (
+    station_id TEXT PRIMARY KEY,
+    camera_id TEXT NOT NULL,
+    action_id INTEGER,
+    action_name TEXT,
+    status TEXT NOT NULL DEFAULT 'idle',
+    cycle_id INTEGER,
+    cosmos_description TEXT,
+    confidence REAL NOT NULL DEFAULT 96.7,
+    checker_result TEXT NOT NULL DEFAULT '{}',
+    updated_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS sop_cycles (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    station_id TEXT NOT NULL,
+    cycle_id INTEGER NOT NULL,
+    compliant INTEGER NOT NULL,
+    duration_seconds REAL,
+    completed_at TEXT NOT NULL,
+    UNIQUE(station_id, cycle_id)
+);
+CREATE TABLE IF NOT EXISTS sop_events (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    station_id TEXT NOT NULL,
+    camera_id TEXT NOT NULL,
+    event_type TEXT NOT NULL,
+    severity TEXT NOT NULL,
+    action_id INTEGER,
+    cycle_id INTEGER,
+    message TEXT NOT NULL,
+    payload TEXT NOT NULL DEFAULT '{}',
+    created_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_sop_events_station_time ON sop_events(station_id, created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_sop_cycles_station_time ON sop_cycles(station_id, completed_at DESC);
+"""
+
+
+def _plant_manager_connect() -> sqlite3.Connection:
+    connection = sqlite3.connect(PLANT_MANAGER_DB_PATH, timeout=10)
+    connection.row_factory = sqlite3.Row
+    return connection
+
+
+def _init_plant_manager_db() -> None:
+    with _plant_manager_connect() as connection:
+        connection.executescript(_PLANT_MANAGER_SCHEMA)
+
+
+def _utc_timestamp() -> str:
+    return time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+
+
+def _normalise_confidence(value: Optional[float]) -> float:
+    if value is None:
+        return DEFAULT_COSMOS_CONFIDENCE
+    return round(value * 100 if 0 <= value <= 1 else value, 1)
+
+
+def _normalise_action_light(value: Union[bool, int, str]) -> bool:
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, int):
+        return value != 0
+    return str(value).strip().lower() in {"1", "true", "on", "active", "lit", "⬤", "●"}
+
+
+def _save_plant_manager_update(update: SopCheckerDashboardUpdate) -> dict:
+    timestamp = _utc_timestamp()
+    confidence = _normalise_confidence(update.confidence)
+    action_states = {
+        f"action_{index}": _normalise_action_light(update.action_states[f"action_{index}"])
+        for index in range(8)
+    } if update.action_states else {}
+    with _plant_manager_connect() as connection:
+        existing = connection.execute(
+            "SELECT cosmos_description, action_name, checker_result FROM station_state WHERE station_id = ?",
+            (update.station_id,),
+        ).fetchone()
+        previous_checker = json.loads(existing["checker_result"] or "{}") if existing else {}
+        checker_result = {
+            "missing_detected": update.missing_detected,
+            "misordered_detected": update.misordered_detected,
+            "cycle_completed": update.cycle_completed,
+            "compliant": update.compliant,
+            "session_id": update.session_id if update.session_id is not None else previous_checker.get("session_id"),
+            "tracker_id": update.tracker_id if update.tracker_id is not None else previous_checker.get("tracker_id"),
+            "frame": update.frame if update.frame is not None else previous_checker.get("frame"),
+            "action_states": action_states or previous_checker.get("action_states", {}),
+        }
+        cosmos_description = update.cosmos_description or (existing["cosmos_description"] if existing else None)
+        action_name = update.action_name or (existing["action_name"] if existing else None)
+        connection.execute(
+            """
+            INSERT INTO station_state (
+                station_id, camera_id, action_id, action_name, status, cycle_id,
+                cosmos_description, confidence, checker_result, updated_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(station_id) DO UPDATE SET
+                camera_id=excluded.camera_id, action_id=COALESCE(excluded.action_id, station_state.action_id),
+                action_name=COALESCE(excluded.action_name, station_state.action_name), status=excluded.status,
+                cycle_id=COALESCE(excluded.cycle_id, station_state.cycle_id),
+                cosmos_description=COALESCE(excluded.cosmos_description, station_state.cosmos_description),
+                confidence=excluded.confidence, checker_result=excluded.checker_result, updated_at=excluded.updated_at
+            """,
+            (
+                update.station_id, update.camera_id, update.action_id, action_name, update.status, update.cycle_id,
+                cosmos_description, confidence, json.dumps(checker_result, ensure_ascii=False), timestamp,
+            ),
+        )
+
+        issues = []
+        if update.missing_detected:
+            issues.append(("missing_step", "critical", f"Missing SOP steps: {update.missing_detected}"))
+        if update.misordered_detected:
+            issues.append(("misordered_step", "warning", f"Misordered SOP steps: {update.misordered_detected}"))
+        if update.event_message:
+            issues.append(("sop_update", "info", update.event_message))
+        for event_type, severity, message in issues:
+            connection.execute(
+                """INSERT INTO sop_events
+                   (station_id, camera_id, event_type, severity, action_id, cycle_id, message, payload, created_at)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                (
+                    update.station_id, update.camera_id, event_type, severity, update.action_id, update.cycle_id,
+                    message, json.dumps(checker_result, ensure_ascii=False), timestamp,
+                ),
+            )
+
+        if update.cycle_completed and update.cycle_id is not None:
+            compliant = update.compliant
+            if compliant is None:
+                compliant = not update.missing_detected and not update.misordered_detected
+            connection.execute(
+                """INSERT INTO sop_cycles
+                   (station_id, cycle_id, compliant, duration_seconds, completed_at) VALUES (?, ?, ?, ?, ?)
+                   ON CONFLICT(station_id, cycle_id) DO UPDATE SET compliant=excluded.compliant,
+                   duration_seconds=excluded.duration_seconds, completed_at=excluded.completed_at""",
+                (update.station_id, update.cycle_id, int(compliant), update.duration_seconds, timestamp),
+            )
+    return _get_plant_manager_dashboard(update.station_id)
+
+
+def _get_plant_manager_dashboard(station_id: str = "station-8") -> dict:
+    with _plant_manager_connect() as connection:
+        state = connection.execute("SELECT * FROM station_state WHERE station_id = ?", (station_id,)).fetchone()
+        events = connection.execute(
+            "SELECT * FROM sop_events WHERE station_id = ? ORDER BY created_at DESC LIMIT 20", (station_id,)
+        ).fetchall()
+        kpi = connection.execute(
+            """SELECT COUNT(*) AS completed_cycles,
+                      COALESCE(AVG(compliant) * 100, 0) AS compliance_rate,
+                      COALESCE(AVG(duration_seconds), 0) AS average_cycle_seconds
+               FROM sop_cycles WHERE station_id = ? AND date(completed_at, 'localtime') = date('now', 'localtime')""",
+            (station_id,),
+        ).fetchone()
+        exception_count = connection.execute(
+            """SELECT COUNT(*) FROM sop_events WHERE station_id = ? AND severity IN ('warning', 'critical')
+               AND date(created_at, 'localtime') = date('now', 'localtime')""",
+            (station_id,),
+        ).fetchone()[0]
+    current = dict(state) if state else {
+        "station_id": station_id, "camera_id": "cam-08", "status": "idle",
+        "confidence": DEFAULT_COSMOS_CONFIDENCE, "checker_result": "{}", "updated_at": None,
+    }
+    if isinstance(current.get("checker_result"), str):
+        current["checker_result"] = json.loads(current["checker_result"] or "{}")
+    return {
+        "current": current,
+        "kpi": {
+            "completed_cycles": kpi["completed_cycles"],
+            "compliance_rate": round(kpi["compliance_rate"], 1),
+            "exceptions": exception_count,
+            "average_cycle_seconds": round(kpi["average_cycle_seconds"], 1),
+        },
+        "events": [dict(event) for event in events],
+        "confidence_source": "cosmos" if current.get("confidence_source") == "cosmos" else "fallback",
+    }
+
+
+def _record_cosmos_chunk(chunk: Dict[str, Any]) -> None:
+    description = str(chunk.get("response", "")).strip()
+    if not description or chunk.get("chunk_idx") == -1 or chunk.get("vlm_skipped"):
+        return
+    checker = chunk.get("checker_result") or {}
+    action_match = re.search(r"\((\d+)\)", description)
+    confidence = chunk.get("vlm_confidence", chunk.get("confidence"))
+    update = SopCheckerDashboardUpdate(
+        action_id=int(action_match.group(1)) if action_match else None,
+        action_name=description,
+        cosmos_description=description,
+        confidence=confidence,
+        status="in_progress",
+        cycle_id=checker.get("cycle"),
+        missing_detected=checker.get("missing_detected") or [],
+        misordered_detected=checker.get("misordered_detected") or [],
+        cycle_completed=bool(checker.get("cycle_completed")),
+    )
+    _save_plant_manager_update(update)
 
 
 def _validate_rtsp_preview_url(rtsp_url: str) -> str:
@@ -410,6 +638,7 @@ async def lifespan(app: FastAPI):
 
     # Initialize storage and metadata on startup
     _ensure_writable_dir(STORAGE_DIR, "media storage", "MEDIA_STORAGE_DIR")
+    _init_plant_manager_db()
 
     # Emit the camera-emulation notice once at startup (the pipeline-level log
     # fires per camera stream). Default PYLON_CAMEMU=1 means a customer with a
@@ -453,6 +682,7 @@ openapi_tags = [
         "description": "List and describe the various models available in the API.",
     },
     {"name": "Metadata", "description": "Operations to get service metadata."},
+    {"name": "Plant Manager", "description": "Live SOP dashboard state, KPI, and event storage."},
 ]
 
 app = FastAPI(
@@ -463,6 +693,11 @@ app = FastAPI(
     lifespan=lifespan,
     openapi_tags=openapi_tags,
 )
+
+@app.get("/static/QAS", include_in_schema=False)
+async def qas_ui():
+    return FileResponse(STATIC_DIR / "QAS", media_type="text/html")
+
 
 if STATIC_DIR.is_dir():
     app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
@@ -476,6 +711,28 @@ async def root_ui():
 @app.get("/ui", include_in_schema=False)
 async def ui():
     return FileResponse(STATIC_DIR / "index.html")
+
+
+@app.get("/v1/plant-manager/dashboard", tags=["Plant Manager"])
+async def get_plant_manager_dashboard(station_id: str = "station-8"):
+    """Return persisted live state, today's KPI, and recent SOP events."""
+    return await asyncio.to_thread(_get_plant_manager_dashboard, station_id)
+
+
+@app.post("/v1/plant-manager/sop-checker", tags=["Plant Manager"])
+async def update_plant_manager_sop_checker(update: SopCheckerDashboardUpdate):
+    """Receive an SOP Checker update and persist it for the plant-manager UI."""
+    if update.action_states:
+        expected = {f"action_{index}" for index in range(8)}
+        received = set(update.action_states)
+        if received != expected:
+            raise HTTPException(
+                status_code=422,
+                detail=f"action_states must contain exactly action_0 through action_7; received {sorted(received)}",
+            )
+        if update.tracker_id is None:
+            raise HTTPException(status_code=422, detail="tracker_id is required with action_states")
+    return await asyncio.to_thread(_save_plant_manager_update, update)
 
 
 # ---------------------------
@@ -797,6 +1054,9 @@ async def ds_sop_generate_chunks(request: ChatCompletionRequest, raw_request: Re
                 min_length_sec=chunking_options.min_length_sec,
                 max_length_sec=chunking_options.max_length_sec,
                 threshold=chunking_options.threshold,
+                motion_gate_min_active_ratio=chunking_options.motion_gate_min_active_ratio,
+                motion_gate_enabled=chunking_options.motion_gate_enabled,
+                hand_gate_enabled=chunking_options.hand_gate_enabled,
             )
         elif chunking_options and chunking_options.algorithm == "uniform":
             chunk_params = ChunkParams(
@@ -937,6 +1197,7 @@ async def _run_stream_chunks_response(
             if chunk is None:
                 break
             assert isinstance(chunk, dict)
+            await asyncio.to_thread(_record_cosmos_chunk, chunk)
             delta_message = DeltaMessage(content=chunk.get("response", "").strip())
             choice = ChatCompletionResponseStreamChoice(
                 index=0, delta=delta_message, finish_reason=None, chunk_metadata=chunk
