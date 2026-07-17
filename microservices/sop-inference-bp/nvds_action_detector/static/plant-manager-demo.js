@@ -1,11 +1,75 @@
-const RTSP_URL = "rtsp://root:1q2w3e4r@172.24.56.18:554/media2/stream.sdp?profile=Profile201";
+const RTSP_URL = window.SOP_STREAM_CONFIG?.rtspUrl
+  || "rtsp://root:1q2w3e4r@172.24.56.18:554/media2/stream.sdp?profile=Profile201";
 const STORAGE_KEY = "plantManagerDemoLanguage";
 const MOTION_THRESHOLD_STORAGE_KEY = "plantManagerMotionThreshold";
 const MOTION_GATE_STORAGE_KEY = "plantManagerMotionGateEnabled";
-const COSMOS_PROMPTS = {
-  "zh-TW": "辨識這段影片正在進行的動作，只使用繁體中文簡潔描述目前可見的動作。",
-  en: "Describe the action currently visible in this video. Respond only in concise operational English.",
-};
+const DEMO_INFERENCE_ENABLED = true;
+const LABEL_MAPPING_URL = "/static/sop-label-mapping.json";
+let SOP_LABEL_MAPPINGS = [];
+let COSMOS_LONG_DESCRIPTIONS = [];
+let COSMOS_PROMPTS = {};
+const ACTION_STATE_SNAPSHOTS = new Map();
+const RESOLVED_MAPPING_BY_ID = new Map();
+
+async function loadLabelMappingConfig() {
+  const response = await fetch(LABEL_MAPPING_URL, { cache: "no-store" });
+  if (!response.ok) throw new Error(`Label mapping config: ${response.status}`);
+  const config = await response.json();
+  const mappings = Array.isArray(config.mappings) ? config.mappings : [];
+  if (mappings.length !== 8 || mappings.some((item, index) => item.step !== index + 1 || !item.short_label || !item.vlm_training_label || !item.long_description)) {
+    throw new Error("Label mapping config must contain ordered steps 1-8 with short_label, vlm_training_label, and long_description");
+  }
+  SOP_LABEL_MAPPINGS = mappings;
+  COSMOS_LONG_DESCRIPTIONS = mappings.map((item) => item.long_description);
+  const mappingText = mappings.map((item) => `(${item.step}) ${item.short_label} <= ${item.vlm_training_label}`).join("\n");
+  COSMOS_PROMPTS = {
+    "zh-TW": `請先依據模型原始訓練 label 理解影片動作，再使用以下映射輸出 SOP step：\n${mappingText}\n第一行只能輸出最符合的「SOP 編號與完整英文 label」。第二行以繁體中文簡潔描述畫面中實際看到的動作。步驟 5–8 請依畫面中的 cover 層級判斷。若畫面不足以確認，請明確寫「無法確認」。`,
+    en: `First interpret the video using the model's original training labels, then map it to an SOP step:\n${mappingText}\nThe first line must contain only the best matching SOP number and complete English label. On the second line, briefly describe the visible action. For steps 5-8, use the visible cover level. If uncertain, explicitly state "Uncertain".`,
+  };
+}
+
+function normalizeSopLabel(value) {
+  return String(value || "").toLowerCase().replace(/^\s*\(?\d+\)?[.):\-\s]*/, "").replace(/[^a-z0-9]+/g, "");
+}
+
+function sopIdentity(current) {
+  const checker = current.checker_result || {};
+  return `${checker.session_id ?? "no-session"}:${checker.tracker_id ?? current.station_id ?? "default"}`;
+}
+
+function resolveSopMapping(current, actionStates = {}) {
+  const identity = sopIdentity(current);
+  if (Object.keys(actionStates).length > 0) {
+    const previousStates = ACTION_STATE_SNAPSHOTS.get(identity) || {};
+    const nextStates = Object.fromEntries(
+      Array.from({ length: SOP_LABEL_MAPPINGS.length }, (_, index) => [`action_${index}`, Boolean(actionStates[`action_${index}`])]),
+    );
+    const newlyActiveIndex = Array.from({ length: SOP_LABEL_MAPPINGS.length }, (_, index) => index)
+      .find((index) => nextStates[`action_${index}`] && !previousStates[`action_${index}`]);
+    ACTION_STATE_SNAPSHOTS.set(identity, nextStates);
+    if (newlyActiveIndex != null) {
+      const mapping = SOP_LABEL_MAPPINGS[newlyActiveIndex];
+      RESOLVED_MAPPING_BY_ID.set(identity, mapping);
+      return mapping;
+    }
+    const previousMapping = RESOLVED_MAPPING_BY_ID.get(identity);
+    if (previousMapping) return previousMapping;
+  }
+  const normalizedActionName = normalizeSopLabel(current.action_name);
+  const nameMatch = normalizedActionName
+    ? SOP_LABEL_MAPPINGS.find((item) => normalizeSopLabel(item.short_label) === normalizedActionName)
+    : null;
+  if (nameMatch) {
+    RESOLVED_MAPPING_BY_ID.set(identity, nameMatch);
+    return nameMatch;
+  }
+  const actionId = Number(current.action_id);
+  const fallback = Number.isInteger(actionId) && actionId >= 1 && actionId <= SOP_LABEL_MAPPINGS.length
+    ? SOP_LABEL_MAPPINGS[actionId - 1]
+    : null;
+  if (fallback) RESOLVED_MAPPING_BY_ID.set(identity, fallback);
+  return fallback;
+}
 const TRANSLATIONS = {
   "zh-TW": {
     pageTitle: "SOP 作業監控｜廠長版 Demo", factoryOperations: "工廠營運", heading: "SOP 作業監控",
@@ -20,7 +84,7 @@ const TRANSLATIONS = {
     currentOperationLabel: "目前作業", currentOperation: "目前作業", inProgress: "進行中", stepFourOfEight: "步驟 4 / 8",
     currentAction: "依序鬆開冷板固定螺絲", currentActionDetail: "正式 SOP 提供後，這裡會顯示步驟判定。",
     stepPendingConfig: "SOP 步驟等待設定", waitingForSop: "等待 SOP Checker 更新",
-    cosmosDescription: "Cosmos 動作描述", cosmosActionDescription: "", waitingForCosmos: "正在連接 cosmos_2 即時推論…", cosmosIdle: "未偵測到明顯動作，等待操作員下一步動作。", cosmosUnavailable: "cosmos_2 即時推論暫時無法使用。",
+    cosmosDescription: "Cosmos 動作描述", cosmosActionDescription: "", waitingForCosmos: "正在連接 cosmos_2 即時推論…", cosmosIdle: "未偵測到明顯動作，等待操作員下一步動作。", cosmosUnavailable: "cosmos_2 即時推論暫時無法使用。", demoInferenceDisabled: "Demo 推論暫時關閉，GPU 保留給 QAS。", trackerRemoved: "Tracker 已移除，等待新的 SOP 作業。",
     duration: "持續時間", confidence: "辨識信心度", model: "模型", sopProgress: "SOP 完成進度", motionThreshold: "Motion Threshold", motionGate: "Frame-difference", motionGateOn: "開啟", motionGateOff: "關閉", cosmosProcessing: "等待下一次 VLM 推論結果…",
     step1: "鬆開上方螺絲", step2: "鬆開下方螺絲", step3: "裝上頂層蓋板",
     step4: "裝上第二層蓋板", step5: "裝上第三層蓋板", step6: "裝上第四層蓋板", pending: "待執行", completed: "已完成",
@@ -42,7 +106,7 @@ const TRANSLATIONS = {
     currentOperationLabel: "CURRENT OPERATION", currentOperation: "Current Operation", inProgress: "In Progress", stepFourOfEight: "Step 4 of 8",
     currentAction: "Loosen the cold-plate mounting screws in sequence", currentActionDetail: "The matched step will appear here after the production SOP is provided.",
     stepPendingConfig: "SOP steps awaiting configuration", waitingForSop: "Waiting for SOP Checker update",
-    cosmosDescription: "Cosmos Action Description", cosmosActionDescription: "", waitingForCosmos: "Connecting to live cosmos_2 inference…", cosmosIdle: "No significant motion detected. Waiting for the operator's next action.", cosmosUnavailable: "Live cosmos_2 inference is temporarily unavailable.",
+    cosmosDescription: "Cosmos Action Description", cosmosActionDescription: "", waitingForCosmos: "Connecting to live cosmos_2 inference…", cosmosIdle: "No significant motion detected. Waiting for the operator's next action.", cosmosUnavailable: "Live cosmos_2 inference is temporarily unavailable.", demoInferenceDisabled: "Demo inference is temporarily disabled; GPU is reserved for QAS.", trackerRemoved: "Waiting for a new SOP session.",
     duration: "Duration", confidence: "Detection Confidence", model: "Model", sopProgress: "SOP Completion Progress", motionThreshold: "Motion Threshold", motionGate: "Frame-difference", motionGateOn: "On", motionGateOff: "Off", cosmosProcessing: "Waiting for the next VLM result…",
     step1: "Loosen the screw (TOP)", step2: "Loosen the screw (BOT)", step3: "Put on the cover (Top)",
     step4: "Put on the cover (Second)", step5: "Put on the cover (Third)", step6: "Put on the cover (Fourth)", pending: "Pending", completed: "Completed",
@@ -61,6 +125,9 @@ const streamStatus = document.getElementById("streamStatus");
 const actionTimer = document.getElementById("actionTimer");
 const languageSelect = document.getElementById("languageSelect");
 const cosmosActionDescription = document.getElementById("cosmosActionDescription");
+const COSMOS_CHARACTERS_PER_SECOND = 100;
+let cosmosTypewriterTarget = "";
+let cosmosTypewriterTimer = null;
 const currentActionName = document.getElementById("currentActionName");
 const currentStepLabel = document.getElementById("currentStepLabel");
 const confidenceValue = document.getElementById("confidenceValue");
@@ -85,6 +152,8 @@ let cosmosController = null;
 let lastCosmosDescription = "";
 let lastCosmosUpdateAt = 0;
 let cosmosReconnectTimer = null;
+let lastSopProgressSignature = null;
+let mappedSopDescriptionActive = false;
 const COSMOS_IDLE_AFTER_MS = 20000;
 const savedMotionGateValue = localStorage.getItem(MOTION_GATE_STORAGE_KEY);
 motionGateEnabled.checked = savedMotionGateValue === null ? true : savedMotionGateValue === "true";
@@ -105,6 +174,30 @@ function t(key) {
   const dictionary = TRANSLATIONS[language];
   if (Object.prototype.hasOwnProperty.call(dictionary, key)) return dictionary[key];
   return TRANSLATIONS["zh-TW"][key] ?? key;
+}
+
+function typeCosmosText(text, reset = true) {
+  const nextText = String(text || "");
+  if (reset && nextText === cosmosTypewriterTarget) return;
+  if (reset) {
+    cosmosTypewriterTarget = nextText;
+    cosmosActionDescription.textContent = "";
+  } else {
+    cosmosTypewriterTarget = nextText;
+  }
+  if (cosmosTypewriterTimer) return;
+  const tick = () => {
+    const shown = cosmosActionDescription.textContent;
+    if (!cosmosTypewriterTarget.startsWith(shown)) cosmosActionDescription.textContent = "";
+    const current = cosmosActionDescription.textContent;
+    if (current.length < cosmosTypewriterTarget.length) {
+      cosmosActionDescription.textContent = cosmosTypewriterTarget.slice(0, current.length + 1);
+      cosmosTypewriterTimer = window.setTimeout(tick, 1000 / COSMOS_CHARACTERS_PER_SECOND);
+    } else {
+      cosmosTypewriterTimer = null;
+    }
+  };
+  tick();
 }
 
 function applyLanguage() {
@@ -131,17 +224,43 @@ function renderDashboard(dashboard) {
   const current = dashboard.current || {};
   const kpi = dashboard.kpi || {};
   const actionStates = current.checker_result?.action_states || {};
+  const identity = sopIdentity(current);
+  const trackerRemoved = current.status === "tracker_removed";
   const hasActionSnapshot = Object.keys(actionStates).length > 0;
   if (!lastCosmosUpdateAt) {
     cosmosActionDescription.textContent = current.cosmos_description || t("waitingForCosmos");
   }
-  currentActionName.textContent = current.action_name || t("waitingForSop");
-  currentStepLabel.textContent = current.action_id == null
+  currentActionName.textContent = trackerRemoved ? t("waitingForSop") : (current.action_name || t("waitingForSop"));
+  if (trackerRemoved) {
+    ACTION_STATE_SNAPSHOTS.delete(identity);
+    RESOLVED_MAPPING_BY_ID.delete(identity);
+  }
+  const resolvedMapping = trackerRemoved ? null : resolveSopMapping(current, actionStates);
+  const activeStep = resolvedMapping?.step ?? null;
+  currentStepLabel.textContent = activeStep == null
     ? t("stepPendingConfig")
-    : (language === "en" ? `SOP Action ${current.action_id} of 8` : `SOP 動作 ${current.action_id} / 8`);
-  const activeStep = current.action_id == null ? null : Number(current.action_id);
+    : (language === "en" ? `SOP Action ${activeStep} of 8` : `SOP 動作 ${activeStep} / 8`);
   const activeActions = Array.from({ length: 8 }, (_, index) => Boolean(actionStates[`action_${index}`]));
   const activeCount = activeActions.filter(Boolean).length;
+  const progressSignature = `${identity}:${trackerRemoved ? "removed" : activeStep ?? "none"}:${activeActions.map((active) => active ? "1" : "0").join("")}`;
+  if (progressSignature !== lastSopProgressSignature) {
+    lastSopProgressSignature = progressSignature;
+    if (trackerRemoved) {
+      const removedMessage = t("trackerRemoved");
+      mappedSopDescriptionActive = true;
+      lastCosmosDescription = removedMessage;
+      lastCosmosUpdateAt = Date.now();
+      typeCosmosText(removedMessage);
+    } else if (resolvedMapping) {
+      const mappedDescription = resolvedMapping.long_description;
+      mappedSopDescriptionActive = true;
+      lastCosmosDescription = mappedDescription;
+      lastCosmosUpdateAt = Date.now();
+      typeCosmosText(mappedDescription);
+    } else {
+      mappedSopDescriptionActive = false;
+    }
+  }
   stepNumber.textContent = activeStep == null ? "--" : String(activeStep).padStart(2, "0");
   const progress = hasActionSnapshot
     ? (activeCount / 8) * 100
@@ -189,13 +308,13 @@ function processCosmosSseBlock(block) {
   if (data === "[DONE]") return true;
   try {
     const payload = JSON.parse(data);
-    const content = String(payload.choices?.[0]?.delta?.content || "").trim();
-    if (content) {
+    const content = String(payload.choices?.[0]?.delta?.content || "");
+    if (content.trim() && !mappedSopDescriptionActive) {
       lastCosmosUpdateAt = Date.now();
-      if (content !== lastCosmosDescription) {
-        lastCosmosDescription = content;
-        cosmosActionDescription.textContent = content;
-      }
+      lastCosmosDescription = content.startsWith(lastCosmosDescription)
+        ? content
+        : lastCosmosDescription + content;
+      typeCosmosText(lastCosmosDescription, false);
     }
   } catch (_error) {
     // Ignore an incomplete or malformed SSE event and continue reading.
@@ -204,11 +323,16 @@ function processCosmosSseBlock(block) {
 }
 
 async function connectCosmosInference() {
+  if (!DEMO_INFERENCE_ENABLED) {
+    if (cosmosController) cosmosController.abort();
+    typeCosmosText(t("demoInferenceDisabled"));
+    return;
+  }
   if (cosmosController) cosmosController.abort();
   cosmosController = new AbortController();
   lastCosmosDescription = "";
   lastCosmosUpdateAt = Date.now();
-  cosmosActionDescription.textContent = t("waitingForCosmos");
+  typeCosmosText(t("waitingForCosmos"));
   try {
     const requestBody = {
         model: "ds_sop_model",
@@ -223,8 +347,8 @@ async function connectCosmosInference() {
         chunking_options: {
           algorithm: "ddm-net",
           threshold: 0.8,
-          min_length_sec: 1.0,
-          max_length_sec: 2.0,
+          min_length_sec: 3.0,
+          max_length_sec: 5.0,
           motion_gate_enabled: motionGateEnabled.checked,
           motion_gate_min_active_ratio: Number(motionThreshold.value) / 100,
         },
@@ -257,7 +381,7 @@ async function connectCosmosInference() {
       if (done) break;
     }
   } catch (error) {
-    if (error.name !== "AbortError") cosmosActionDescription.textContent = t("cosmosUnavailable");
+    if (error.name !== "AbortError") typeCosmosText(t("cosmosUnavailable"));
   }
 }
 
@@ -266,8 +390,8 @@ function updateClock(advance = true) {
   clock.textContent = new Date().toLocaleTimeString(locale, { hour12: false });
   if (advance) seconds += 1;
   actionTimer.textContent = `${String(Math.floor(seconds / 60)).padStart(2, "0")}:${String(seconds % 60).padStart(2, "0")}`;
-  if (lastCosmosUpdateAt && Date.now() - lastCosmosUpdateAt >= COSMOS_IDLE_AFTER_MS) {
-    cosmosActionDescription.textContent = t(motionGateEnabled.checked ? "cosmosIdle" : "cosmosProcessing");
+  if (!mappedSopDescriptionActive && lastCosmosUpdateAt && Date.now() - lastCosmosUpdateAt >= COSMOS_IDLE_AFTER_MS) {
+    typeCosmosText(t(motionGateEnabled.checked ? "cosmosIdle" : "cosmosProcessing"));
   }
 }
 
@@ -315,14 +439,23 @@ motionThreshold.addEventListener("input", () => {
   cosmosReconnectTimer = setTimeout(() => void connectCosmosInference(), 500);
 });
 
-updateMotionControls();
-applyLanguage();
-updateClock();
-setInterval(updateClock, 1000);
-void connectPreview();
-void connectCosmosInference();
-void refreshDashboard();
-setInterval(refreshDashboard, 2000);
+async function initializeDemo() {
+  updateMotionControls();
+  applyLanguage();
+  updateClock();
+  setInterval(updateClock, 1000);
+  void connectPreview();
+  try {
+    await loadLabelMappingConfig();
+    void connectCosmosInference();
+    void refreshDashboard();
+    setInterval(refreshDashboard, 2000);
+  } catch (error) {
+    cosmosActionDescription.textContent = `Label mapping config error: ${error.message}`;
+  }
+}
+
+void initializeDemo();
 
 window.addEventListener("pagehide", () => {
   if (cosmosController) cosmosController.abort();

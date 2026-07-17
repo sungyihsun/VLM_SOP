@@ -1,0 +1,54 @@
+{
+  "version": "2026-07-17",
+  "description": "Shared QAS and PRD mapping. SSE shows the raw VLM result until the SOP dashboard API provides a valid step; then Cosmos Action Description shows long_description for that step.",
+  "mappings": [
+    {
+      "step": 1,
+      "short_label": "Loosen the screw (TOP)",
+      "vlm_training_label": "After loosening, tighten the screws in the correct position to secure the TOP Bianca sub-panel to fix the PCBA (manually tighten the screws).",
+      "long_description": "After loosening, tighten the screws in the correct position to secure the TOP Bianca sub-panel to fix the PCBA (manually tighten the screws)."
+    },
+    {
+      "step": 2,
+      "short_label": "Loosen the screw (BOT)",
+      "vlm_training_label": "After loosening, tighten the screws in the correct position to secure the BOT Bianca sub-panel to fix the PCBA (manually tighten the screws).",
+      "long_description": "After loosening, tighten the screws in the correct position to secure the BOT Bianca sub-panel to fix the PCBA (manually tighten the screws)."
+    },
+    {
+      "step": 3,
+      "short_label": "Remove the coldplate frame (TOP)",
+      "vlm_training_label": "Loosen TOP Bianca coldplate iron frame screws*6 in order 1~6 and remove coldplate iron frame",
+      "long_description": "Loosen TOP Bianca coldplate iron frame screws*6 in order 1~6 and remove coldplate iron frame"
+    },
+    {
+      "step": 4,
+      "short_label": "Remove the coldplate frame (BOT)",
+      "vlm_training_label": "Loosen BOT Bianca coldplate iron frame screws*6 in order 1~6 and remove coldplate iron frame",
+      "long_description": "Loosen BOT Bianca coldplate iron frame screws*6 in order 1~6 and remove coldplate iron frame"
+    },
+    {
+      "step": 5,
+      "short_label": "Put on the covers (Top)",
+      "vlm_training_label": "Put the cover on the first NV Link connector.",
+      "long_description": "Put the cover on the first NV Link connector."
+    },
+    {
+      "step": 6,
+      "short_label": "Put on the covers (Second)",
+      "vlm_training_label": "Put the cover on the second NV Link connector.",
+      "long_description": "Put the cover on the second NV Link connector."
+    },
+    {
+      "step": 7,
+      "short_label": "Put on the covers (Third)",
+      "vlm_training_label": "Cover the third NV Link connector.",
+      "long_description": "Cover the third NV Link connector."
+    },
+    {
+      "step": 8,
+      "short_label": "Put on the covers (Forth)",
+      "vlm_training_label": "Cover the fourth NV Link connector.",
+      "long_description": "Cover the fourth NV Link connector."
+    }
+  ]
+}

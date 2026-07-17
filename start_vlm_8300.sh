@@ -8,9 +8,44 @@ ENV_FILE="${PROJECT_DIR}/deploy/.env"
 COMPOSE_FILE="${PROJECT_DIR}/deploy/compose.yaml"
 SERVICE="nvds-action-sop"
 BASE_URL="http://127.0.0.1:8300"
+STREAM_CONFIG_FILE="${PROJECT_DIR}/nvds_action_detector/static/stream-config.js"
+PRD_RTSP_URL="rtsp://root:1q2w3e4r@172.24.56.18:554/media2/stream.sdp?profile=Profile201"
+QAS_RTSP_URL="rtsp://172.24.56.16:8552/sensor_0"
 
 compose() {
   docker compose --env-file "${ENV_FILE}" -f "${COMPOSE_FILE}" "$@"
+}
+
+select_stream() {
+  local selection="${SOP_STREAM_MODE:-}"
+
+  if [[ -z "${selection}" && -t 0 ]]; then
+    echo "請選擇 VLM 即時串流："
+    echo "  1) PRD（原本的即時串流）"
+    echo "  2) QAS（${QAS_RTSP_URL}）"
+    read -r -p "模式 [1]: " selection
+  fi
+
+  case "${selection^^}" in
+    ""|1|PRD)
+      selected_mode="PRD"
+      selected_rtsp_url="${PRD_RTSP_URL}"
+      ;;
+    2|QAS)
+      selected_mode="QAS"
+      selected_rtsp_url="${QAS_RTSP_URL}"
+      ;;
+    *)
+      echo "錯誤：無效的 SOP_STREAM_MODE '${selection}'，請使用 PRD 或 QAS。" >&2
+      exit 2
+      ;;
+  esac
+
+  local temporary_config="${STREAM_CONFIG_FILE}.tmp"
+  printf 'window.SOP_STREAM_CONFIG = Object.freeze({\n  mode: "%s",\n  rtspUrl: "%s",\n});\n' \
+    "${selected_mode}" "${selected_rtsp_url}" > "${temporary_config}"
+  mv "${temporary_config}" "${STREAM_CONFIG_FILE}"
+  echo "已選擇 ${selected_mode} 串流：${selected_rtsp_url}"
 }
 
 if [[ ! -f "${ENV_FILE}" ]]; then
@@ -22,6 +57,8 @@ if [[ ! -f "${COMPOSE_FILE}" ]]; then
   echo "錯誤：找不到 ${COMPOSE_FILE}" >&2
   exit 1
 fi
+
+select_stream
 
 container_id="$(compose ps --status running -q "${SERVICE}")"
 

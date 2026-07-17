@@ -142,6 +142,7 @@
         </div>
       </section>
     </main>
-    <script src="/static/qas.js?v=20260717-hand-gate-signal"></script>
+    <script src="/static/stream-config.js?v=20260718-stream-selector"></script>
+    <script src="/static/qas.js?v=20260718-stream-selector"></script>
   </body>
 </html>
