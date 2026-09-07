@@ -12,7 +12,7 @@ OUT_PATH = os.environ.get("NAMPO_SAMGYETANG_CANDIDATES_PATH", "candidate-results
 ANCHOR_OUT_PATH = os.environ.get("NAMPO_SAMGYETANG_ANCHOR_PATH", "candidate-results/nampo-samgyetang-anchor.json")
 
 STATION_QUERY = "남포동 부산"
-RADIUS_M = 1200.0
+RADIUS_M = 3000.0
 MIN_RATING = 4.0
 MIN_REVIEWS = 15
 
@@ -99,6 +99,9 @@ TEXT_QUERIES = [
     "인삼계탕",
     "토종삼계탕",
     "닭백숙",
+    "한방삼계탕",
+    "황제삼계탕",
+    "삼계탕 맛집",
 ]
 
 all_results = {}
