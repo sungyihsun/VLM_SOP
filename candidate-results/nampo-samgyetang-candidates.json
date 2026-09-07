@@ -42,5 +42,27 @@
   ],
   "cid": "879890773243865684",
   "distance_m": 1003.2
+ },
+ "3165016184749932602": {
+  "place_id": "ChIJ44_ZkmvpaDUROsBheHNl7Cs",
+  "name": "明星(名聲)一隻雞",
+  "address": "22 Jeoryeong-ro, Yeongdo-gu, Busan, 南韓",
+  "rating": 4.6,
+  "userRatingCount": 286,
+  "priceLevel": "PRICE_LEVEL_MODERATE",
+  "googleMapsUri": "https://maps.google.com/?cid=3165016184749932602&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 35.0925282,
+   "longitude": 129.0396337
+  },
+  "types": [
+   "chicken_restaurant",
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "cid": "3165016184749932602",
+  "distance_m": 1003.7
  }
 }
