@@ -1,0 +1,197 @@
+{
+ "6963117382250897301": {
+  "place_id": "ChIJd7iy7KbpaDURlZ9p8l32oWA",
+  "name": "宮中蔘雞湯",
+  "address": "9 Jagalchi-ro, Seo-gu, Busan, 南韓",
+  "rating": 4.5,
+  "userRatingCount": 141,
+  "priceLevel": "PRICE_LEVEL_MODERATE",
+  "googleMapsUri": "https://maps.google.com/?cid=6963117382250897301&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 35.096359199999995,
+   "longitude": 129.02547389999998
+  },
+  "types": [
+   "chicken_restaurant",
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "cid": "6963117382250897301",
+  "distance_m": 460.2
+ },
+ "5886983041524557168": {
+  "place_id": "ChIJr5iYTQDpaDURcOXRvOLDslE",
+  "name": "Premium jangin dakgalbi",
+  "address": "南韓 Busan, Jung-gu, Gudeok-ro 48beon-gil, 4-1 1층",
+  "rating": 4.5,
+  "userRatingCount": 207,
+  "priceLevel": "PRICE_LEVEL_MODERATE",
+  "googleMapsUri": "https://maps.google.com/?cid=5886983041524557168&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 35.098739099999996,
+   "longitude": 129.03079449999998
+  },
+  "types": [
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "cid": "5886983041524557168",
+  "distance_m": 151.8
+ },
+ "3165016184749932602": {
+  "place_id": "ChIJ44_ZkmvpaDUROsBheHNl7Cs",
+  "name": "明星(名聲)一隻雞",
+  "address": "22 Jeoryeong-ro, Yeongdo-gu, Busan, 南韓",
+  "rating": 4.6,
+  "userRatingCount": 286,
+  "priceLevel": "PRICE_LEVEL_MODERATE",
+  "googleMapsUri": "https://maps.google.com/?cid=3165016184749932602&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 35.0925282,
+   "longitude": 129.0396337
+  },
+  "types": [
+   "chicken_restaurant",
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "cid": "3165016184749932602",
+  "distance_m": 1003.7
+ },
+ "9004737020190673167": {
+  "place_id": "ChIJpWhC_J_paDURD0lGWJxA93w",
+  "name": "海豚嫩豆腐",
+  "address": "15 Junggu-ro 40beon-gil, Jung-gu, Busan, 南韓",
+  "rating": 4.1,
+  "userRatingCount": 1003,
+  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+  "googleMapsUri": "https://maps.google.com/?cid=9004737020190673167&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 35.101546,
+   "longitude": 129.029607
+  },
+  "types": [
+   "korean_restaurant",
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "cid": "9004737020190673167",
+  "distance_m": 463.9
+ },
+ "3604632780096974574": {
+  "place_id": "ChIJqRxFLkzpaDUR7q5oU2o6BjI",
+  "name": "紅油短南浦洞總店",
+  "address": "南韓 Busan, Jung-gu, Gudeok-ro 34beon-gil, 5 2층",
+  "rating": 4.3,
+  "userRatingCount": 315,
+  "priceLevel": "PRICE_LEVEL_MODERATE",
+  "googleMapsUri": "https://maps.google.com/?cid=3604632780096974574&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 35.0983394,
+   "longitude": 129.03203449999998
+  },
+  "types": [
+   "chinese_restaurant",
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "cid": "3604632780096974574",
+  "distance_m": 183.2
+ },
+ "9755309407767772535": {
+  "place_id": "ChIJw0iGpQrpaDURdz0GdDjSYYc",
+  "name": "大屋",
+  "address": "19 Junggu-ro 24beon-gil, Jung-gu, Busan, 南韓",
+  "rating": 4.1,
+  "userRatingCount": 656,
+  "priceLevel": "PRICE_LEVEL_MODERATE",
+  "googleMapsUri": "https://maps.google.com/?cid=9755309407767772535&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 35.1002668,
+   "longitude": 129.02983609999998
+  },
+  "types": [
+   "korean_restaurant",
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "cid": "9755309407767772535",
+  "distance_m": 320.1
+ },
+ "4719889095376967736": {
+  "place_id": "ChIJjylLCxTpaDUROBgvDSBqgEE",
+  "name": "고등어구이정식",
+  "address": "南韓 Busan, Jung-gu, 南浦洞10-9",
+  "rating": 4.5,
+  "userRatingCount": 94,
+  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+  "googleMapsUri": "https://maps.google.com/?cid=4719889095376967736&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 35.097605099999996,
+   "longitude": 129.0312032
+  },
+  "types": [
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "cid": "4719889095376967736",
+  "distance_m": 79.1
+ },
+ "323787716396512322": {
+  "place_id": "ChIJm7fQrqHpaDURQvRyajZTfgQ",
+  "name": "Daejeong Yanggopchang",
+  "address": "31 Junggu-ro 23beon-gil, Jung-gu, Busan, 南韓",
+  "rating": 4.2,
+  "userRatingCount": 634,
+  "priceLevel": "PRICE_LEVEL_MODERATE",
+  "googleMapsUri": "https://maps.google.com/?cid=323787716396512322&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 35.099998,
+   "longitude": 129.02611
+  },
+  "types": [
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "cid": "323787716396512322",
+  "distance_m": 481.5
+ },
+ "13894097965050308211": {
+  "place_id": "ChIJLdZgZwvpaDURcyZNMXzA0cA",
+  "name": "阿里山",
+  "address": "南韓 Busan, Jung-gu, Gudeok-ro, 12-1 1,2층",
+  "rating": 4.3,
+  "userRatingCount": 59,
+  "priceLevel": "PRICE_LEVEL_MODERATE",
+  "googleMapsUri": "https://maps.google.com/?cid=13894097965050308211&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 35.0980118,
+   "longitude": 129.0341767
+  },
+  "types": [
+   "chinese_restaurant",
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "cid": "13894097965050308211",
+  "distance_m": 353.1
+ }
+}
