@@ -25,9 +25,14 @@ FIELD_MASK = ("places.id,places.displayName,places.formattedAddress,places.ratin
               "places.location,places.types,places.primaryType")
 
 
-def search_text(query):
+def search_text(query, included_type=None, location_bias=None):
     url = "https://places.googleapis.com/v1/places:searchText"
     body = {"textQuery": query, "languageCode": "zh-TW"}
+    if included_type:
+        body["includedType"] = included_type
+    if location_bias:
+        lat, lng, radius = location_bias
+        body["locationBias"] = {"circle": {"center": {"latitude": lat, "longitude": lng}, "radius": radius}}
     req = urllib.request.Request(url, data=json.dumps(body).encode('utf-8'), method='POST', headers={
         "Content-Type": "application/json", "X-Goog-Api-Key": KEY, "X-Goog-FieldMask": FIELD_MASK,
     })
@@ -83,19 +88,23 @@ print("resolved 南浦洞 ->", anchor)
 os.makedirs(os.path.dirname(ANCHOR_OUT_PATH), exist_ok=True)
 json.dump(anchor, open(ANCHOR_OUT_PATH, 'w'), ensure_ascii=False, indent=1)
 
-# Phase 2: samgyetang-specific text searches (searchNearby has no "samgyetang"
-# type in Google's taxonomy, so use targeted text queries instead, same
-# fallback style as search_cheongsapo.py's anchor resolution).
+# Phase 2: samgyetang-specific text searches. Plain text queries pulled in a
+# lot of unrelated restaurants (Google's text ranking is loose), so scope
+# each query with includedType="chicken_restaurant" (samgyetang has no
+# dedicated type in Google's taxonomy, but chicken_restaurant is the closest
+# umbrella and is what genuine samgyetang shops are tagged as) plus a
+# locationBias circle around the 南浦洞 anchor.
 TEXT_QUERIES = [
-    "남포동 삼계탕",
-    "남포동 인삼계탕",
-    "남포동 닭백숙",
+    "삼계탕",
+    "인삼계탕",
+    "토종삼계탕",
+    "닭백숙",
 ]
 
 all_results = {}
 lat, lng = anchor['lat'], anchor['lng']
 for q in TEXT_QUERIES:
-    data = search_text(q)
+    data = search_text(q, included_type="chicken_restaurant", location_bias=(lat, lng, RADIUS_M))
     places = data.get('places', [])
     print(f"'{q}': {len(places)} results", flush=True)
     for p in places:
