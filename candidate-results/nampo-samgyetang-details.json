@@ -1,0 +1,950 @@
+{
+ "형과아우누룽지삼계탕&왕갈비탕 부평점": {
+  "id": "ChIJ69yvoqmTaDURVCpYFP__NQw",
+  "types": [
+   "chicken_restaurant",
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "nationalPhoneNumber": "051-245-5007",
+  "formattedAddress": "South Korea, Busan, Jung-gu, Daecheong-ro, 18 1층",
+  "location": {
+   "latitude": 35.103041499999996,
+   "longitude": 129.02173679999999
+  },
+  "rating": 4.4,
+  "googleMapsUri": "https://maps.google.com/?cid=879890773243865684&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+  "regularOpeningHours": {
+   "openNow": true,
+   "periods": [
+    {
+     "open": {
+      "day": 0,
+      "hour": 10,
+      "minute": 0
+     },
+     "close": {
+      "day": 0,
+      "hour": 21,
+      "minute": 0
+     }
+    },
+    {
+     "open": {
+      "day": 1,
+      "hour": 10,
+      "minute": 0
+     },
+     "close": {
+      "day": 1,
+      "hour": 21,
+      "minute": 0
+     }
+    },
+    {
+     "open": {
+      "day": 2,
+      "hour": 10,
+      "minute": 0
+     },
+     "close": {
+      "day": 2,
+      "hour": 21,
+      "minute": 0
+     }
+    },
+    {
+     "open": {
+      "day": 3,
+      "hour": 10,
+      "minute": 0
+     },
+     "close": {
+      "day": 3,
+      "hour": 21,
+      "minute": 0
+     }
+    },
+    {
+     "open": {
+      "day": 4,
+      "hour": 10,
+      "minute": 0
+     },
+     "close": {
+      "day": 4,
+      "hour": 21,
+      "minute": 0
+     }
+    },
+    {
+     "open": {
+      "day": 5,
+      "hour": 10,
+      "minute": 0
+     },
+     "close": {
+      "day": 5,
+      "hour": 21,
+      "minute": 0
+     }
+    },
+    {
+     "open": {
+      "day": 6,
+      "hour": 10,
+      "minute": 0
+     },
+     "close": {
+      "day": 6,
+      "hour": 21,
+      "minute": 0
+     }
+    }
+   ],
+   "weekdayDescriptions": [
+    "Monday: 10:00 AM – 9:00 PM",
+    "Tuesday: 10:00 AM – 9:00 PM",
+    "Wednesday: 10:00 AM – 9:00 PM",
+    "Thursday: 10:00 AM – 9:00 PM",
+    "Friday: 10:00 AM – 9:00 PM",
+    "Saturday: 10:00 AM – 9:00 PM",
+    "Sunday: 10:00 AM – 9:00 PM"
+   ],
+   "nextCloseTime": "2026-09-07T12:00:00Z"
+  },
+  "priceLevel": "PRICE_LEVEL_MODERATE",
+  "userRatingCount": 33,
+  "displayName": {
+   "text": "형과아우누룽지삼계탕&왕갈비탕 부평점",
+   "languageCode": "ko"
+  },
+  "primaryType": "chicken_restaurant",
+  "photos": [
+   {
+    "name": "places/ChIJ69yvoqmTaDURVCpYFP__NQw/photos/AVoNoXQ9G4xEg6-Yy5WrSUVW_mTvsthIasniyjSIqAAdQTecaJsYkDpuD-AS9T4GOvQ-1esJqz_m6gqHGoN37v_6Pi7CDei3ksRTyZ5BBVpWvQ54LBNk2T4voPEtzR4wZuEii4_l5H3eThm9ru6jGs4mE9tVSVZHAFMafZp-E2ZQqv4eoviqKVhpRAWrvsfPW2QieFIRimkyDHziwond9dJqTwhJQs2TyusGzhM7CrG9i_so2aIQ1cerJO9mR-rO4rjGCVe013MD9_-gxsSdMv_jlKnS8QHAzMLXFCRY0S5QXFMwfRsKeLflyHbqNjBlxaZYlTMhvQYjw1Rbxf6Eq0IVXSXSk0xw4CFHwB6xwTUHT3HJDJn9_fgdVNYym0sE-uCGdtt8gVzeD9GLR2UQRqucu4N1k6-iAqP5Q5Ks5JGYShXwlF4_tW0XvWFAwoEWsw",
+    "widthPx": 3000,
+    "heightPx": 4000,
+    "authorAttributions": [
+     {
+      "displayName": "형과아우누룽지삼계탕&왕갈비탕 부평점",
+      "uri": "https://maps.google.com/maps/contrib/107121794053388845925",
+      "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKbzTf0qyfZWM9817iSL7ZhpH0pV64IWAU9fyH8vMJ871P0qA=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIABIhBy42BAJI4NgfKk0vNVlZkd&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIABIhBy42BAJI4NgfKk0vNVlZkd!2e10!4m2!3m1!1s0x356893a9a2afdceb:0xc35ffff14582a54"
+   },
+   {
+    "name": "places/ChIJ69yvoqmTaDURVCpYFP__NQw/photos/AVoNoXQ0UFTfTuDmPuHdcES7sR74TKgRurqvdH9LQ9vu1UAktyfTq4E5BA30dz9jJ8BijTTPVhn61TEx6v_o6jXwtDfpfP7UuEco88D2bWAM0DLo88IltpscMQc70tX3-eeAIId28dWOqkKw-O7IuxyUpFitZJHlhPxuHcqFUoNQj41RmUmnni2tBKC1OdSuLdQGIitD1vwbLi0O5vz0fBUqD2Xy_ic-abZQslsWvFo1i-8wvHBIkwELdraKrkr4aHq5dnTZmROtGebORLpxc1t-CxeuF4JCJrhH-Aksz3u4MgJRLCeJgB4z3O-4-hlXJ4JueSCaYEIQ5lWrWAEILCTiyqz_M-GiUSZBsVeuZEihMXUW6h5-euFUP0u2lTIY9d58hE13_2VDlR1lnzkGQtIf3QTTrbKjLE-W54sx0N50rp9Nj28aMhpUdmv5XixY8biU",
+    "widthPx": 1167,
+    "heightPx": 1236,
+    "authorAttributions": [
+     {
+      "displayName": "형과아우누룽지삼계탕&왕갈비탕 부평점",
+      "uri": "https://maps.google.com/maps/contrib/107121794053388845925",
+      "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKbzTf0qyfZWM9817iSL7ZhpH0pV64IWAU9fyH8vMJ871P0qA=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIABIhAuTghB5GDtb5uICik7ncUC&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIABIhAuTghB5GDtb5uICik7ncUC!2e10!4m2!3m1!1s0x356893a9a2afdceb:0xc35ffff14582a54"
+   },
+   {
+    "name": "places/ChIJ69yvoqmTaDURVCpYFP__NQw/photos/AVoNoXRg_-Oom7qRer4h13Ht46mIjfqIZeRkX6V9J1D16Tdkjnw_cDWvbpMHg4J2aWK6rI16H-IWFBYvevM7KqUu45YPR7vO-LN6-nidXrmg9X3kTn498L_uKza-NmSM5Idj0mHASnDYy1OOaLwflsxDL5FDZBvG0dIpwXSjK3pF-wsFTvDd6tyi0vKsvVk_anCZho3sUrGsX6pwAZaumag_QcbYLpR1YJb0BKy14OyG4E88Z3YFBfGdpLrn8AlobNL4t5vol3SLbn0zcnN2t-KgrRPHGyLCebCVRo-iCasj-1cs0g9rE631sqyH76EdJvONXP_dcBscPRHS7HZujA-Eq7OP85XIVIB499OdiHwqDVDy0cGsLuh6ZMz7MKzNW1N1S5-UOB45ilwEB21KNmJ7Jk6Z8OMd5nmffg-IdLSGzx4J8wfWRxw0l2OqC2toYA",
+    "widthPx": 4000,
+    "heightPx": 2252,
+    "authorAttributions": [
+     {
+      "displayName": "tram la",
+      "uri": "https://maps.google.com/maps/contrib/113568652252428007450",
+      "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUINtsF3BgjOvJLUpL7avq0HlQ7o63nueiPKNF2HepCUGSEqI66=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIABIhCOek0Ts_fOFe0pv3Yc-RFw&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIABIhCOek0Ts_fOFe0pv3Yc-RFw!2e10!4m2!3m1!1s0x356893a9a2afdceb:0xc35ffff14582a54"
+   },
+   {
+    "name": "places/ChIJ69yvoqmTaDURVCpYFP__NQw/photos/AVoNoXR96bHWAsHmYRnljOeuVvKROYobfe8uZjHxvwDIb4gXO1KDpcDSveVHDt9abNGuMliuka7FO1_faIUwgTi0gqPN5TBzRoqfmtf3L9A_hIxmP9U6BedqbLv6S3-KY-V-9xk2i8jFZgSKbPQcOvNQpU_AsZiSMUn5NbELNSSwnacstON_rB0OoigsmXVKRhF-euGFXhaKxKPtRbCsRzsqVf9fjNq4F55p14M06gqhSArv0QLboN1uRPwSz3cD0127pgm-HTPB17uNEop9ssdjSN4WcZRipl76e7oP5k4d_STUENWAOTJxiSsjEE9IJDYdyNOjYQ0NN8QqjbK9-B8kOwQLF6c597uNP-1kk0nnTgs64q4JGBJaatHPN-n7_Xhk1Jx1Vzm-nRtWHVbKMySFNwevYGQAeO-LoHiF4rWDhvkTms260YWokbORH5RtakaQ",
+    "widthPx": 3000,
+    "heightPx": 4000,
+    "authorAttributions": [
+     {
+      "displayName": "형과아우누룽지삼계탕&왕갈비탕 부평점",
+      "uri": "https://maps.google.com/maps/contrib/107121794053388845925",
+      "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKbzTf0qyfZWM9817iSL7ZhpH0pV64IWAU9fyH8vMJ871P0qA=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIABIhDAzLEjZNw82WQd1iPCPg49&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIABIhDAzLEjZNw82WQd1iPCPg49!2e10!4m2!3m1!1s0x356893a9a2afdceb:0xc35ffff14582a54"
+   },
+   {
+    "name": "places/ChIJ69yvoqmTaDURVCpYFP__NQw/photos/AVoNoXTJd85NIljstEY5Y2alTYagoSGRwH6rYd-BTTg_nIu929j_9dLMpb0QfwarDLN9k3MgkWqU7vQxl-1kQLw3A7PyaGu7PcFoYNftee3PKkW3trVqkJp-Bo-iwPkxcjLcrr-ubjf4fyzX4kGEvC6R2Xck72AF-dWPnqndeCZauJco7v6fqhsqcznusiVpAA6J1X6mWdH9g0iYOsJVPj3odkNRQCjsAYfhwnNGy_iHGbxYzoG6rrdBUA1fbxPVvAApuJ1Qkcsk0TyK02cowDq2b0VGAvnaZ9KH5y9iACaDIzC1NApXk3EaZPP5ov6mXNnSSUyAIpHeEmxXLY3ddAnYYYApZPlPRDGbVGEXwcsr786vuwmVjT5H_8oHx0Qi-JSWcybtyER8E9kWpP1zH4s33EGwdM7Ub1BkXf-Dqo1RNNUQB7yhTAz682ju_D8Jq1X4",
+    "widthPx": 3000,
+    "heightPx": 4000,
+    "authorAttributions": [
+     {
+      "displayName": "형과아우누룽지삼계탕&왕갈비탕 부평점",
+      "uri": "https://maps.google.com/maps/contrib/107121794053388845925",
+      "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKbzTf0qyfZWM9817iSL7ZhpH0pV64IWAU9fyH8vMJ871P0qA=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIABIhBt6x4QhDpCSNsFgpOmnFuF&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIABIhBt6x4QhDpCSNsFgpOmnFuF!2e10!4m2!3m1!1s0x356893a9a2afdceb:0xc35ffff14582a54"
+   },
+   {
+    "name": "places/ChIJ69yvoqmTaDURVCpYFP__NQw/photos/AVoNoXQYCM6GoaemwxakTXHPvpzExj8lvpinDMlD2qDQ-OWX_whEDzRkZ5XK-8-aYsRp0mDqE9Tv1BrWHH6xndOOUg0e95a0ItPPqQhiLaaKzG83_4qjpmapL8A1Ksi8A1XhF-946NfwysZjLhAqjITrP4nMgpKLpEZqmYswlIQdXEmVthGZcIqikbviuGTBkPfYg3WPcypUtwJDrpu72pM6pO4QB23bk-XuL47i1j7IheK5xccZXGJ_-lvuWqmr-89KA3Pw1RERHX5FSB2_gyh1zYRx7LeU8iYfJFyzbiQqRMJMdbJ2MhtQp4WEIRd7fKvSccN82tNLL0XGcuRkUWwC8-J9m-x9IskTDQMugrf6Co8snkRuUvx8pMWMjrZkBf28WwvM6ud60UV7BNL97JnlAHdCAEpmuXKwrxFdQIASz63Uu8epl66sKGvc2LvQ_NMC",
+    "widthPx": 3000,
+    "heightPx": 4000,
+    "authorAttributions": [
+     {
+      "displayName": "형과아우누룽지삼계탕&왕갈비탕 부평점",
+      "uri": "https://maps.google.com/maps/contrib/107121794053388845925",
+      "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKbzTf0qyfZWM9817iSL7ZhpH0pV64IWAU9fyH8vMJ871P0qA=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIABIhBNyZHXXWOFtAU2nnjeLH00&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIABIhBNyZHXXWOFtAU2nnjeLH00!2e10!4m2!3m1!1s0x356893a9a2afdceb:0xc35ffff14582a54"
+   },
+   {
+    "name": "places/ChIJ69yvoqmTaDURVCpYFP__NQw/photos/AVoNoXRPyHLPxEah7SA_dSmmMIu9W8ZxG-j_t1xn_PEVZM0ytkeXqHxxvdZ3YMvRnTbVNPorMBrXrmenc7AHKq2xS1sBrBT_iWC_RLl47c76K_EN69QmrgqU6oxqaTJilYKePnteM3P7DQZPsX1-OK2Gwjxwkin0W2gHCfDKUGsY1N3KqUxWhbA1xaHh7u9nkZYrHOFInP3sya4PuaVi-wSEZeFvrrdji3EAXnxqUgw7llkQQI4AdiqGqNlC6a8Rdx4yt0Xa7UXV7ytE-XZQ-0BBpLhvKaHprkyv7AwSr3-Zwt9iv48CcNpI7BulAHyYYl2CiUvOHfGS7EYwArUUVx_W1a-bSN-X0JFYzhrprWsDCqE3SYDh47bWj7UGijnvTvfnOEFHMJoPL0818uUPNrPLztJdQBJfiRlF7IQMXOzLZbZhyRAo",
+    "widthPx": 1440,
+    "heightPx": 1081,
+    "authorAttributions": [
+     {
+      "displayName": "이희찬",
+      "uri": "https://maps.google.com/maps/contrib/108807624290482510312",
+      "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKDuW1w5KyBKsDGNicnRTpt6klv88UPVrWRDDHTpuzxLlsPDg=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIHM0ogKEICAgIChkt7tvwE&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIChkt7tvwE!2e10!4m2!3m1!1s0x356893a9a2afdceb:0xc35ffff14582a54"
+   },
+   {
+    "name": "places/ChIJ69yvoqmTaDURVCpYFP__NQw/photos/AVoNoXRT12X7Yy-WZ6umKKRnvk0_QMZeWsO59KLyMrsCxYtP7A0Rr89egChQ9KSBx2xym3GfOJ1AHF0w2XXGM8vM0So8iYbN_mes4BaY7za_1LHLQzI0cy_yOSrDrCcJEvXouBGyBWPWGCcWrZ2GZjyLQh1elyjkW93TR7kOQiK_YShMwjocstL5JsCNiTHdjHCvaHL3OqaRX5aIGRbIa_tbKSuTr0EDtakPzkut0xk7pxXfN-CC2WH3MUjvcFwzG2A1D1egVUtjWykgQIpJrYOZSWrUyVZcH60dCgQNHywwEkQW7iQeNKbZ-6t-RRuCcp6ubOyToI75oP7QESSRCcD3uARo_zp6KxzKSnQhNhtySI3-5RZNIR6M3C7gV919_soSairIy61u41wvNUVyj3ypgafX-TrjozR_w6gEx5pfaa8",
+    "widthPx": 3024,
+    "heightPx": 4032,
+    "authorAttributions": [
+     {
+      "displayName": "아잰데요",
+      "uri": "https://maps.google.com/maps/contrib/100332334185746070536",
+      "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjW_GT_4v21r27ylwZYJVPq2CrZ6s9RkQexbpSznU-uHEvNlSD4=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIHM0ogKEICAgIDn4-SLDQ&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDn4-SLDQ!2e10!4m2!3m1!1s0x356893a9a2afdceb:0xc35ffff14582a54"
+   },
+   {
+    "name": "places/ChIJ69yvoqmTaDURVCpYFP__NQw/photos/AVoNoXT5LLHRrSSC6HaOuQTu0UhuaIXpux8G7VTx_AdqKefNICFioA6i3G0rE8J_-NhwtppWNzJCmKzBhctgNK_a8tpStn3HaZpz5Mnqsu1WXahnQLDk7FfrkHO2W5a13x1XJvAuuL0EcCbEf1hBSrDQFGtIDsB3oOt4TAodq5yzvYXHoDdCKvtxTDZLJcDIHc7uUpwlsc-smA3oiweVP7Ne3kYR8A7WcJypuVDbSWOoLMS_RICcGbjj9SNtCuFaO7Cr4gFM18nQPdeuIAe9bah8K4SkXuoqWVJbrM3c0_Ww6ryd2SmOlhvbjKDVxHK_JH0NkCgQUXnr2BNgjxniJlFOWhfF-v7Fw2_sVNsy6ULCPtMIL8sQ1NqliJqdsbPRGuae3AzuxhGaakgWtuNPGH1lhmecYNzZp6Cx3hzxZKeAPW222juRYNfgeKQIdeWPczGL",
+    "widthPx": 4000,
+    "heightPx": 3000,
+    "authorAttributions": [
+     {
+      "displayName": "형과아우누룽지삼계탕&왕갈비탕 부평점",
+      "uri": "https://maps.google.com/maps/contrib/107121794053388845925",
+      "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKbzTf0qyfZWM9817iSL7ZhpH0pV64IWAU9fyH8vMJ871P0qA=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIABIhD2Y6ykI6E_qCFnEWMIWk9c&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIABIhD2Y6ykI6E_qCFnEWMIWk9c!2e10!4m2!3m1!1s0x356893a9a2afdceb:0xc35ffff14582a54"
+   },
+   {
+    "name": "places/ChIJ69yvoqmTaDURVCpYFP__NQw/photos/AVoNoXRsYv8fSDO6o-x2fQIP49ARxkMhuKM-q-lJ0jclr2gd8dAhbmSbO5qOKpEr63S3vjYCgmEPWRSmKxxj3A2bFy2ENM4aDhGz67Q6vGINjAgspAUdNOYbhO7f5qRA6L5u4IBe7SwYHOl92pLMT4Q8R2SAsjnyaaH5xmQPTN_YwpqhtjIZexQYih_zbe1qN2etTTQYiL1k0zWuiU6pZSsr_N6FUpJusRSeQSgbktk7xj3JIiS8kx8YrpwSRiiItdsHhtRxH110e5Ihv5Klzyfvb5CI_vZUH0d2H3gS0z0pfMv3dzaWahyECDq8epvRQTEu3UfU3C-dawTk9y_ooL8HaWXHbJzz20ygrfHn-V9mnwynShLJGj7t-h6Z5aH68TH5olwiCVgctJqPG5YojTUA49DiAFI-Z9JsNReWFhfgANbYH0CAgexsv3Lj2LcD3cLp",
+    "widthPx": 3000,
+    "heightPx": 4000,
+    "authorAttributions": [
+     {
+      "displayName": "형과아우누룽지삼계탕&왕갈비탕 부평점",
+      "uri": "https://maps.google.com/maps/contrib/107121794053388845925",
+      "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKbzTf0qyfZWM9817iSL7ZhpH0pV64IWAU9fyH8vMJ871P0qA=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIABIhDcpL3Ua94z5apOqRoCHma8&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIABIhDcpL3Ua94z5apOqRoCHma8!2e10!4m2!3m1!1s0x356893a9a2afdceb:0xc35ffff14582a54"
+   }
+  ],
+  "_photo_urls": [
+   "https://lh3.googleusercontent.com/place-photos/AG9NLjA-tisVpC0DYMxDfdHY2SADtGaDT-j8FDU0WWcJvG5qgBgB_auy5DDSsemXVHyWodlPC2dBv-N4bsgdWnSitPnC3_5IBiQ8Djb0oYGWJnKsz5QIz8UCFjFvRGF9emgZkni_C1YnsylgFyqiCVpU-kHg=s4800-w800-h800",
+   "https://lh3.googleusercontent.com/place-photos/AG9NLjCG3wjQlwacM057PQdfz4Myy5UB-sdH4JbMj0zye8ktobIDUpBDT9dG-klDC7rZtG9fuBAxAKE_lBFFXX1DFk4BeUhKuUfR4NeSp98OvrcrDIILUN9iZ1u4qh3n22jbsWaPmLKyauXADdfkmknmJeMKUw=s4800-w800-h800",
+   "https://lh3.googleusercontent.com/place-photos/AG9NLjC5heRUjC5asL2aAvoHTyQSUx4IVzifeKHJZ_x_YI3s_VUExxFGyjObAd5Kl9-Gm3W63Og6PES_0oIH3EzWfP7GD7bXGLaUreFeVTjvd2pm5Vy8F4FKWal3VmVYs9HEJtP3LjGX2ROtlOgvE-hf1sPd=s4800-w800-h800"
+  ],
+  "_distance_m": 1003.2,
+  "_hoursweek": [
+   [
+    [
+     600,
+     1260
+    ]
+   ],
+   [
+    [
+     600,
+     1260
+    ]
+   ],
+   [
+    [
+     600,
+     1260
+    ]
+   ],
+   [
+    [
+     600,
+     1260
+    ]
+   ],
+   [
+    [
+     600,
+     1260
+    ]
+   ],
+   [
+    [
+     600,
+     1260
+    ]
+   ],
+   [
+    [
+     600,
+     1260
+    ]
+   ]
+  ]
+ },
+ "宮中蔘雞湯": {
+  "id": "ChIJd7iy7KbpaDURlZ9p8l32oWA",
+  "types": [
+   "chicken_restaurant",
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "nationalPhoneNumber": "051-253-5757",
+  "formattedAddress": "9 Jagalchi-ro, Seo-gu, Busan, South Korea",
+  "location": {
+   "latitude": 35.096359199999995,
+   "longitude": 129.02547389999998
+  },
+  "rating": 4.5,
+  "googleMapsUri": "https://maps.google.com/?cid=6963117382250897301&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+  "regularOpeningHours": {
+   "openNow": true,
+   "periods": [
+    {
+     "open": {
+      "day": 0,
+      "hour": 9,
+      "minute": 30
+     },
+     "close": {
+      "day": 0,
+      "hour": 21,
+      "minute": 0
+     }
+    },
+    {
+     "open": {
+      "day": 1,
+      "hour": 9,
+      "minute": 30
+     },
+     "close": {
+      "day": 1,
+      "hour": 21,
+      "minute": 0
+     }
+    },
+    {
+     "open": {
+      "day": 2,
+      "hour": 9,
+      "minute": 30
+     },
+     "close": {
+      "day": 2,
+      "hour": 21,
+      "minute": 0
+     }
+    },
+    {
+     "open": {
+      "day": 3,
+      "hour": 9,
+      "minute": 30
+     },
+     "close": {
+      "day": 3,
+      "hour": 21,
+      "minute": 0
+     }
+    },
+    {
+     "open": {
+      "day": 4,
+      "hour": 9,
+      "minute": 30
+     },
+     "close": {
+      "day": 4,
+      "hour": 21,
+      "minute": 0
+     }
+    },
+    {
+     "open": {
+      "day": 5,
+      "hour": 9,
+      "minute": 30
+     },
+     "close": {
+      "day": 5,
+      "hour": 21,
+      "minute": 0
+     }
+    },
+    {
+     "open": {
+      "day": 6,
+      "hour": 9,
+      "minute": 30
+     },
+     "close": {
+      "day": 6,
+      "hour": 21,
+      "minute": 0
+     }
+    }
+   ],
+   "weekdayDescriptions": [
+    "Monday: 9:30 AM – 9:00 PM",
+    "Tuesday: 9:30 AM – 9:00 PM",
+    "Wednesday: 9:30 AM – 9:00 PM",
+    "Thursday: 9:30 AM – 9:00 PM",
+    "Friday: 9:30 AM – 9:00 PM",
+    "Saturday: 9:30 AM – 9:00 PM",
+    "Sunday: 9:30 AM – 9:00 PM"
+   ],
+   "nextCloseTime": "2026-09-07T12:00:00Z"
+  },
+  "priceLevel": "PRICE_LEVEL_MODERATE",
+  "userRatingCount": 141,
+  "displayName": {
+   "text": "궁중삼계탕",
+   "languageCode": "ko"
+  },
+  "primaryType": "chicken_restaurant",
+  "photos": [
+   {
+    "name": "places/ChIJd7iy7KbpaDURlZ9p8l32oWA/photos/AVoNoXRwCKcRWukjJLr834zMlER-SqWGEVlpb3M_56hINojVr4HRJ6VKqb9C3H2so2RdOzc7dW-a5Y2xInZhCeeW1i8lW_Du0F01KWSIjDI_kPd4jwGrIIPKgNHDuDJVo-GEpik6XXbbJm96_4_ZVNUj819_gyNi2xQDQAsyN1-8q7NpFg06ukbW8DtOmGLUO8Ncn2UJOC6dOoEeqrMLk8MtrAFPu6BT_hATUY0YFXsZD5G9K1laqKoy0bW47sKscO2PjuyxZgCEuzZYQVFzPhsqyR3Qrf1m9FpNX-mdPeV5coUQCIw4FdugyNhJUunpRJB-8fwq8-4c_WMIbVOtjcfl3Aga8guG3aN7mM8Z8paLyZTFgGxoqjM7I8C11X6dT4HioN7Gjg8AqF3k8ARoYDt5Pj9smiIoT0iJw7mYUexKpp3Igg",
+    "widthPx": 4032,
+    "heightPx": 3024,
+    "authorAttributions": [
+     {
+      "displayName": "hechima",
+      "uri": "https://maps.google.com/maps/contrib/102617260316878118249",
+      "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWgn4lGW9d2KALLq1639v1SxonUWcHPts0a3l-43OrXrEItfd6LTQ=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIHM0ogKEICAgIDh3qDHZg&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDh3qDHZg!2e10!4m2!3m1!1s0x3568e9a6ecb2b877:0x60a1f65df2699f95"
+   },
+   {
+    "name": "places/ChIJd7iy7KbpaDURlZ9p8l32oWA/photos/AVoNoXR5vCV-oEjDyAj0cjXA-5v8A6gLGVD16ZbHjgp9ccL2iqF2AqHFWyaV70l1_dJv9vdqQ_gT347CUSXFuVxvWVlm1rAe4TRSaSzmtcxYvzy-uoqe1xt4vzgNZ7BxJlKce0id7nIpSapS4spzhKT6LzJIbtJhjZ-VtwcpwVG6DFlJbL0BCm3G26YT-j_cMzJykskJr6K_dwz0P364xBAhAe6-5aq32NyisaWKJbiaZZFmK97YaSq9wzqx0ZS3jiWw2MqiV6n2OQtxvm5HQlkQkw2SSqxAtbp2qMjmRe8DqGLmWdtYmeAWruOToAzEukLLuZkXbPlL0LL0NFwtXXAoU6Dt9_du3wNjgq1wgnzHPyXURsiaCIiRPuRKTyL3LkYMrV-IuyjfaOZOHPzTh_NbOfUaqu_VpGPvdapiQ6-2fFzpRxznZuTAwAv-FgKRtVKX",
+    "widthPx": 2804,
+    "heightPx": 2770,
+    "authorAttributions": [
+     {
+      "displayName": "teru schim",
+      "uri": "https://maps.google.com/maps/contrib/106264019869221442065",
+      "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVQ10zTXmvZRPjGopAMshErZFcvE7FBKysbNrNNlhY7faNI_r8=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIABIhC2bUcxoA0JG8cKaZxu8p-A&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIABIhC2bUcxoA0JG8cKaZxu8p-A!2e10!4m2!3m1!1s0x3568e9a6ecb2b877:0x60a1f65df2699f95"
+   },
+   {
+    "name": "places/ChIJd7iy7KbpaDURlZ9p8l32oWA/photos/AVoNoXSNNT_XMo-z-9P8_rx7it8pPwQzio4dTjC-Ht9I3_FDS9j-a3XHmjxp6WwaZTOREtv9eXfJekrQwQyH7LoCy32ybm-S7gBXfIL_t9MPAhKZmfxOJSk6YJZGLB71M_0SQNLLzFy4aqaDEOvgZsslm35ZdPsfvqhxnxunPmm6RVdWiKdW4IqbMSMRbqQ8q722K7oaS615t0aNzZUWHskqKVv0mwkksjtvO-socm3TvvK547IYnTz7QWGHeE5RsKH0kStVtwRcRugJMYsEt_ZWvL0lOJ7CZRoee5ZldgaI4Z4Y4FR9hGO9tWZaNqRRJ1Kro-zRgFYHoMLflTD_60yyAJcuj0o35KrH94JxvxONkp4ajRpGaQVuGoQopVmw_gQAwG3O6Qpf8kaMSe43eK50BHuPUsH03KJV8Pp5OAvna8a_QdIYHagibgE77Jmy98ui",
+    "widthPx": 2448,
+    "heightPx": 3264,
+    "authorAttributions": [
+     {
+      "displayName": "JOU-HUI LI",
+      "uri": "https://maps.google.com/maps/contrib/106731694125807838020",
+      "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVyAiWSTDGZGit-J3LlC21EbjLOdxktutL_XXdWlnzaboHVSwLw=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIABIhA_ze0L00SSTUIrDtOg6eAV&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIABIhA_ze0L00SSTUIrDtOg6eAV!2e10!4m2!3m1!1s0x3568e9a6ecb2b877:0x60a1f65df2699f95"
+   },
+   {
+    "name": "places/ChIJd7iy7KbpaDURlZ9p8l32oWA/photos/AVoNoXRsunpM0OFiuG8w2Yo9K_yBRCH0Ywg-NaCisodY39G6TGJOClJBt6e6lQFuEdmbxw40S8ckym4q2MF8-tdnKhKdRPUQ8YVI0cg1MShDZ1XEDtz8Vai41P1uWFZLVQAPiT4MPKTwttCzkVUiNOM6KfDrY4iYxBJOihj1SqTXY__8ncRUev-wniZrwhf8U2HpeZGTIEF79n4196jyXgoskYC7WQ8BM-b8v1K2R7ad31Ni8Es4sqmypbszHpOrPEjOCSn_oC9TyVHY5tdJw72XFkC_iJAvoPaws7R_zGymcjk-SMKUpNvuausk4FUGfIF_ZGxem7m7YcSlvCD_yLwPT-puA8Jyck65yVWjdhYx5bAWdi5ldpYHhkrXudznoflgozifv9T7J65D-UkoL8hkSwxkcWEWFyM832efhRY1uXs",
+    "widthPx": 1479,
+    "heightPx": 1109,
+    "authorAttributions": [
+     {
+      "displayName": "chiang lai",
+      "uri": "https://maps.google.com/maps/contrib/110486316803308788949",
+      "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWnwkrdZyuPCBNpItrgghWpLLiz4tPwIAopgoRGjxuPdFraBUc12w=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIHM0ogKEICAgIC1wpfHNg&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIC1wpfHNg!2e10!4m2!3m1!1s0x3568e9a6ecb2b877:0x60a1f65df2699f95"
+   },
+   {
+    "name": "places/ChIJd7iy7KbpaDURlZ9p8l32oWA/photos/AVoNoXTo8X32CAzRD97ZaNsVFMhd2JXDzDROsE80laRimvfI-ryyM0Oz2p9BTTERvW5X3jnRx1FsXlNf3Be-VZfhnGAZnJNyNqt5SgSccEdhZLMcOD5qgJkfBh3GNQzNXZeQm7uH3JCqL_87UlCOxD1TshejZJwuQNRZHHXW-BPrJl1QaQfPHZuPBwrB7VZ5iSU6KHKzT24vphF-bPv6h8RP9Ym0fEBjEa1k_A1y0FsQe_OFWI2QOW4aAnugIkbhEQXcreorSwHMptf1wRAYgtvVJALaOv5lgrP406O9lX4F2jp4VDJzokrGkqLwosjqAWDMP_OlfN1SZjC5pYBtbUbmr2P8mhqLaflCe6-zXBctvvBgx_K3CbAv9SLvDA21mJXFVROOZc9jtpISMxjcOX7q62ZC6EMTbsX0H4eRStGfihEx7Pt4D5oblZ6QvFGehiPn",
+    "widthPx": 4032,
+    "heightPx": 3024,
+    "authorAttributions": [
+     {
+      "displayName": "CHARIS CHEN",
+      "uri": "https://maps.google.com/maps/contrib/100527267127429630052",
+      "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJPT_IYrIw0vU5Dl4MAKD5ccW_dpi_bspYKhOG6oETY7dxOxA=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIABIhDKRk8EIq43ynPhfJdsx_lH&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIABIhDKRk8EIq43ynPhfJdsx_lH!2e10!4m2!3m1!1s0x3568e9a6ecb2b877:0x60a1f65df2699f95"
+   },
+   {
+    "name": "places/ChIJd7iy7KbpaDURlZ9p8l32oWA/photos/AVoNoXSkc28zCAwmCsQXHKow8d61zPkIxAnGnUdqgFIpHJNcA_IMCLKs6PtKHQzSipXPSAt43MO00sZ6I1zHFE-_75Iq7PoCg1SiSkkWlDvgkoiLd5gZ5KV7sjh6SDqrdqK7pjKXVt0hDu4hgbpX-pbzo7ENJQdp-iNdHiu_5U6pfqixTtfL_SAZooCdezeyWimzKBrFi5QAh5sdAlYwg20C0Le6m29zTBAciq_GVz0vfmlDZmip8wgWhUOZfpfS1qrBHMHt--T6iaBsk1kQXlpjahaL7q8l5tvZF3K-LsoB2IOUV2cJ4_6iKU-V6fg_w3m4sml55LU3W7zQc6kVmYJ67xtgZa28OoGYuNiZPuYL5RFUChl6Bf0-BK-expIVM5NOzRpA_wWsf5qQtIBT97-_UfsPslR9kvQjx1qHPl8bFWXvL_rpU5MJk5sJ628HW8PU",
+    "widthPx": 3060,
+    "heightPx": 4080,
+    "authorAttributions": [
+     {
+      "displayName": "JOU-HUI LI",
+      "uri": "https://maps.google.com/maps/contrib/106731694125807838020",
+      "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVyAiWSTDGZGit-J3LlC21EbjLOdxktutL_XXdWlnzaboHVSwLw=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIABIhCOXA01UHXtkn53hREs_V9b&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIABIhCOXA01UHXtkn53hREs_V9b!2e10!4m2!3m1!1s0x3568e9a6ecb2b877:0x60a1f65df2699f95"
+   },
+   {
+    "name": "places/ChIJd7iy7KbpaDURlZ9p8l32oWA/photos/AVoNoXTnVq16z8jjh0Aqm8NlmGnoon3D8WWgGJURi0Ol7cbCFpHyhkTzxGLOnwwz6PAUD-5VAbfnEYApbPQ09z9I-S9sYKwGwjdCRoNNalTftyb0LHSHzKC499q7OD1bhrUGVf1J60iz5eLQwDR962-uDmHN4F1iKF1GFRphucpJYnjy4NgEi8tTpCCjFUNNZU3QPktT6IvsDTxMIGJZPHm2kRrKpQ6fLDoErr3cLbQ15EuUjhjZwOQUl8RdAxBS6Z83_vimNtR5eekV-hgu9T-LyKFG5rW1YAVQ1wuPsHCTQhnmm10fB-v5brqnEFMDTUAC3mHwM6baMrVukH47Rh3eeVpS3VsqObB_ZThG5FXcEjl_JYHteNwc5_xOFLd7sNL2k97sqF9ZvivB6fmV5ciMEJ3zCXYxYQ9ZB74CWV9-kn5DRf5u_JIeGOCc7pvdtAqS",
+    "widthPx": 3060,
+    "heightPx": 4080,
+    "authorAttributions": [
+     {
+      "displayName": "JOU-HUI LI",
+      "uri": "https://maps.google.com/maps/contrib/106731694125807838020",
+      "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVyAiWSTDGZGit-J3LlC21EbjLOdxktutL_XXdWlnzaboHVSwLw=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIABIhDGqtx6uhl5s0Ah8eapluSU&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIABIhDGqtx6uhl5s0Ah8eapluSU!2e10!4m2!3m1!1s0x3568e9a6ecb2b877:0x60a1f65df2699f95"
+   },
+   {
+    "name": "places/ChIJd7iy7KbpaDURlZ9p8l32oWA/photos/AVoNoXRRPbr6QwMMIy6WTZ5oXVAdg9rxMlSO3Awx9sp7w1V6iEPtfoWemwvdRqsycDXvNNikfM1bVc9QOI8U23iUcQKnktCRSsTRZv_qdjoRay7-XmnehhhIfV54McGp3r8BHj3SBPSEOPlqAuRkmdBy7o48YrJYinZyJCL4XWHX1iVbJ7KgqpDX46a2A3dUoXbhfB-HLpYfCGfEOiQvxgUE4JhHdZSion3cyAxYwF2HOSz9N4qarUEgljEBKOm2OCKlNuqHOOYXm_5MTKU3-KRYZkZj2NZvcIw-D0myhQ_j_utDOJJUfEH3Gh70OosDEEKOCZYyJ4CEsu7-r3c3xO1waiYUp-evgmr3y2OJ_ImLNouLjxhX9vjJziJvaSE19ETTmheKH7066ESCO0ezGB0BWGd4dChBjJXSFcPjL98AzI6PmKd-3GnpnxxwEBXwCQ",
+    "widthPx": 4000,
+    "heightPx": 2252,
+    "authorAttributions": [
+     {
+      "displayName": "Terry Leung",
+      "uri": "https://maps.google.com/maps/contrib/101181626751565465194",
+      "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUqB_nI1MBS6hWxUvuP2odwO4N1kzgm3I-x5huvjct2N9t45ETk=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIABIhBc8n1iX0KhFHwpGfUE5aqq&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIABIhBc8n1iX0KhFHwpGfUE5aqq!2e10!4m2!3m1!1s0x3568e9a6ecb2b877:0x60a1f65df2699f95"
+   },
+   {
+    "name": "places/ChIJd7iy7KbpaDURlZ9p8l32oWA/photos/AVoNoXQ56MVmASxyUqaEaGTXXn5T8k5C5jsAX3y-o6Uo6CSkVEfLsQeYmLm15BJKqxzDRLmmwRNwIxu_berPCiG_WJhL5hmhO8dcHE5EO9xfLC6xpAsR7m9gx0379ZtlnHuktgrB4w30eJAI5kNrC3rX08yCPk7tAn00VcBfGd5B3Oj9Eo4hux29yCHk550H9XhmBwo25b4LLKZaJiNc5LV_zfo_iTBCXJFArB5OtoRfuWuup1nhg5o_hXOINAajKgOnhki2x0NZeg3eW0osLvnNlyxrZM_-g_aj_q8m7UwqUZVEZpti2x4fDcy_9bTTmjeKnhvqO56L91qTGfvis_fIXZjUTxN6qAUrEBbMiuQvpulNwtSMrpb66jcRNr7DbJ58u4ZhOaSa4-W0RrswoFxVNea_jpidKs4mhcJdxFKy2vw",
+    "widthPx": 1560,
+    "heightPx": 4000,
+    "authorAttributions": [
+     {
+      "displayName": "lai ricky",
+      "uri": "https://maps.google.com/maps/contrib/106973444424062357794",
+      "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVFFHd6shMq-NpFhXcuR2kdp5Gb8-jIpsqmwJSjUxmy_DCFFNFX=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIHM0ogKEICAgICBuvCdCg&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgICBuvCdCg!2e10!4m2!3m1!1s0x3568e9a6ecb2b877:0x60a1f65df2699f95"
+   },
+   {
+    "name": "places/ChIJd7iy7KbpaDURlZ9p8l32oWA/photos/AVoNoXSwHgtpvYgXvpLcPKdru0RWcJlsTtmNG9G1eEUVVtB7IN8bwDhjtJXgx9kF9XTMv52AOtzNozXoGwcTv43EGZxYl0qQxovABGoafwwK-B2rg9646mK4ctG7igx3fuYEcvKh-XHict9N19AjK1O8naO8JzJ_csWOuh5T1FghptR9cNTLQ-QPfPv_ROkqwNreFZEkIv76HtqDALuc8kJ7gSrgMBIF_bA18yfFUfQf-l07kw4bpNTpjUuUG6VX9TJ003tT4iuhwGAlMjfQB6QWmPzemMriEjcTPWHuCMTaynpvh2kjETNVKmPO8rMl9VoWVX2lQ731oPyxbaN1BMDTrkB_5dLvswdYKmvFj_eiy-J2SHm1Nq6LCarLF43ZwRFk3Mzuvuv9fVMZDEb1Slbn3QOW-zU-y0sOaENRWfU1tto9CLM",
+    "widthPx": 4032,
+    "heightPx": 3024,
+    "authorAttributions": [
+     {
+      "displayName": "hechima",
+      "uri": "https://maps.google.com/maps/contrib/102617260316878118249",
+      "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjWgn4lGW9d2KALLq1639v1SxonUWcHPts0a3l-43OrXrEItfd6LTQ=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIHM0ogKEICAgIDh3qDHpgE&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIHM0ogKEICAgIDh3qDHpgE!2e10!4m2!3m1!1s0x3568e9a6ecb2b877:0x60a1f65df2699f95"
+   }
+  ],
+  "_photo_urls": [
+   "https://lh3.googleusercontent.com/place-photos/AG9NLjADTBmvkDtFdUEYa0zAuRyGFpKGdyav_gLBVJ0Xbwtsyt45oybzIaLIDfYFgrHP7F87XS9hSKp23UwY3-7VRu-6oJrFdEp0T3i-xhgwluFQ9R0jQZVyWgUOr0RrmCHLTsZo0XJT8cDpHd87CQ=s4800-w800-h800",
+   "https://lh3.googleusercontent.com/place-photos/AG9NLjCuwOcFx14McMofzyUPKSb2753zkcT4Xq6d-Pg-SjtERHQZmuG6zAD62VMr6qnZ5AunMbh2Xzk1taQCsMPmeCfdlfOmrGIfF9kPd1afSl-iWm0WrBFwjgbfdZiwE0KYSZMSQuNz8J-Fv3bm_Vt5StOSmw=s4800-w800-h800",
+   "https://lh3.googleusercontent.com/place-photos/AG9NLjBeZkm2uq4TYENdRGQudldlUy7xMtBLzPDTbKXI12lmYer6mr-OYVgmGUbORMMoS-21yMaqk5zc2ZTPwpgxGFnHJhrSuBcQoZNINWw0_rC2gVqxuXUoxolahYxi7DBAMe_BPMbNBTQplgmlBMupNER5Kw=s4800-w800-h800"
+  ],
+  "_distance_m": 460.2,
+  "_hoursweek": [
+   [
+    [
+     570,
+     1260
+    ]
+   ],
+   [
+    [
+     570,
+     1260
+    ]
+   ],
+   [
+    [
+     570,
+     1260
+    ]
+   ],
+   [
+    [
+     570,
+     1260
+    ]
+   ],
+   [
+    [
+     570,
+     1260
+    ]
+   ],
+   [
+    [
+     570,
+     1260
+    ]
+   ],
+   [
+    [
+     570,
+     1260
+    ]
+   ]
+  ]
+ },
+ "明星(名聲)一隻雞": {
+  "id": "ChIJ44_ZkmvpaDUROsBheHNl7Cs",
+  "types": [
+   "chicken_restaurant",
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "nationalPhoneNumber": "051-418-7566",
+  "formattedAddress": "22 Jeoryeong-ro, Yeongdo-gu, Busan, South Korea",
+  "location": {
+   "latitude": 35.0925282,
+   "longitude": 129.0396337
+  },
+  "rating": 4.6,
+  "googleMapsUri": "https://maps.google.com/?cid=3165016184749932602&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+  "regularOpeningHours": {
+   "openNow": true,
+   "periods": [
+    {
+     "open": {
+      "day": 0,
+      "hour": 11,
+      "minute": 0
+     },
+     "close": {
+      "day": 0,
+      "hour": 22,
+      "minute": 30
+     }
+    },
+    {
+     "open": {
+      "day": 1,
+      "hour": 11,
+      "minute": 0
+     },
+     "close": {
+      "day": 1,
+      "hour": 22,
+      "minute": 30
+     }
+    },
+    {
+     "open": {
+      "day": 2,
+      "hour": 11,
+      "minute": 0
+     },
+     "close": {
+      "day": 2,
+      "hour": 22,
+      "minute": 30
+     }
+    },
+    {
+     "open": {
+      "day": 3,
+      "hour": 11,
+      "minute": 0
+     },
+     "close": {
+      "day": 3,
+      "hour": 22,
+      "minute": 30
+     }
+    },
+    {
+     "open": {
+      "day": 4,
+      "hour": 11,
+      "minute": 0
+     },
+     "close": {
+      "day": 4,
+      "hour": 22,
+      "minute": 30
+     }
+    },
+    {
+     "open": {
+      "day": 5,
+      "hour": 11,
+      "minute": 0
+     },
+     "close": {
+      "day": 5,
+      "hour": 22,
+      "minute": 30
+     }
+    },
+    {
+     "open": {
+      "day": 6,
+      "hour": 11,
+      "minute": 0
+     },
+     "close": {
+      "day": 6,
+      "hour": 22,
+      "minute": 30
+     }
+    }
+   ],
+   "weekdayDescriptions": [
+    "Monday: 11:00 AM – 10:30 PM",
+    "Tuesday: 11:00 AM – 10:30 PM",
+    "Wednesday: 11:00 AM – 10:30 PM",
+    "Thursday: 11:00 AM – 10:30 PM",
+    "Friday: 11:00 AM – 10:30 PM",
+    "Saturday: 11:00 AM – 10:30 PM",
+    "Sunday: 11:00 AM – 10:30 PM"
+   ],
+   "nextCloseTime": "2026-09-07T13:30:00Z"
+  },
+  "priceLevel": "PRICE_LEVEL_MODERATE",
+  "userRatingCount": 286,
+  "displayName": {
+   "text": "Myeongseong Dak-hanmari",
+   "languageCode": "en"
+  },
+  "primaryType": "chicken_restaurant",
+  "photos": [
+   {
+    "name": "places/ChIJ44_ZkmvpaDUROsBheHNl7Cs/photos/AVoNoXT8aXHDUlattychIeqbabukfSiEGCsC2Ywf0AsRQcFyn5KzxDK-Qa7QhSmwcTRaMGI8qmb18cqB7_kjv0fLRhuZTUVTSYYbcx2Uq2_pZCHWqENYyqOb3Hqkk_mf7QyhKB4JRnDu6tPwVUIAXA26ynp-8686vZYKjaVtH0tTiEZehM9tvQGgQ9HECD3khhEmzhNmFfnyOIClDFW01uVK-orP5_HfBLDD6GIgOyU3ORtZIS5YGaOmIQBzy-z0Qf8xqZFFYfMSTJ-wSZJNq05X8_pqmMZGCkjBcKJyB6e4jnNz3v_NR9Q0CCAxfcAf8cAFO4F5_HJHG7zGCfBnKwvoCu0hjIzIwFV1PTQf-p1p8uLolrfgNITCgi5UkSNrAKIzpaM3XKf2L2rlErU6cfAXfEPaoi8TNYP32NEpileko11gnjPHF2Xi1iAwIYRvgTN8",
+    "widthPx": 3000,
+    "heightPx": 4000,
+    "authorAttributions": [
+     {
+      "displayName": "呂強強",
+      "uri": "https://maps.google.com/maps/contrib/114199188546810492012",
+      "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjXjD0lDuXolM3sog5cNCubJ1-U3q098pXWpw1q3Jb938EDve0kH=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIABIhCB7kqTx4GPV2EzPcqe0S5p&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIABIhCB7kqTx4GPV2EzPcqe0S5p!2e10!4m2!3m1!1s0x3568e96b92d98fe3:0x2bec65737861c03a"
+   },
+   {
+    "name": "places/ChIJ44_ZkmvpaDUROsBheHNl7Cs/photos/AVoNoXRhTXII7u7K1jHel0zUG2hossBW5mK3o3BSto-kCSmsYz1XrgKcgGWpDgwFvSvfh78ol9w3kDO82ljSy1QGBztfyawGLeewi3SdqJ9SjRngLWz_gm0foFyCYN1P6aiRclJIsrGjrqKJpI5Xy3wIc_eSn1vg4OwdzKc0_uMQpT6IKR3qihCsSTQUveQ2cixf7Yjbr743kR_y08SD2HseockNLBDe8H0K9MsHcc-hmHD0E9YU4umaWJriIcm3OOf4N_1087a9tir03GAaT--7NiQNPFrYTeHHXUiPd5-gDYdsVhr5w3lsJkVMJoqJGZvmxP0NNztmW5A39AxWRpLJErEswTDjL8OtUFDKwNoFMNb1JpoJB5N7_A6WVyeTOEEBCnWMphdDono9iKQqYQnYHiAsdKyMopiDCFSwF6C9gBdil8nkwRxtILmJ6Eh_g4W7",
+    "widthPx": 4800,
+    "heightPx": 3600,
+    "authorAttributions": [
+     {
+      "displayName": "ChunChih Lee",
+      "uri": "https://maps.google.com/maps/contrib/103826495049130174291",
+      "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjUZqXk-7nFOK8_ANfk8spoTeGcxmIRX45_jvDi0wo6RvJvV8y8=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIABIhB2-mbFI3TOf2OeMr_JFMh7&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIABIhB2-mbFI3TOf2OeMr_JFMh7!2e10!4m2!3m1!1s0x3568e96b92d98fe3:0x2bec65737861c03a"
+   },
+   {
+    "name": "places/ChIJ44_ZkmvpaDUROsBheHNl7Cs/photos/AVoNoXQYQOsLBRAgEZH-79bb8m3VJvDGeZDlcSDSBQVspHKC2yOCnd4_Ie4hMgjoNsSN3Q1wg7ogQs9u-xoHHj77IYb6o_LRhsPjHVTAsnkviOfbys_2u4BuA-hd746hxhv8_tPSQfULXxevS3aMzu3AKteXvZKQ87X8hWIBfrtgU8PGOkhQdfvng06LsiMWxwYtmkpGl59u9Mni09sY5CSjA-cw8bRqE0ipl6y8G2bSUhiglGt_8kzyNk0MXihUQji7OXvS5dLm8hM2DtBw04M-aE4GrLg5mJS-XvCkeuj9s59Tk-4TV_T8CUSKZDDGu3khq2bUCKaCezV0hqnvAIvlWdy0Uo_hW1IdYkgsOF-jU-MFiFmYJcGTP4tE8aZJzeqGuBBoQjn_GHhxZ5Up-QCqzt-syR8XEXh_afWCwZ6JzbxDRq99XMlOgsLutcuWKM-4",
+    "widthPx": 4800,
+    "heightPx": 3600,
+    "authorAttributions": [
+     {
+      "displayName": "三個狗寶貝愛生活",
+      "uri": "https://maps.google.com/maps/contrib/112532764835116382356",
+      "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocKaPevkJI3tz1BkOJQKQZQjLGVm4VR3IV__xUnJtTEP8Z0fBA=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIABIhASvZMDjjrCZA9jhdtM--9H&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIABIhASvZMDjjrCZA9jhdtM--9H!2e10!4m2!3m1!1s0x3568e96b92d98fe3:0x2bec65737861c03a"
+   },
+   {
+    "name": "places/ChIJ44_ZkmvpaDUROsBheHNl7Cs/photos/AVoNoXT-X0jozCg2N84eh2pSliVQ5SDSp0f93NlzKsewCbfvGmVdfhUQQ7e-QSBcovAyDck3f0Bih7HSVl-yKle-gDQtIyY4e9AlW81S4brNawaW71A-AoM_TI9GbyEG7nYRDvBHyXMPc2C1UqCUB_kyDSCPaADH711xIp0ZnUEcc8glS9qBClz5KMy10T8odNG5fOn2ds4LxB9lt2PMEFo3fHDGCT5WayiYvC0veBxAc3ItS41ez0Z-pGsSltBZE0NKksUF8_e_xx5Yfy_VlQ_R8ZYYuCdgtwmB-dcfEieGWd03Mzy9XnGX3EdWDWRCGvbA2AkSsKcLYzbqYtAmZYuv1eha9e3oKWgl_FSsefHR1SOAcWZ0FdsRDuPfjML-JWSY9Mnbz4tiPb6b1XbTXM2EspvpI-NDjGh8gelZOSMOclCGVOTYBuC_TWotCT3rUxqm",
+    "widthPx": 1636,
+    "heightPx": 2181,
+    "authorAttributions": [
+     {
+      "displayName": "黃大仙",
+      "uri": "https://maps.google.com/maps/contrib/116793329728744330009",
+      "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjVzqh63B7zTD6ZYpx1w4pEAc-xZIhD3B13PvYWPij5t9umHCFfd=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIABIhCAcw7u3vmKnFmyc410lOR_&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIABIhCAcw7u3vmKnFmyc410lOR_!2e10!4m2!3m1!1s0x3568e96b92d98fe3:0x2bec65737861c03a"
+   },
+   {
+    "name": "places/ChIJ44_ZkmvpaDUROsBheHNl7Cs/photos/AVoNoXQGDYehlw5zEU70Tl_u6bBFePSm9q15arkU-PManqmO_YhPdTvdBYuyEKs-WFfDQPY9DMmifVTBZidDooHR23ywgckpUO-EkFNOc2uBIn8fVGDZsvkxh2zEo_nigPRCqVjyX6qzGauM8t6eRUdLBjCEfjl-VVo4ZyZwF9l-wQQTzVH7qrNm7hAtMaEw_cDnR6hbBqjIFHOpkQ-jc993V7LSEgSPm0kuQWPavsixJA-dgZnStfMbwlkQvH1zOogZkHFAH2styHev-_fTt_zG_TaBgY6G6DBew2HyK6Cu-y4ZAY51aH1lDWd3XDtUJ0R2Op7C_aLSHrQlJlVpau1HpOM4f9nRNLL3azCh8gfUTiZAeSxAog6SnN7JwUM68BvubLimZD6Ds9Vh6mo0MLvQ45enOXf288ytsEtp0lNOiOEInoJO7e98BmK76D_cWsA0",
+    "widthPx": 3600,
+    "heightPx": 4800,
+    "authorAttributions": [
+     {
+      "displayName": "Eric Huang",
+      "uri": "https://maps.google.com/maps/contrib/115060814096963862651",
+      "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjV50D5VpQUX4XV201WbKtwmeV1lYhFT2Qq-iQI1nO_vQN709uC_=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIABIhBlYvMCGeW8oguZwqRLE1eE&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIABIhBlYvMCGeW8oguZwqRLE1eE!2e10!4m2!3m1!1s0x3568e96b92d98fe3:0x2bec65737861c03a"
+   },
+   {
+    "name": "places/ChIJ44_ZkmvpaDUROsBheHNl7Cs/photos/AVoNoXRoQ7JzyrkIHjlIFVHUHuhjOZ82PODZbW9MmU87H_HDU_8UZXR9yDdEGeeJ4gMFnVSyKrCBvR0H0a8o2-n1sYUnS22iRguaPz6K3Umgg-qNPlVttDQYilqMEQxJPj0E09OYNkm5dVc1O9JHNmtsc7sHjm4XsIriwwjxkN_PnzUiKOmlolEUeIAy6kaq81QdWnHRUKGqFMe4xAtRysedLVuW2-mUSZ3WdYINqKc_98JFqSMX46U533PyLeucMI3cujqUTVmqmSqMUPUSO2OgfFxmnPjw9ss0rnam0OVSOXp00kOc15C3rUiXaEziCbUF34-tlfC72VIl9BIz1uZfR--_zZNhQOTURwp-A3js4scCOlIfqm2lgHMzxJCgsnYBHq2PArPnQQWa9mdwBusS0sQaNIV93vxq0AHiHGEYq8ugB7sSaDlo6Ro5oRx3gQ",
+    "widthPx": 4032,
+    "heightPx": 3024,
+    "authorAttributions": [
+     {
+      "displayName": "Joly Hsiao",
+      "uri": "https://maps.google.com/maps/contrib/101804360624730906093",
+      "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocLnh5cgpjSJjtCno0MSKVNCsTucy-Dm5YjAlLzQlqkzANW3cA=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIABIhDxxJvaMsG8o-UWZ6cWZ8wi&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIABIhDxxJvaMsG8o-UWZ6cWZ8wi!2e10!4m2!3m1!1s0x3568e96b92d98fe3:0x2bec65737861c03a"
+   },
+   {
+    "name": "places/ChIJ44_ZkmvpaDUROsBheHNl7Cs/photos/AVoNoXR_9ryxYC689UVcKAjKPm-vwk0_GEiS_gjHzeCv9eaWMyItlTWtb8RISetikq-hHvsPaSebPgsX5hix4puh3ZEW0jgAF1HlMRT4jgTMq1JozVnsbLwft74KzlyO5bqvGp499VnzR2POcfjcXQm_SYKNVB_QiWp2vTMJcpPjHI_bp4CzuM4nxlhXnyw5Xo8Ju__Vy8ntEG8laj-N8asSWJk_NHCcbBDS1QQpHwn1UsVtkOlnKCJiB-f0id3NiSNvnvTphRqyClWcUvtPivKkZuW5LnGROOUxQLDr1Z2YMfwl_XuZlibQw3XA2dv81bQeYfyrH411m98aCb-qOp8w4gEUtdboIZsuE8F2OyNtx1m_6zrD6rDJ_h8xPsVtyh_Esd10SrJd5ZZX3Cpg4uCdh-fEOdy_4f9fyXfl52n5qFFQ9xxD4G3QJq2XPOZwLHgO",
+    "widthPx": 3024,
+    "heightPx": 4032,
+    "authorAttributions": [
+     {
+      "displayName": "M L Lai",
+      "uri": "https://maps.google.com/maps/contrib/111736355960647720257",
+      "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjX9gKTc4WIJFecWOeuVHmQKTQqj3Kg_At-dK9zywDoJuaSR7y5_7g=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIABIhBNsjddx4ObQ_3lNQJsLYFw&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIABIhBNsjddx4ObQ_3lNQJsLYFw!2e10!4m2!3m1!1s0x3568e96b92d98fe3:0x2bec65737861c03a"
+   },
+   {
+    "name": "places/ChIJ44_ZkmvpaDUROsBheHNl7Cs/photos/AVoNoXRXMRJn8ZGQc29azS-T-IilV3z8uBk8NGOb5_izvWTmzUfmnvKo98DAMuQPFUagcZvkJDIo2JF9yi21eQoSwpxabZPWW1lXWwh29xV4LmXR7j28EYbs4028GPFZk7Yj7bGPWI7kL7WmQpOVVvhCr8Gnx5s6YJybaBgzWL_41SS1oWXtD5oHll66xCFpQyOJ-FqupX0OGe2gQja_3SoM5Hvjx4Iar9fxLjtcchT-9tzFu80MpfAi8YPMFfqQ3hhHVYWY16929hF0v0Yu8s3COrAwJrQgodOGV8wDxe-ldbQAALH4F9P2SDpprkIw2ixIwsc6DadOjaZknzYtm7pXt880CEUdV6paIorWpJa3knEmgj5U2Q6pGQl3sBAxNANEGTjGtvfqKmgxPJI8lycFLTMJPHsa8-wvtQos1rkIaPBKw5I_ve_sTIF49a4KXw",
+    "widthPx": 3024,
+    "heightPx": 4032,
+    "authorAttributions": [
+     {
+      "displayName": "xinyu",
+      "uri": "https://maps.google.com/maps/contrib/109519738182820358814",
+      "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocJwkjmKdqOEpcbVvQ_jSPTlmJUfUjPvLzgvsDA8Sd715-VrDw=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIABIhDJ5c1G0CABwLPtB0DMSvMM&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIABIhDJ5c1G0CABwLPtB0DMSvMM!2e10!4m2!3m1!1s0x3568e96b92d98fe3:0x2bec65737861c03a"
+   },
+   {
+    "name": "places/ChIJ44_ZkmvpaDUROsBheHNl7Cs/photos/AVoNoXSPY_Y3EspoLBhnYasVNQ9iITHDH3K7uvz_qeXH6-0sC21u4oIvWKSzGOEJEuzJpz1pBCjA268i0Y3xMgWmMn5-ftot-KJWY3yVCbC9xNC9ufmAyZUkyTY0DfgXyd4oufk3Sx0Gc5PpDK8xTv_Xa9D1jxkMN-8vUushySJRHYVScAbvscVGxyYKgHDAay1rRynXGtdWEgJZRqe2ZFwQ4jRXeT1xnQ0s8D_iCkLwDuG-EzoxLWqq3wVQO7fqV5UrV2UMKeAQMVupzE2W52XbX8kF9mWmWq5CiHRYYcabH3jfiOOHJuLPpna28jCMcvVqrX9zEaXdpM5rOGwPjXgD9D5czITNouQavox--qZxKeepDnF1iW1OLwXJ77QmgnyjdbYLDxQNijAA0wpDgFxc6ubJnRz_FtzD1vhw_w2a_JRwFiTj22GFQMoQ0CU547xp",
+    "widthPx": 3024,
+    "heightPx": 4032,
+    "authorAttributions": [
+     {
+      "displayName": "hsueh hsinyu",
+      "uri": "https://maps.google.com/maps/contrib/103140151766376249701",
+      "photoUri": "https://lh3.googleusercontent.com/a/ACg8ocL78UhUwy9HDOi9xmV_qPcRaCOOSWVl8PcfZGfo0oIZXqO6Xw=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIABIhCmdetDbNUtXGImzRVfIFqQ&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIABIhCmdetDbNUtXGImzRVfIFqQ!2e10!4m2!3m1!1s0x3568e96b92d98fe3:0x2bec65737861c03a"
+   },
+   {
+    "name": "places/ChIJ44_ZkmvpaDUROsBheHNl7Cs/photos/AVoNoXRSPyr2oc3rsVjhn9ki86iYn-lSjWRm_yZPYCz0SRrLDbuM3v-UmCs6eWNah6Y5kj6LmyKhzQMNUznc68J73S_9dG4U9FQP5Wf044R6eqBDVHvpuZEpi81pg5Ws2nihFmhYU1V20crNNggHY8hT8oo40FDjPUt5okqwF2-GGyDpOeF_LHC1TbRmkfIlKIii3oTbJ1xyjnd8xJh09O1MXC-jWzv6GkoVrihXRrVVnw4C7cYIJKMqREsKuQBuSHDVmdo_qrBgDfEU_rljGhdfHp77_Sj2i-z2vE-3fi9Ca9S13B4-7Ij5vsFlqTdQQTtpcGzKh6sMSKbgNkVecQM_KegTKMbHJRhoQ9k9vsCcgI29jDw2N1glxapGR39mhMCCM9weDHyu-cpZKD1qgJdpXSyN384D6nC7lz9wKy5TYCl6JpWPrP1kIFndnv_vMy4s",
+    "widthPx": 4800,
+    "heightPx": 3600,
+    "authorAttributions": [
+     {
+      "displayName": "蔡民群",
+      "uri": "https://maps.google.com/maps/contrib/100839705206178525855",
+      "photoUri": "https://lh3.googleusercontent.com/a-/ALV-UjW321-zM5uqPywwobpgSHvGphobSFdJK54kUfoh2fxPNySP02Mc=s100-p-k-no-mo"
+     }
+    ],
+    "flagContentUri": "https://www.google.com/local/content/rap/report?postId=!1e10!2sCIABIhCet277LKrqene8BDX-vOAW&t=27&cb_client=maps_api_places.places_api&hl=en-US",
+    "googleMapsUri": "https://www.google.com/maps/place//data=!3m4!1e2!3m2!1sCIABIhCet277LKrqene8BDX-vOAW!2e10!4m2!3m1!1s0x3568e96b92d98fe3:0x2bec65737861c03a"
+   }
+  ],
+  "_photo_urls": [
+   "https://lh3.googleusercontent.com/place-photos/AG9NLjCiTxEHY1Gf799GJuMY9HSRf61jnZi5b9wrRgs__Qcf0DyS84n5_srWSLqJnaRQPe4-g30LNKzuxiXP4Nni8xMMdJ2BEIO9ckhI-6_k_Na-x1E2I6Q7VW9doYt9jwTP4fsBHYi8q53ytaKAg1NyPXDTqQ=s4800-w800-h800",
+   "https://lh3.googleusercontent.com/place-photos/AG9NLjD_GnroVK14-cawoUzF1zd5ZwzP95vc0aAARHWaNWAVF8fu0ma9AJrY0QgZPFlmEzIwA7Sm0jdg5859ffZ79GHRKrqvBVIM8lnmYTDwGwoFDYb_McwV60aTgUpE-g3TG74aYKeVK9W62AhVuAbHMNqVlA=s4800-w800-h800",
+   "https://lh3.googleusercontent.com/place-photos/AG9NLjDqoKteNGNZjyJMl1rIvxyoi7oR3ZGOLYwYeLn8lRWS3joC7DJNqDd_uC3tISUl0Svi8lICjKlDxI7V8wXjEjPS77nZP7goZSCbafpDUTm2Dq2oDi7hf5cA2JnYmEL3X1gBycag0Azp_SgxLN7pb35V5Q=s4800-w800-h800"
+  ],
+  "_distance_m": 1003.7,
+  "_hoursweek": [
+   [
+    [
+     660,
+     1350
+    ]
+   ],
+   [
+    [
+     660,
+     1350
+    ]
+   ],
+   [
+    [
+     660,
+     1350
+    ]
+   ],
+   [
+    [
+     660,
+     1350
+    ]
+   ],
+   [
+    [
+     660,
+     1350
+    ]
+   ],
+   [
+    [
+     660,
+     1350
+    ]
+   ],
+   [
+    [
+     660,
+     1350
+    ]
+   ]
+  ]
+ }
+}
