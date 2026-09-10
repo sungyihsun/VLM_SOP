@@ -35,25 +35,23 @@ jobs:
           ADD_RESTAURANT_DETAILS_PATH: ${{ runner.temp }}/details.json
         run: |
           python3 - <<'PY'
-          import json, re
-          candidates = json.load(open("${{ runner.temp }}/candidates.json"))
-          html = open("index.html", encoding="utf-8").read()
-          existing_cids = set(re.findall(r"cid=(\d+)", html))
-          existing_names = set(re.findall(r'\{name:"((?:[^"\\]|\\.)*)"', html))
-          search_areas = ("竹北",)
-          choices = []
-          for cid, place in candidates.items():
-              if place["area_label"] not in search_areas:
-                  continue
-              if cid in existing_cids or place["name"] in existing_names:
-                  continue
-              choices.append((place["rating"], place["userRatingCount"], place["name"], place["area_label"]))
-          picked = sorted(choices, reverse=True)[:5]
-          selected = {}
-          for _, _, name, area_label in picked:
-              selected.setdefault(area_label, []).append(name)
-          if sum(len(v) for v in selected.values()) != 5:
-              raise SystemExit(f"Expected five new restaurants total, got {sum(len(v) for v in selected.values())}")
+          import json
+          # Hand-picked from the 31 raw candidates rather than pure
+          # top-by-rating: excludes 肌動力 JIDONGLI (a gym, not a
+          # restaurant, despite matching the text query) and Benefit 新竹
+          # 竹北店 (failed the address-language cross-check in
+          # fetch_details.py). All five are genuinely 減脂/低卡/舒肥/蛋白
+          # focused meal-box shops, not just generically "healthy", per the
+          # user's specific ask for 健康減脂.
+          selected = {
+              "竹北": [
+                  "戰 鬥 雞 油雞/醉雞 輕食餐盒 竹北三民店",
+                  "Miss Energy 能量小姐 竹北高鐵直營門市 低卡餐盒|低脂便當|健身餐盒|健康餐盒|商務便當|必吃便當|減脂餐|低卡美食",
+                  "蛋白盒子健康低卡餐盒-竹北嘉豐店",
+                  "食Go易健康概念餐盒 竹北自強南店-竹北低卡餐盒|低脂便當|健身餐盒|健康餐盒|活動餐盒|外帶餐盒|舒肥餐|舒肥料理",
+                  "72度C舒肥健康餐/水煮餐 竹北仁義店",
+              ]
+          }
           json.dump(selected, open("${{ runner.temp }}/final_list.json", "w"), ensure_ascii=False, indent=2)
           print(json.dumps(selected, ensure_ascii=False))
           PY
