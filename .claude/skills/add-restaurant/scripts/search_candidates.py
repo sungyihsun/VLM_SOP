@@ -32,8 +32,7 @@ AREAS = {
 
 # EDIT: area label -> list of query strings to try for that area
 QUERIES = {
-    "中壢": ["火鍋 中壢", "鍋物 中壢"],
-    "青埔": ["火鍋 青埔", "鍋物 青埔"],
+    "竹北": ["健康減脂餐 竹北", "減脂餐盒 竹北", "健身餐盒 竹北", "低卡餐 竹北", "雞胸肉餐盒 竹北"],
 }
 
 # area_label -> substring(s) that MUST appear in a candidate's real
