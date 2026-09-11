@@ -1,1037 +1,680 @@
 {
- "13261040506146245538": {
-  "place_id": "ChIJYV7e9PcjaDQRosvpkBSuCLg",
-  "name": "鼎鍋物 中壢中原店",
-  "address": "320台灣桃園市中壢區正義里中山東路一段336號2F",
-  "rating": 4.8,
-  "userRatingCount": 464,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=13261040506146245538&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.954691999999998,
-   "longitude": 121.2361281
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "836871807411247788": {
-  "place_id": "ChIJDY2GnH8jaDQRrFpJk3kqnQs",
-  "name": "井賀鍋物-中壢店（最後收客22:20，用餐時間100分鐘）",
-  "address": "320008台灣桃園市中壢區永光里環西路二段289號",
-  "rating": 4.6,
-  "userRatingCount": 770,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=836871807411247788&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.9652298,
-   "longitude": 121.21353110000001
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "5703486533822910673": {
-  "place_id": "ChIJI_fe66ojaDQR0RC9vcjaJk8",
-  "name": "金蒔鍋物 環中店",
-  "address": "320台灣桃園市中壢區明德里環中東路二段632號1樓",
-  "rating": 4.8,
-  "userRatingCount": 755,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=5703486533822910673&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.9451997,
-   "longitude": 121.2302426
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "8284174101471269821": {
-  "place_id": "ChIJ02WVHG4jaDQRvZOvL3RM93I",
-  "name": "蒔野鍋物(中壢店)",
-  "address": "32043台灣桃園市中壢區中央里建國北路36號",
-  "rating": 5,
-  "userRatingCount": 4449,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=8284174101471269821&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.957423600000002,
-   "longitude": 121.2267368
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "japanese_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "3119438768528093081": {
-  "place_id": "ChIJnf7XegAjaDQRme-yUAh5Sis",
-  "name": "小牧鍋中壢店-熟成原肉吃到飽",
-  "address": "320台灣桃園市中壢區正義里中山東路一段330號",
-  "rating": 4.9,
-  "userRatingCount": 2919,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=3119438768528093081&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.954433700000003,
-   "longitude": 121.2357871
-  },
-  "types": [
-   "restaurant",
-   "hot_pot_restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "14526097140492094369": {
-  "place_id": "ChIJ1fSYSgcjaDQRoUvZ_2IQl8k",
-  "name": "鍋泰暖。泰式南洋火鍋-桃園中壢店",
-  "address": "320台灣桃園市中壢區普仁里中山東路一段323號",
-  "rating": 4.9,
-  "userRatingCount": 1832,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=14526097140492094369&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.955159599999998,
-   "longitude": 121.23617909999999
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "12973164441260666621": {
-  "place_id": "ChIJB9R3aSMjaDQR_S4SFlPwCbQ",
-  "name": "加分100%浜中特選昆布鍋物-中壢店",
-  "address": "320台灣桃園市中壢區中央里中山路118號2樓",
-  "rating": 4.8,
-  "userRatingCount": 3810,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=12973164441260666621&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.955776999999998,
-   "longitude": 121.22559699999998
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "15921109068307887614": {
-  "place_id": "ChIJLWBqPDEjaDQR_vW9Dlgk89w",
-  "name": "開鍋open pot中壢中原店",
-  "address": "320台灣桃園市中壢區普仁里中北路22號1樓",
-  "rating": 4.8,
-  "userRatingCount": 1645,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=15921109068307887614&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.955712300000002,
-   "longitude": 121.2361976
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "11933791863104192552": {
-  "place_id": "ChIJiwc51nojaDQRKMDFt3hYnaU",
-  "name": "石乘拾石頭火鍋（中北旗艦店）",
-  "address": "320台灣桃園市中壢區健行里中北路二段210號",
-  "rating": 4.9,
-  "userRatingCount": 489,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=11933791863104192552&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.952780699999998,
-   "longitude": 121.22857679999998
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "10995139411464047729": {
-  "place_id": "ChIJy0UmFAAjaDQRcUw2PAqVlpg",
-  "name": "中壢洞天 粵式煲湯獨享鍋",
-  "address": "320台灣桃園市中壢區興平里新生路229號",
-  "rating": 4.8,
-  "userRatingCount": 923,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=10995139411464047729&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.9626406,
-   "longitude": 121.2228956
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "16817184414445705167": {
-  "place_id": "ChIJ2c2hDucjaDQRz5dFqR-kYuk",
-  "name": "十二段鍋物堂 | 桃園中壢店",
-  "address": "32083台灣桃園市中壢區普慶里環中東路869號1樓",
-  "rating": 4.6,
-  "userRatingCount": 1074,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=16817184414445705167&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.952613,
-   "longitude": 121.2424236
-  },
-  "types": [
-   "japanese_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "2678121220208672237": {
-  "place_id": "ChIJ0ZeUKzYiaDQR7T35ew-ZKiU",
-  "name": "恆八味屋鍋物-中壢復興店",
-  "address": "320台灣桃園市中壢區中央里復興路45號",
-  "rating": 4.8,
-  "userRatingCount": 4861,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=2678121220208672237&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.9571979,
-   "longitude": 121.225411
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "japanese_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "15468817811994017294": {
-  "place_id": "ChIJ2yHfCxsjaDQRDn4ju9dHrNY",
-  "name": "高鼎屋鍋物 中壢旗艦店",
-  "address": "320台灣桃園市中壢區中央里中美路19號",
-  "rating": 4.6,
-  "userRatingCount": 975,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=15468817811994017294&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.957949499999998,
-   "longitude": 121.2272541
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "7166467526132105972": {
-  "place_id": "ChIJi-U6bqQjaDQR9AJ61T5odGM",
-  "name": "福柒涮涮鍋-中壢店",
-  "address": "320台灣桃園市中壢區中建里中央西路一段15號",
-  "rating": 4.4,
-  "userRatingCount": 2942,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=7166467526132105972&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.9574195,
-   "longitude": 121.2228908
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "9271573292921071332": {
-  "place_id": "ChIJ_dKmQ2cjaDQR5CaPeck-q4A",
-  "name": "飽島滿鍋",
-  "address": "320台灣桃園市中壢區興國里中美路二段128號1樓",
-  "rating": 4.8,
-  "userRatingCount": 625,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=9271573292921071332&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.9601838,
-   "longitude": 121.2210843
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "17730408579231379451": {
-  "place_id": "ChIJm3VUtDEiaDQR---fv6kQD_Y",
-  "name": "藏王 極上鍋物 - 中壢店",
-  "address": "320台灣桃園市中壢區水尾里環北路365號",
-  "rating": 4.6,
-  "userRatingCount": 4439,
-  "priceLevel": "PRICE_LEVEL_EXPENSIVE",
-  "googleMapsUri": "https://maps.google.com/?cid=17730408579231379451&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.966037399999998,
-   "longitude": 121.22523609999998
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "7362364423995021814": {
-  "place_id": "ChIJIW7XyRcjaDQR9lkyp29fLGY",
-  "name": "久違石頭火鍋中山東路店（提供免費停車場、收客至08:30）",
-  "address": "320台灣桃園市中壢區仁美里中山東路三段115巷12號",
-  "rating": 4.8,
-  "userRatingCount": 3605,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=7362364423995021814&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.9444296,
-   "longitude": 121.24923520000002
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "12671515768121164049": {
-  "place_id": "ChIJg3l5yGsjaDQREYGfXHRE2q8",
-  "name": "和牛涮 日式鍋物放題 中壢元化店",
-  "address": "320台灣桃園市中壢區新街里元化路245號2樓",
-  "rating": 4.9,
-  "userRatingCount": 15733,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=12671515768121164049&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.961725599999998,
-   "longitude": 121.22657059999997
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "5563544410642525875": {
-  "place_id": "ChIJeTyFXVMjaDQRsy51ICquNU0",
-  "name": "時辣苑 • 和牛麻辣鍋 中壢店",
-  "address": "320台灣桃園市中壢區興平里環北路210號",
-  "rating": 4.9,
-  "userRatingCount": 5552,
-  "priceLevel": "PRICE_LEVEL_EXPENSIVE",
-  "googleMapsUri": "https://maps.google.com/?cid=5563544410642525875&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.9659434,
-   "longitude": 121.22253780000001
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "10007537857397163626": {
-  "place_id": "ChIJdfrYKHAjaDQRaoZuuqjq4Yo",
-  "name": "糧倉1號店頂級麻辣鴛鴦鍋 中壢店",
-  "address": "320台灣桃園市中壢區興國里中美路二段80號",
-  "rating": 4.8,
-  "userRatingCount": 4273,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=10007537857397163626&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.9600094,
-   "longitude": 121.2221711
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "11122715814428053304": {
-  "place_id": "ChIJbUyR3OkjaDQROI-aQBrTW5o",
-  "name": "桃鍋物",
-  "address": "320台灣桃園市中壢區興南里慈惠一街119號",
-  "rating": 5,
-  "userRatingCount": 733,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=11122715814428053304&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.9604686,
-   "longitude": 121.2248056
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "17135723732986683092": {
-  "place_id": "ChIJf5pHNzEiaDQR1N7mOfJRzu0",
-  "name": "福叄鍋物",
-  "address": "320台灣桃園市中壢區新明里中央西路二段222號",
-  "rating": 4.7,
-  "userRatingCount": 3005,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=17135723732986683092&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.9603274,
-   "longitude": 121.21258689999999
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "15915391073958312054": {
-  "place_id": "ChIJGZ4z4gYjaDQRdji1wNvT3tw",
-  "name": "魔椒頂級鴛鴦鍋 中壢直營店",
-  "address": "320台灣桃园市中坜市中央里元化路197巷3號1樓",
-  "rating": 4.8,
-  "userRatingCount": 4502,
-  "priceLevel": "PRICE_LEVEL_EXPENSIVE",
-  "googleMapsUri": "https://maps.google.com/?cid=15915391073958312054&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.9606101,
-   "longitude": 121.2277277
-  },
-  "types": [
-   "buffet_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "11445614274147955894": {
-  "place_id": "ChIJKWDWuoUjaDQRtrS6dor91p4",
-  "name": "逸小鍋 鍋の物 中壢健行店",
-  "address": "320台灣桃園市中壢區健行里健行路245-1號",
-  "rating": 4.6,
-  "userRatingCount": 1652,
+ "14311267835983133727": {
+  "place_id": "ChIJv6hikVw3aDQRH3w_wUXWm8Y",
+  "name": "72度C舒肥健康餐/水煮餐 竹北仁義店",
+  "address": "302台灣新竹縣竹北市三民路29號",
+  "rating": 4.2,
+  "userRatingCount": 150,
   "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
-  "googleMapsUri": "https://maps.google.com/?cid=11445614274147955894&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "googleMapsUri": "https://maps.google.com/?cid=14311267835983133727&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
   "location": {
-   "latitude": 24.9472431,
-   "longitude": 121.2284674
+   "latitude": 24.834522999999997,
+   "longitude": 121.018357
   },
   "types": [
-   "hot_pot_restaurant",
    "restaurant",
    "food",
    "point_of_interest",
    "establishment"
   ],
-  "area_label": "中壢"
+  "area_label": "竹北"
  },
- "2028951907446233765": {
-  "place_id": "ChIJB1Xh8rcjaDQRpRqvjQJJKBw",
-  "name": "錸一鍋佰元時尚鍋物-自助吧吃到飽/佰元鍋/中原佰元鍋/中原火鍋/中原火鍋吃到飽",
-  "address": "320台灣桃園市中壢區普忠里新中北路222號",
-  "rating": 4.8,
-  "userRatingCount": 1981,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=2028951907446233765&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.9588558,
-   "longitude": 121.2393405
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "4435615205166852851": {
-  "place_id": "ChIJRzTObFAjaDQR86pKOId4jj0",
-  "name": "錸一鍋時尚鍋物 內壢店",
-  "address": "320台灣桃園市中壢區莊敬路762號",
+ "13034892887054868964": {
+  "place_id": "ChIJGc2drpM3aDQR5OEr2gQ-5bQ",
+  "name": "非晉餐廚（竹北民權店）-竹北低卡餐盒|低脂便當|健身餐盒|健康餐盒|商務便當|必吃便當|活動餐盒|外帶餐盒",
+  "address": "302台灣新竹縣竹北市文化里民權街56號",
   "rating": 4.9,
-  "userRatingCount": 467,
-  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
-  "googleMapsUri": "https://maps.google.com/?cid=4435615205166852851&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.9658393,
-   "longitude": 121.25643629999999
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "11900134914619043978": {
-  "place_id": "ChIJQx48rvcjaDQRinAXvafFJaU",
-  "name": "大滿貫功夫鍋-桃園台式火鍋l火鍋美食餐廳l人氣鍋物l熱門鍋物l平價火鍋",
-  "address": "320台灣桃園市中壢區金華里九和六街76號",
-  "rating": 4.6,
-  "userRatingCount": 378,
+  "userRatingCount": 426,
   "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=11900134914619043978&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "googleMapsUri": "https://maps.google.com/?cid=13034892887054868964&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
   "location": {
-   "latitude": 24.964818899999997,
-   "longitude": 121.22535300000001
+   "latitude": 24.832235999999998,
+   "longitude": 121.01202300000001
   },
   "types": [
-   "restaurant",
-   "hot_pot_restaurant",
-   "japanese_restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "中壢"
- },
- "15360714733983327204": {
-  "place_id": "ChIJcTy50TUiaDQR5GMvf6o4LNU",
-  "name": "庫米鍋物 - 全中壢最超值的龍蝦套餐",
-  "address": "320台灣桃園市中壢區興國里中美路二段88號",
-  "rating": 4.6,
-  "userRatingCount": 1782,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=15360714733983327204&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.9600395,
-   "longitude": 121.2219544
-  },
-  "types": [
-   "japanese_restaurant",
    "restaurant",
    "food",
    "point_of_interest",
    "establishment"
   ],
-  "area_label": "中壢"
+  "area_label": "竹北"
  },
- "11336164103024329203": {
-  "place_id": "ChIJGxZk8e4haDQR88FMrDAlUp0",
-  "name": "桃金鍋物 - 中壢青埔門市 | 午茶宵夜首選（最後收客23:50）",
-  "address": "320台灣桃園市中壢區青昇路310號",
-  "rating": 4.8,
-  "userRatingCount": 933,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=11336164103024329203&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 25.015271799999997,
-   "longitude": 121.22013159999999
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "青埔"
- },
- "15417280590657167814": {
-  "place_id": "ChIJ4xQQIgAhaDQRxiGlUAMv9dU",
-  "name": "二旭鍋桃園青埔店",
-  "address": "320台灣桃園市中壢區青埔里高鐵站前東路一段1號",
-  "rating": 4.5,
-  "userRatingCount": 761,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=15417280590657167814&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 25.0135103,
-   "longitude": 121.217191
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "青埔"
- },
- "11258926957358649874": {
-  "place_id": "ChIJqbEObOkhaDQREpJuVWq-P5w",
-  "name": "享享鍋物 青埔青塘店",
-  "address": "320台灣桃園市中壢區青溪里永能路330號",
+ "1804868817673434771": {
+  "place_id": "ChIJzRV9cV43aDQRk7aah6AuDBk",
+  "name": "輕島 Isla Vita 精緻健康餐盒 竹北台元店",
+  "address": "轉角處, No. 296 -1 號博愛街福德里竹北市新竹縣台灣 302",
   "rating": 4.7,
-  "userRatingCount": 1014,
+  "userRatingCount": 283,
   "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=11258926957358649874&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "googleMapsUri": "https://maps.google.com/?cid=1804868817673434771&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
   "location": {
-   "latitude": 25.0099791,
-   "longitude": 121.2072112
+   "latitude": 24.834575899999997,
+   "longitude": 121.00766249999998
   },
   "types": [
-   "hot_pot_restaurant",
+   "meal_takeaway",
    "restaurant",
    "food",
    "point_of_interest",
    "establishment"
   ],
-  "area_label": "青埔"
+  "area_label": "竹北"
  },
- "15145330655845778952": {
-  "place_id": "ChIJR9o-cAAhaDQRCIaF8_wFL9I",
-  "name": "攪攪風味小火鍋-中壢青埔店",
-  "address": "320台灣桃園市中壢區領航北路二段223號",
-  "rating": 4.7,
-  "userRatingCount": 1308,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=15145330655845778952&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 25.010205799999998,
-   "longitude": 121.2049665
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "青埔"
- },
- "12259490505560845631": {
-  "place_id": "ChIJZ5AlQAAhaDQRP206R6l1Iqo",
-  "name": "老吳商行 青埔店｜排隊人氣火鍋 涮涮鍋｜慶生 家庭聚餐 包場推薦｜高級海鮮 肉品",
-  "address": "337台灣桃園市大園區領航北路三段213號",
-  "rating": 4.4,
-  "userRatingCount": 811,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=12259490505560845631&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 25.0177742,
-   "longitude": 121.21277909999999
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "japanese_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "青埔"
- },
- "16841863597959477807": {
-  "place_id": "ChIJ3wMQOgAhaDQRL_r017VRuuk",
-  "name": "涮金鍋 和風涮涮鍋 中壢青埔店",
-  "address": "320台灣桃園市中壢區芝芭里高鐵南路二段335號",
-  "rating": 4.6,
-  "userRatingCount": 1305,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=16841863597959477807&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 25.0016768,
-   "longitude": 121.2039331
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "青埔"
- },
- "16821396807827890512": {
-  "place_id": "ChIJZd4Cyc8haDQRUKF47EWbcek",
-  "name": "金蒔鍋物 青埔旗艦店-青埔火鍋,青埔聚餐,青埔美食,A17店,青埔餐廳 陽光劇場停車優惠",
-  "address": "337002台灣桃園市大園區青峰里大成路二段100號3樓之6",
+ "3576828033029801959": {
+  "place_id": "ChIJmUMjBl43aDQR54dmKyVyozE",
+  "name": "食Go易健康概念餐盒 竹北自強南店-竹北低卡餐盒|低脂便當|健身餐盒|健康餐盒|活動餐盒|外帶餐盒|舒肥餐|舒肥料理",
+  "address": "302042台灣新竹縣竹北市鹿場里自強南路93號",
   "rating": 4.3,
-  "userRatingCount": 321,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=16821396807827890512&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "userRatingCount": 122,
+  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+  "googleMapsUri": "https://maps.google.com/?cid=3576828033029801959&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
   "location": {
-   "latitude": 25.024022799999997,
-   "longitude": 121.2193133
+   "latitude": 24.8164657,
+   "longitude": 121.02585329999998
   },
   "types": [
-   "hot_pot_restaurant",
    "restaurant",
    "food",
    "point_of_interest",
    "establishment"
   ],
-  "area_label": "青埔"
+  "area_label": "竹北"
  },
- "17404824204547714366": {
-  "place_id": "ChIJwY5hWQAhaDQRPu0vOmZbivE",
-  "name": "千壹方溫體牛鍋物",
-  "address": "33743台灣桃園市大園區青山里致遠一路3號",
-  "rating": 4.4,
-  "userRatingCount": 71,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=17404824204547714366&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+ "2378805720538132434": {
+  "place_id": "ChIJFdBRyBI3aDQR0q9XCjM3AyE",
+  "name": "MR. ENERGY 能量先生-竹北店/外送專門店|低卡餐盒|健康餐盒|會議便當|商業客製|午餐首選",
+  "address": "302台灣新竹縣竹北市福德里三民路264號",
+  "rating": 4.2,
+  "userRatingCount": 330,
+  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+  "googleMapsUri": "https://maps.google.com/?cid=2378805720538132434&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
   "location": {
-   "latitude": 25.0049475,
-   "longitude": 121.21111110000001
+   "latitude": 24.8338801,
+   "longitude": 121.01083919999998
   },
   "types": [
-   "hot_pot_restaurant",
+   "restaurant",
+   "meal_delivery",
+   "food_delivery",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "area_label": "竹北"
+ },
+ "3152031769815673768": {
+  "place_id": "ChIJt9f48HQ3aDQRqOubyDFEvis",
+  "name": "C'FINE 舒飯健康餐盒新竹竹北店",
+  "address": "302台灣新竹縣竹北市東興里自強北路146號",
+  "rating": 4.1,
+  "userRatingCount": 339,
+  "priceLevel": "PRICE_LEVEL_MODERATE",
+  "googleMapsUri": "https://maps.google.com/?cid=3152031769815673768&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 24.8221074,
+   "longitude": 121.03042110000001
+  },
+  "types": [
    "restaurant",
    "food",
    "point_of_interest",
    "establishment"
   ],
-  "area_label": "青埔"
+  "area_label": "竹北"
  },
- "12304733701693385758": {
-  "place_id": "ChIJhbSDd3IhaDQRHiw2wRsyw6o",
-  "name": "東東石頭火鍋",
-  "address": "337台灣桃園市大園區青山里新生路四段121號",
-  "rating": 4.6,
-  "userRatingCount": 499,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=12304733701693385758&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+ "7983392474393000419": {
+  "place_id": "ChIJwd-Esw03aDQR47m4Wii1ym4",
+  "name": "Miss Energy 能量小姐 竹北高鐵直營門市 低卡餐盒|低脂便當|健身餐盒|健康餐盒|商務便當|必吃便當|減脂餐|低卡美食",
+  "address": "302台灣新竹縣竹北市東平里嘉豐南路二段23號",
+  "rating": 4.3,
+  "userRatingCount": 154,
+  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+  "googleMapsUri": "https://maps.google.com/?cid=7983392474393000419&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
   "location": {
-   "latitude": 25.0065001,
-   "longitude": 121.21351539999999
+   "latitude": 24.807807099999998,
+   "longitude": 121.0325293
   },
   "types": [
-   "hot_pot_restaurant",
+   "chinese_restaurant",
    "restaurant",
    "food",
    "point_of_interest",
    "establishment"
   ],
-  "area_label": "青埔"
+  "area_label": "竹北"
  },
- "10580042295671320593": {
-  "place_id": "ChIJH-0tDz4haDQREfAYlmnc05I",
-  "name": "超有肉涮涮屋-青埔店（寵物友善餐廳）",
-  "address": "320台灣桃園市中壢區領航北路二段58號",
+ "1834975162666419869": {
+  "place_id": "ChIJ7d6mQHU3aDQRnYZlNjAkdxk",
+  "name": "有飯食光-三民店",
+  "address": "302台灣新竹縣竹北市竹仁里三民路279號",
+  "rating": 4.3,
+  "userRatingCount": 404,
+  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+  "googleMapsUri": "https://maps.google.com/?cid=1834975162666419869&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 24.833070499999998,
+   "longitude": 121.01255580000002
+  },
+  "types": [
+   "restaurant",
+   "health_food_store",
+   "food_store",
+   "store",
+   "health",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "area_label": "竹北"
+ },
+ "11738633199746971358": {
+  "place_id": "ChIJFQu-d8A3aDQR3naGg7MA6KI",
+  "name": "健人餐廚（成功店） ~原 健人餐廚嘉豐店",
+  "address": "302台灣新竹縣竹北市鹿場里成功一街26號",
+  "rating": 4.2,
+  "userRatingCount": 361,
+  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+  "googleMapsUri": "https://maps.google.com/?cid=11738633199746971358&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 24.8205939,
+   "longitude": 121.0232174
+  },
+  "types": [
+   "chinese_restaurant",
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "area_label": "竹北"
+ },
+ "16978468384207374619": {
+  "place_id": "ChIJx1cjoQY3aDQRG4nhJgqjn-s",
+  "name": "非晉餐廚（竹北勝利店）",
+  "address": "302台灣新竹縣竹北市十興里勝利一路85號1樓",
+  "rating": 4.2,
+  "userRatingCount": 251,
+  "priceLevel": "PRICE_LEVEL_MODERATE",
+  "googleMapsUri": "https://maps.google.com/?cid=16978468384207374619&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 24.8216556,
+   "longitude": 121.02672249999998
+  },
+  "types": [
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "area_label": "竹北"
+ },
+ "2646586979954873848": {
+  "place_id": "ChIJramDXHY3aDQR-FViB9aQuiQ",
+  "name": "一米飯屋eatmebox",
+  "address": "302台灣新竹縣竹北市北崙里博愛街170號",
+  "rating": 4.2,
+  "userRatingCount": 247,
+  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+  "googleMapsUri": "https://maps.google.com/?cid=2646586979954873848&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 24.8323926,
+   "longitude": 121.0057106
+  },
+  "types": [
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "area_label": "竹北"
+ },
+ "13407257684730130241": {
+  "place_id": "ChIJI1DE2mk3aDQRQS93XtQlELo",
+  "name": "柳弗擇食餐館｜健康餐盒 美食",
+  "address": "302台灣新竹縣竹北市竹義里中正西路24號",
+  "rating": 4.7,
+  "userRatingCount": 55,
+  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+  "googleMapsUri": "https://maps.google.com/?cid=13407257684730130241&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 24.8391712,
+   "longitude": 121.00473219999998
+  },
+  "types": [
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "area_label": "竹北"
+ },
+ "852254290621891242": {
+  "place_id": "ChIJu3tsB8QxaDQRqgLSCsPQ0ws",
+  "name": "安天有富肌健康養身餐盒-竹北店",
+  "address": "302台灣新竹縣竹北市仁義路106號",
   "rating": 4.8,
-  "userRatingCount": 3470,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=10580042295671320593&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "userRatingCount": 40,
+  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+  "googleMapsUri": "https://maps.google.com/?cid=852254290621891242&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
   "location": {
-   "latitude": 25.0072582,
-   "longitude": 121.20188269999998
+   "latitude": 24.8355671,
+   "longitude": 121.01491700000001
   },
   "types": [
-   "hot_pot_restaurant",
    "restaurant",
    "food",
    "point_of_interest",
    "establishment"
   ],
-  "area_label": "青埔"
+  "area_label": "竹北"
  },
- "17202017391859346408": {
-  "place_id": "ChIJTwX_63chaDQR6Cvefa3Xue4",
-  "name": "怎麻辣頂級鴛鴦鍋",
-  "address": "320台灣桃園市中壢區青埔里青溪路一段383號",
-  "rating": 4.6,
-  "userRatingCount": 1917,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=17202017391859346408&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+ "2525375987706487865": {
+  "place_id": "ChIJBeKcvtQ3aDQROeSLrxTwCyM",
+  "name": "SICO料理所- 竹北高鐵店",
+  "address": "302台灣新竹縣竹北市東平里隘口五街52號",
+  "rating": 4.2,
+  "userRatingCount": 190,
+  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+  "googleMapsUri": "https://maps.google.com/?cid=2525375987706487865&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
   "location": {
-   "latitude": 25.013011,
-   "longitude": 121.22234490000001
+   "latitude": 24.8033981,
+   "longitude": 121.03435019999999
   },
   "types": [
-   "hot_pot_restaurant",
    "restaurant",
    "food",
    "point_of_interest",
    "establishment"
   ],
-  "area_label": "青埔"
+  "area_label": "竹北"
  },
- "10677873255348902377": {
-  "place_id": "ChIJXfIldLchaDQR6Rm35SZtL5Q",
-  "name": "賣漁仔石頭火鍋｜餐廳｜美食",
-  "address": "320台灣桃園市中壢區青溪里民權路四段275號",
+ "6187519778942424047": {
+  "place_id": "ChIJ_VBupYA3aDQR7xORwHR83lU",
+  "name": "桔滿餐廚 健康餐盒-客製化餐盒 竹北旗艦店",
+  "address": "302台灣新竹縣竹北市新國里中正西路279號",
+  "rating": 4.2,
+  "userRatingCount": 97,
+  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+  "googleMapsUri": "https://maps.google.com/?cid=6187519778942424047&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 24.8425285,
+   "longitude": 120.9966612
+  },
+  "types": [
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "area_label": "竹北"
+ },
+ "10690936986403908060": {
+  "place_id": "ChIJgS33KcQ3aDQR3KmwzovWXZQ",
+  "name": "好好波奇",
+  "address": "302台灣新竹縣竹北市文化里三民路89號",
   "rating": 4.9,
-  "userRatingCount": 296,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=10677873255348902377&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "userRatingCount": 153,
+  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+  "googleMapsUri": "https://maps.google.com/?cid=10690936986403908060&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
   "location": {
-   "latitude": 25.0061769,
-   "longitude": 121.20234529999999
+   "latitude": 24.8333729,
+   "longitude": 121.0175813
   },
   "types": [
-   "hot_pot_restaurant",
    "restaurant",
    "food",
    "point_of_interest",
    "establishment"
   ],
-  "area_label": "青埔"
+  "area_label": "竹北"
  },
- "16964125778588868429": {
-  "place_id": "ChIJ_ajocPohaDQRTR_WDYSubOs",
-  "name": "日嚐海鮮鍋物",
-  "address": "337台灣桃園市大園區青山里致遠一路43號",
+ "17207245791787577045": {
+  "place_id": "ChIJA3kO4ks3aDQR1W5VNuFqzO4",
+  "name": "宸忻營養諮詢中心",
+  "address": "302台灣新竹縣竹北市竹北里莊敬北路557號",
+  "rating": 5,
+  "userRatingCount": 70,
+  "priceLevel": null,
+  "googleMapsUri": "https://maps.google.com/?cid=17207245791787577045&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 24.8327386,
+   "longitude": 121.0263727
+  },
+  "types": [
+   "consultant",
+   "health",
+   "point_of_interest",
+   "service",
+   "establishment"
+  ],
+  "area_label": "竹北"
+ },
+ "3045843486033279113": {
+  "place_id": "ChIJMQZNagA3aDQRiXhzUoMCRSo",
+  "name": "啾咪健康煮（麻辣魯味煮）",
+  "address": "302台灣新竹縣竹北市福德里三民路449號",
+  "rating": 4.1,
+  "userRatingCount": 26,
+  "priceLevel": null,
+  "googleMapsUri": "https://maps.google.com/?cid=3045843486033279113&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 24.834932799999997,
+   "longitude": 121.00866060000001
+  },
+  "types": [
+   "snack_bar",
+   "meal_takeaway",
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "service",
+   "establishment"
+  ],
+  "area_label": "竹北"
+ },
+ "9696185935282534007": {
+  "place_id": "ChIJlUzj4NQ3aDQRd3anTLzFj4Y",
+  "name": "戰 鬥 雞 油雞/醉雞 輕食餐盒 竹北三民店",
+  "address": "302台灣新竹縣竹北市福德里三民路大同路",
+  "rating": 4.5,
+  "userRatingCount": 83,
+  "priceLevel": "PRICE_LEVEL_MODERATE",
+  "googleMapsUri": "https://maps.google.com/?cid=9696185935282534007&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 24.8342653,
+   "longitude": 121.0097435
+  },
+  "types": [
+   "chicken_restaurant",
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "area_label": "竹北"
+ },
+ "7174403237874425368": {
+  "place_id": "ChIJm0VF1Ng3aDQRGN7qtLuZkGM",
+  "name": "彩碗 ColorBowl Poke竹北博愛店",
+  "address": "302台灣新竹縣竹北市北崙里博愛街147號1樓",
+  "rating": 4.7,
+  "userRatingCount": 733,
+  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+  "googleMapsUri": "https://maps.google.com/?cid=7174403237874425368&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 24.8314541,
+   "longitude": 121.0047893
+  },
+  "types": [
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "area_label": "竹北"
+ },
+ "10578052732456204859": {
+  "place_id": "ChIJYzlQ6-43aDQRO_pmTerKzJI",
+  "name": "野餐，日-健康餐盒（新竹竹北店）",
+  "address": "302045台灣新竹縣竹北市福德里博愛街337號",
   "rating": 4.9,
-  "userRatingCount": 1597,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=16964125778588868429&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "userRatingCount": 248,
+  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+  "googleMapsUri": "https://maps.google.com/?cid=10578052732456204859&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
   "location": {
-   "latitude": 25.0055282,
-   "longitude": 121.21171489999998
+   "latitude": 24.8359924,
+   "longitude": 121.00809840000001
   },
   "types": [
-   "hot_pot_restaurant",
    "restaurant",
    "food",
    "point_of_interest",
    "establishment"
   ],
-  "area_label": "青埔"
+  "area_label": "竹北"
  },
- "17045975501574552370": {
-  "place_id": "ChIJ8cPHgZQhaDQRMrtcvWd4j-w",
-  "name": "彭麻記麻辣串串火鍋青埔店",
-  "address": "320台灣桃園市中壢區青埔里青松街320-1號",
-  "rating": 4.6,
-  "userRatingCount": 162,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=17045975501574552370&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 25.0040245,
-   "longitude": 121.22273249999999
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "青埔"
- },
- "14471951678238547032": {
-  "place_id": "ChIJ9QZhrW4faDQRWNwGLGCz1sg",
-  "name": "樸食鍋物",
-  "address": "337台灣桃園市大園區青峰里大智路103號",
+ "13175013156166440112": {
+  "place_id": "ChIJa3pZr9E3aDQRsBRmTKkM17Y",
+  "name": "廚師流浪",
+  "address": "302台灣新竹縣竹北市中興里嘉豐七街149號",
   "rating": 4.7,
-  "userRatingCount": 1907,
+  "userRatingCount": 239,
   "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=14471951678238547032&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "googleMapsUri": "https://maps.google.com/?cid=13175013156166440112&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
   "location": {
-   "latitude": 25.022963299999997,
-   "longitude": 121.21700930000002
+   "latitude": 24.8102248,
+   "longitude": 121.03149870000001
   },
   "types": [
-   "hot_pot_restaurant",
+   "meal_takeaway",
+   "meal_delivery",
+   "food_delivery",
    "restaurant",
    "food",
    "point_of_interest",
    "establishment"
   ],
-  "area_label": "青埔"
+  "area_label": "竹北"
  },
- "6821835692731158591": {
-  "place_id": "ChIJMzXGAvYhaDQRP1BSPWsHrF4",
-  "name": "台福飽飽鍋｜家常小火鍋 · 豆花甜品-青埔店",
-  "address": "320台灣桃園市中壢區青溪里領航北路二段68號",
+ "7533771512775066274": {
+  "place_id": "ChIJg3miGgA3aDQRokLqdUZVjWg",
+  "name": "Benefit 新竹竹北店",
+  "address": "302台灣新竹縣竹北市新國里中央路216號",
   "rating": 4.7,
-  "userRatingCount": 2476,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=6821835692731158591&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "userRatingCount": 68,
+  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+  "googleMapsUri": "https://maps.google.com/?cid=7533771512775066274&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
   "location": {
-   "latitude": 25.0074977,
-   "longitude": 121.2022931
+   "latitude": 24.8395427,
+   "longitude": 120.9992328
   },
   "types": [
-   "hot_pot_restaurant",
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "area_label": "竹北"
+ },
+ "5734671018626315840": {
+  "place_id": "ChIJHa19VkU3aDQRQPbyaOiklU8",
+  "name": "蛋白盒子健康低卡餐盒-竹北嘉豐店",
+  "address": "302台灣新竹縣竹北市東平里嘉豐十一路二段10號",
+  "rating": 4.3,
+  "userRatingCount": 150,
+  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+  "googleMapsUri": "https://maps.google.com/?cid=5734671018626315840&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 24.8070168,
+   "longitude": 121.03463979999998
+  },
+  "types": [
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "area_label": "竹北"
+ },
+ "15069260431596506793": {
+  "place_id": "ChIJ__xhMzE3aDQRqc4orYXEINE",
+  "name": "肌動力 JIDONGLI 肌力體能訓練中心",
+  "address": "302台灣新竹縣竹北市仁德街15號",
+  "rating": 5,
+  "userRatingCount": 222,
+  "priceLevel": null,
+  "googleMapsUri": "https://maps.google.com/?cid=15069260431596506793&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 24.836340099999997,
+   "longitude": 121.0113762
+  },
+  "types": [
+   "gym",
+   "sports_activity_location",
+   "health",
+   "point_of_interest",
+   "establishment"
+  ],
+  "area_label": "竹北"
+ },
+ "13792514911453316773": {
+  "place_id": "ChIJo4V0MzM3aDQRpQZ0cDzbaL8",
+  "name": "Uncle Tacos 墨西哥健康餐/竹北美食/異國美食",
+  "address": "302台灣新竹縣竹北市仁和街63號旁巷子內第一棟25號攤位",
+  "rating": 4.8,
+  "userRatingCount": 461,
+  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+  "googleMapsUri": "https://maps.google.com/?cid=13792514911453316773&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 24.837772299999997,
+   "longitude": 121.0109164
+  },
+  "types": [
+   "taco_restaurant",
+   "snack_bar",
+   "meal_takeaway",
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "area_label": "竹北"
+ },
+ "2805303203580037227": {
+  "place_id": "ChIJ64hBWw83aDQRa0iniGZw7iY",
+  "name": "Miss Energy 能量小姐 竹北遠百直營門市",
+  "address": "302台灣新竹縣竹北市十興里勝利一路160號",
+  "rating": 4,
+  "userRatingCount": 137,
+  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+  "googleMapsUri": "https://maps.google.com/?cid=2805303203580037227&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 24.821173599999998,
+   "longitude": 121.0272346
+  },
+  "types": [
+   "food_store",
+   "store",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "area_label": "竹北"
+ },
+ "8170674276495196662": {
+  "place_id": "ChIJCU2FOPU3aDQR9gHr4fYQZHE",
+  "name": "gonnaEAT 竹北店 | 地中海概念 | 原型食物 | 健康餐廳",
+  "address": "302044台灣新竹縣竹北市鹿場里自強南路36號1樓",
+  "rating": 4.3,
+  "userRatingCount": 672,
+  "priceLevel": "PRICE_LEVEL_MODERATE",
+  "googleMapsUri": "https://maps.google.com/?cid=8170674276495196662&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 24.818817799999998,
+   "longitude": 121.0268591
+  },
+  "types": [
+   "mediterranean_restaurant",
+   "salad_shop",
+   "brunch_restaurant",
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "area_label": "竹北"
+ },
+ "12108144635098791199": {
+  "place_id": "ChIJc4jxzFo3aDQRH30d2GTFCKg",
+  "name": "樂心料理 竹北縣政店",
+  "address": "302台灣新竹縣竹北市斗崙里縣政三街130號",
+  "rating": 4,
+  "userRatingCount": 269,
+  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+  "googleMapsUri": "https://maps.google.com/?cid=12108144635098791199&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 24.8243117,
+   "longitude": 121.0139748
+  },
+  "types": [
+   "meal_delivery",
+   "food_delivery",
+   "meal_takeaway",
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "area_label": "竹北"
+ },
+ "4945525070017417775": {
+  "place_id": "ChIJd3q5EpU2aDQRL1ItQtkIokQ",
+  "name": "豆戀迷Do Re Mi -竹北三民店/外送下午茶專門店｜低卡健康｜天然養生｜團體餐點｜客製化下午茶點心｜竹北在地美食",
+  "address": "302台灣新竹縣竹北市福德里三民路461號",
+  "rating": 4.1,
+  "userRatingCount": 329,
+  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+  "googleMapsUri": "https://maps.google.com/?cid=4945525070017417775&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 24.8351378,
+   "longitude": 121.0084643
+  },
+  "types": [
    "dessert_restaurant",
    "restaurant",
    "food",
    "point_of_interest",
    "establishment"
   ],
-  "area_label": "青埔"
+  "area_label": "竹北"
  },
- "17192358769203401284": {
-  "place_id": "ChIJD2YiHowhaDQRRNJwKTaHl-4",
-  "name": "鍋強強極緻火鍋",
-  "address": "32054台灣桃園市中壢區芝芭里領航南路一段7號",
-  "rating": 4.6,
-  "userRatingCount": 1104,
+ "8709006209681100143": {
+  "place_id": "ChIJHwiXg5Q2aDQRb422YgGb3Hg",
+  "name": "食·福（竹北店）已改名：原簡單生活",
+  "address": "302台灣新竹縣竹北市北崙里縣政十三路148號",
+  "rating": 4.4,
+  "userRatingCount": 990,
   "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=17192358769203401284&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "googleMapsUri": "https://maps.google.com/?cid=8709006209681100143&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
   "location": {
-   "latitude": 25.001006699999998,
-   "longitude": 121.203533
+   "latitude": 24.831523500000003,
+   "longitude": 121.00825889999999
   },
   "types": [
-   "hot_pot_restaurant",
    "restaurant",
+   "brunch_restaurant",
+   "food_store",
+   "store",
    "food",
    "point_of_interest",
    "establishment"
   ],
-  "area_label": "青埔"
+  "area_label": "竹北"
  },
- "14906874686516670755": {
-  "place_id": "ChIJSVgrr7chaDQRI7EWIYzb384",
-  "name": "這一小鍋 桃園新光青埔店【經典店】",
-  "address": "337台灣桃園市中壢區青埔里春德路107號",
-  "rating": 4.6,
-  "userRatingCount": 3128,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=14906874686516670755&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 25.0167833,
-   "longitude": 121.21338499999999
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "青埔"
- },
- "3937183089820097244": {
-  "place_id": "ChIJH8ElwwQhaDQR3Npm_CivozY",
-  "name": "築間幸福鍋物 中壢高鐵北路店",
-  "address": "320台灣桃園市中壢區青埔里高鐵北路二段70號",
-  "rating": 4.6,
-  "userRatingCount": 1444,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=3937183089820097244&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 25.017292299999998,
-   "longitude": 121.2198327
-  },
-  "types": [
-   "hot_pot_restaurant",
-   "japanese_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "青埔"
- },
- "14108279018286586834": {
-  "place_id": "ChIJF4QqhpshaDQR0psRrQStysM",
-  "name": "錢都日式涮涮鍋-桃園青埔店",
-  "address": "320台灣桃園市中壢區洽溪里永裕路128號",
-  "rating": 4.5,
-  "userRatingCount": 919,
-  "priceLevel": "PRICE_LEVEL_MODERATE",
-  "googleMapsUri": "https://maps.google.com/?cid=14108279018286586834&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 25.0095009,
-   "longitude": 121.20092040000002
-  },
-  "types": [
-   "japanese_restaurant",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "青埔"
- },
- "8680219505458729236": {
-  "place_id": "ChIJTS7rch8haDQRFNFIg6ZVdng",
-  "name": "8鍋-青埔店",
-  "address": "320台灣桃園市中壢區青溪里民權路四段476號",
+ "18217297398914808191": {
+  "place_id": "ChIJs5oyxmE3aDQRf_n2BXfX0Pw",
+  "name": "戰 鬥 雞 油雞/醉雞 輕食餐盒 竹北勝利店",
+  "address": "302台灣新竹縣竹北市北興里勝利十一路196號",
   "rating": 4.1,
-  "userRatingCount": 578,
-  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
-  "googleMapsUri": "https://maps.google.com/?cid=8680219505458729236&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "userRatingCount": 73,
+  "priceLevel": "PRICE_LEVEL_MODERATE",
+  "googleMapsUri": "https://maps.google.com/?cid=18217297398914808191&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
   "location": {
-   "latitude": 25.006340599999998,
-   "longitude": 121.20256160000001
+   "latitude": 24.825922,
+   "longitude": 121.030165
   },
   "types": [
-   "hot_pot_restaurant",
+   "snack_bar",
+   "chicken_restaurant",
+   "market",
+   "school",
+   "educational_institution",
+   "meal_takeaway",
    "restaurant",
    "food",
    "point_of_interest",
    "establishment"
   ],
-  "area_label": "青埔"
+  "area_label": "竹北"
  }
 }
