@@ -148,7 +148,7 @@
   "name": "有飯食光-三民店",
   "address": "302台灣新竹縣竹北市竹仁里三民路279號",
   "rating": 4.3,
-  "userRatingCount": 404,
+  "userRatingCount": 405,
   "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
   "googleMapsUri": "https://maps.google.com/?cid=1834975162666419869&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
   "location": {
@@ -158,9 +158,9 @@
   "types": [
    "restaurant",
    "health_food_store",
+   "health",
    "food_store",
    "store",
-   "health",
    "food",
    "point_of_interest",
    "establishment"
@@ -208,26 +208,6 @@
   ],
   "area_label": "竹北"
  },
- "2646586979954873848": {
-  "place_id": "ChIJramDXHY3aDQR-FViB9aQuiQ",
-  "name": "一米飯屋eatmebox",
-  "address": "302台灣新竹縣竹北市北崙里博愛街170號",
-  "rating": 4.2,
-  "userRatingCount": 247,
-  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
-  "googleMapsUri": "https://maps.google.com/?cid=2646586979954873848&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.8323926,
-   "longitude": 121.0057106
-  },
-  "types": [
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "竹北"
- },
  "13407257684730130241": {
   "place_id": "ChIJI1DE2mk3aDQRQS93XtQlELo",
   "name": "柳弗擇食餐館｜健康餐盒 美食",
@@ -239,6 +219,26 @@
   "location": {
    "latitude": 24.8391712,
    "longitude": 121.00473219999998
+  },
+  "types": [
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "area_label": "竹北"
+ },
+ "2646586979954873848": {
+  "place_id": "ChIJramDXHY3aDQR-FViB9aQuiQ",
+  "name": "一米飯屋eatmebox",
+  "address": "302台灣新竹縣竹北市北崙里博愛街170號",
+  "rating": 4.2,
+  "userRatingCount": 247,
+  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+  "googleMapsUri": "https://maps.google.com/?cid=2646586979954873848&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 24.8323926,
+   "longitude": 121.0057106
   },
   "types": [
    "restaurant",
@@ -341,8 +341,8 @@
    "longitude": 121.0263727
   },
   "types": [
-   "consultant",
    "health",
+   "consultant",
    "point_of_interest",
    "service",
    "establishment"
@@ -413,6 +413,26 @@
   ],
   "area_label": "竹北"
  },
+ "5734671018626315840": {
+  "place_id": "ChIJHa19VkU3aDQRQPbyaOiklU8",
+  "name": "蛋白盒子健康低卡餐盒-竹北嘉豐店",
+  "address": "302台灣新竹縣竹北市東平里嘉豐十一路二段10號",
+  "rating": 4.3,
+  "userRatingCount": 150,
+  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+  "googleMapsUri": "https://maps.google.com/?cid=5734671018626315840&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 24.8070168,
+   "longitude": 121.03463979999998
+  },
+  "types": [
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "area_label": "竹北"
+ },
  "10578052732456204859": {
   "place_id": "ChIJYzlQ6-43aDQRO_pmTerKzJI",
   "name": "野餐，日-健康餐盒（新竹竹北店）",
@@ -467,26 +487,6 @@
   "location": {
    "latitude": 24.8395427,
    "longitude": 120.9992328
-  },
-  "types": [
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "竹北"
- },
- "5734671018626315840": {
-  "place_id": "ChIJHa19VkU3aDQRQPbyaOiklU8",
-  "name": "蛋白盒子健康低卡餐盒-竹北嘉豐店",
-  "address": "302台灣新竹縣竹北市東平里嘉豐十一路二段10號",
-  "rating": 4.3,
-  "userRatingCount": 150,
-  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
-  "googleMapsUri": "https://maps.google.com/?cid=5734671018626315840&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.8070168,
-   "longitude": 121.03463979999998
   },
   "types": [
    "restaurant",
@@ -561,6 +561,27 @@
   ],
   "area_label": "竹北"
  },
+ "4945525070017417775": {
+  "place_id": "ChIJd3q5EpU2aDQRL1ItQtkIokQ",
+  "name": "豆戀迷Do Re Mi -竹北三民店/外送下午茶專門店｜低卡健康｜天然養生｜團體餐點｜客製化下午茶點心｜竹北在地美食",
+  "address": "302台灣新竹縣竹北市福德里三民路461號",
+  "rating": 4.1,
+  "userRatingCount": 329,
+  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
+  "googleMapsUri": "https://maps.google.com/?cid=4945525070017417775&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
+  "location": {
+   "latitude": 24.8351378,
+   "longitude": 121.0084643
+  },
+  "types": [
+   "dessert_restaurant",
+   "restaurant",
+   "food",
+   "point_of_interest",
+   "establishment"
+  ],
+  "area_label": "竹北"
+ },
  "8170674276495196662": {
   "place_id": "ChIJCU2FOPU3aDQR9gHr4fYQZHE",
   "name": "gonnaEAT 竹北店 | 地中海概念 | 原型食物 | 健康餐廳",
@@ -574,8 +595,8 @@
    "longitude": 121.0268591
   },
   "types": [
-   "mediterranean_restaurant",
    "salad_shop",
+   "mediterranean_restaurant",
    "brunch_restaurant",
    "restaurant",
    "food",
@@ -600,27 +621,6 @@
    "meal_delivery",
    "food_delivery",
    "meal_takeaway",
-   "restaurant",
-   "food",
-   "point_of_interest",
-   "establishment"
-  ],
-  "area_label": "竹北"
- },
- "4945525070017417775": {
-  "place_id": "ChIJd3q5EpU2aDQRL1ItQtkIokQ",
-  "name": "豆戀迷Do Re Mi -竹北三民店/外送下午茶專門店｜低卡健康｜天然養生｜團體餐點｜客製化下午茶點心｜竹北在地美食",
-  "address": "302台灣新竹縣竹北市福德里三民路461號",
-  "rating": 4.1,
-  "userRatingCount": 329,
-  "priceLevel": "PRICE_LEVEL_INEXPENSIVE",
-  "googleMapsUri": "https://maps.google.com/?cid=4945525070017417775&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA",
-  "location": {
-   "latitude": 24.8351378,
-   "longitude": 121.0084643
-  },
-  "types": [
-   "dessert_restaurant",
    "restaurant",
    "food",
    "point_of_interest",
@@ -667,11 +667,11 @@
    "snack_bar",
    "chicken_restaurant",
    "market",
-   "school",
-   "educational_institution",
    "meal_takeaway",
    "restaurant",
    "food",
+   "school",
+   "educational_institution",
    "point_of_interest",
    "establishment"
   ],
