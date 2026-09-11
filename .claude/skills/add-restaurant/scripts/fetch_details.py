@@ -76,7 +76,14 @@ def photo_url(photo_name, w=800, h=800):
 
 
 def get_details(place_id):
-    url = f"https://places.googleapis.com/v1/places/{place_id}"
+    # languageCode must be passed explicitly here (Place Details defaults to
+    # English if omitted, unlike Text Search which had it in the request
+    # body) — without it, formattedAddress can come back in English even
+    # for a place whose Text Search hit was in Chinese, which false-tripped
+    # the AREA_KEYWORDS check for 蛋白盒子健康低卡餐盒-竹北嘉豐店 and
+    # Benefit 新竹竹北店 (both genuinely in 竹北, just returned English
+    # addresses with no explicit language pinned).
+    url = f"https://places.googleapis.com/v1/places/{place_id}?languageCode=zh-TW"
     field_mask = ("id,displayName,formattedAddress,rating,userRatingCount,priceLevel,"
                   "nationalPhoneNumber,regularOpeningHours,parkingOptions,photos,"
                   "primaryType,types,googleMapsUri,location")
